@@ -1,0 +1,515 @@
+body{
+	background: #f1f1f1;
+	overflow-x: hidden;
+}
+@font-face{
+	src:url(../fonts/roboto/Roboto-Medium.ttf);
+	font-family: RobotoM;
+}
+@font-face{
+	src:url(../fonts/TbcDin_Nusxuri_regular.otf);
+	font-family: TBCregular;
+}
+@font-face{
+	src:url(../fonts/segoeui.ttf);
+	font-family: SegoeUI;
+}
+button{
+	outline: none !important;
+}
+a,
+a:hover,
+a:focus,
+a:active{
+	color: #FF8B7E;
+	text-decoration: none;
+}
+#menu{
+    height: 88px;
+    box-shadow: 0 3px 13px 0px rgba(46, 46, 46, 0.14);
+}
+#menu .navbar-default{
+	background: none;
+	border: none;
+}
+#menu .navbar-nav li a{
+	background: none;
+	font-weight: 400;
+	font-family: SegoeUI;
+	color: #2E2E2E;
+	transition: 0.2s;
+}
+#menu .navbar-nav li a:hover,
+#menu .navbar-nav li a:focus,
+#menu .navbar-nav li a:active{
+	color: black;
+}
+#menu .menubtn,
+#menu .menubtn:hover,
+#menu .menubtn:focus,
+#menu .menubtn:active{
+	box-shadow: none;
+	background: none;
+	padding: 3px 15px;
+}
+
+#menu .menubtn.subscribe{
+	border: 2px solid #42C5A3;
+	border-radius: 13px;
+	margin-top: -5px;
+}
+#menu .menubtn.subscribe i{
+	margin-right: 3px;
+	padding-bottom: 1px;
+	border-bottom: 2px solid #2e2e2e;
+}
+#menu .menubtn.facecontrol{
+	background: #FF8B7E;
+	border: 2px solid #FF8B7E;
+	color: white;
+	border-radius: 13px;
+	margin-top: -5px;
+}
+.menu-absolute{
+	position: relative;
+}
+.menu-absolute .logo{
+	position: absolute;
+	left: 61px;
+	top: 15px;
+	z-index: 1;
+}
+.menu-absolute .menu-right{
+	position: absolute;
+	z-index: 1;
+	right: 61px;
+	top: 33px;
+}
+.menu-absolute .menu-right ul{
+	list-style: none;
+}
+.menu-absolute .menu-right li{
+	display: block;
+	float: left;
+}
+.menu-absolute .menu-right li a,
+.menu-absolute .menu-right li a:hover,
+.menu-absolute .menu-right li a:focus,
+.menu-absolute .menu-right li a:active{
+	color: black;
+	text-decoration: none;
+	padding: 5px 15px;
+}
+#header{
+	height: 337px;
+	background:#8DE0BC;
+}
+#header .tbcfonted{
+	color: white;
+	font-family: TBCRegular;
+}
+#header .tbcfonted h1{
+	font-weight: bold;
+	margin-top: 50px;
+}
+#header .subscribe{
+}
+#header .subscribeBtn{
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	padding: 15px 30px;
+	background: transparent;
+	font-size: 29px;
+	border: 2px solid white;
+	border-radius: 15px;
+	transition: 0.2s;
+	box-shadow: none !important;
+}
+#header .subscribeBtn a{
+	color: white;
+	text-decoration: none;
+}
+#header .subscribeBtn:hover,
+#header .subscribeBtn:focus,
+#header .subscribeBtn:active{
+	background: white;
+}
+#header .subscribeBtn:hover a,
+#header .subscribeBtn:focus a,
+#header .subscribeBtn:active a{
+	color: #8DE0BC;
+}
+#content{
+}
+.vacancies{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.vacancyHeader{
+	margin: 10px 0px;
+	overflow:hidden;
+}
+.vacancyHeader .title{
+	font-family: TBCRegular;
+	font-size: 20px;
+	float: left;
+}
+.vacancyHeader .hr{
+	float: left;
+	border-bottom: 1px solid #ccc;
+	content: " ";
+	width: 1000px;
+	margin-top: 16px;
+	margin-left: 15px;
+}
+.vacancyHeader .vacancy-inner{
+	width: 10000px;
+}
+.vacancies .title.red{
+	color: #FF8B7E;
+}
+.vacancies .title.green{
+	color: #42C5A3;
+}
+
+.vacancies .vips .item{
+	margin-top: 15px;
+	background: white;
+	height: 120px;
+	border-left: 14px solid #FF8B7E;
+	box-shadow: 3px 5px 10px 0px #ccc;
+	padding-right: 10px;
+}
+.vacancies .vips .item .title{
+	font-family: SegoeUI;
+	font-weight: bold;
+}
+.vacancies .vips .item .icon{
+	margin-left: 10px;
+	margin-top: 23px;
+}
+.vacancies .vips .item .icon img{
+	width: 75px;
+}
+.vacancies .vips .item .company_name{
+	font-size: 12px;
+	color: #95989A;
+}
+.vacancies .vips .item .dates{
+	font-size: 12px;
+	color: #95989A;
+}
+.vacancies .vips .item .location{
+	font-size: 12px;
+	color: #42C5A3;
+	font-weight: bold;
+}
+.vacancies .vips .item .absoluted{
+	position: absolute;
+    top: 75px;
+    right: 10px;
+}
+.vacancies .standart .item{
+	margin-top: 15px;
+	background: white;
+	height: 68px;
+	border-left: 14px solid #42C5A3;
+	box-shadow: 3px 5px 10px 0px #ccc;
+	padding-right: 10px;
+}
+.vacancies .standart .item .title{
+	font-family: SegoeUI;
+	font-weight: bold;
+}
+.vacancies .standart .item .icon{
+	margin-left: 20px;
+	margin-top: 16px;
+}
+.vacancies .standart .item .icon img{
+	width: 38px;
+}
+.vacancies .standart .item .company_name{
+	font-size: 12px;
+	color: #95989A;
+}
+.vacancies .standart .item .dates{
+	font-size: 12px;
+	color: #95989A;
+}
+.vacancies .standart .item .location{
+	font-size: 12px;
+	color: #42C5A3;
+	font-weight: bold;
+}
+.vacancies .standart .item .marginleft{
+	margin-left: 15px;
+	margin-top: 12px;
+}
+.vacancies .standart .item .marginright{
+	margin-right: 15px;
+	margin-top: 16px;
+}
+#advertisements{
+	margin-top: 20px;
+}
+#footer{
+	height: 165px;
+	background: #3B3B3B;
+	margin-top: 20px;
+}
+#footer .copyright{
+	margin-left: 100px;
+	color: #95989A;
+	margin-top: 70px;
+}
+#footer .contact{
+	color: #95989A;
+	margin-right: 100px;
+	margin-top: 70px;
+}
+#footer .contact i{
+	color: #8DE0BC;
+	margin-right: 8px;
+}
+#footer .contact .info{
+	float: left;
+	margin-left: 20px;
+}
+#register{
+	margin-top: 40px;
+	font-family: SegoeUI;
+	position: relative;
+
+}
+#register .typeswitcher{
+	margin-top: 50px;
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+}
+#register .switchbtn{
+	width: 200px;
+	height: 40px;
+	background: transparent;
+	border: 1px solid #8DE0BC;
+	border-radius: 10px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 14px;
+	font-weight: bold;
+	float: left;
+	border: 1px solid #8DE0BC;
+	cursor: pointer;
+}
+#register .switchbtn.active{
+	color: #95989A;
+	background: #8DE0BC;
+	color: white;
+	box-shadow: 2px 3px 6px 0px #cccccc;
+}
+#register .switchbtn:nth-child(2){
+	margin-left: 100px;
+}
+#register .switchbtn i{
+	color: black;
+	margin-right: 5px;
+}
+#register .switchbtn:nth-child(1)::after{
+	content: "";
+	position: absolute;
+	height: 40px;
+	border-right: 1px solid #ccc;
+    margin-left: 94px;
+}
+#register .forms{
+	margin-top: 20px;
+	color: #95989A;
+}
+.forms .form-control{
+	border: none;
+	padding: 20px 12px;
+	color: #95989A;
+	border-radius: 10px;
+	box-shadow: 2px 3px 6px 0px #cccccc;
+}
+.uploadbtn{
+	font-family: SegoeUI;
+	color: black;
+	background: white;
+	border-radius: 10px;
+	border: 2px solid #FF8B7E;
+	padding: 10px 12px;
+	transition: 0.2s;
+}
+.uploadbtn:hover,
+.uploadbtn:focus,
+.uploadbtn:active{
+	background: #FF8B7E;
+	color: white;
+}
+.uploadbtn i{
+	margin-right: 10px;
+}
+.authBtn{
+	background: #8DE0BC;
+	color: white;
+	font-size: 17px;
+	font-family: SegoeUI;
+	font-weight: Bold;
+	padding: 8px 25px;
+	border-radius: 10px;
+	border: 1px solid #42C5A3;
+	transition: 0.2s;
+}
+.authBtn:hover,
+.authBtn:focus,
+.authBtn:active{
+	background: white;
+	color: #42C5A3;
+}
+.tableCentered{
+	display: table;
+	margin: 0 auto;
+}
+#register::after{
+	content: "";
+	border-right: 1px solid #ccc;
+	position: absolute;
+	height: 100%;
+	top: 0;
+	right: -100px;
+}
+#login{
+	margin-top: 60px;
+}
+.already_registered{
+	font-family: TBCRegular;
+	color: white;
+	padding-left: 15px;
+	padding-right: 100px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	width: 100%;
+	border-radius: 15px;
+	font-size: 30px;
+	background-color: #8DE0BC;
+	background-image: url('/img/logoicon.png');
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+}
+.myFormControl .form-control{
+	border: none;
+	padding: 20px 12px;
+	color: #95989A;
+	border-radius: 10px;
+	box-shadow: 2px 3px 6px 0px #cccccc;
+}
+#login .form-control{
+	border: none;
+	padding: 20px 12px;
+	color: #95989A;
+	border-radius: 10px;
+	box-shadow 2px 3px 6px 0px #cccccc;
+}
+.forgot_password,
+.forgot_password:hover,
+.forgot_password:focus,
+.forgot_password:active{
+	color: #FF8B7E;
+	line-height: 40px;
+	font-family: TBCRegular;
+}
+.loginContent{
+	width: 500px;
+	margin: 150px auto;
+}
+#loginModal .modal-header,
+#loginModal .modal-body,
+#loginModal .modal-footer{
+	background: #F1F1F1;
+	border: none;
+}
+#loginModal .modal-dialog{
+	margin: 100px auto;
+	color: #3B3B3B;
+	font-family: SegoeUI;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+#loginModal .close{
+	position: absolute;
+    right: -30px;
+    top: -40px;
+    font-size: 40px;
+    color: white;
+    opacity: 0.8;
+}
+.userParam{
+	padding-left: 40px;
+	border-right: 1px solid #95989A;
+	margin-top: 30px;
+	font-family: SegoeUI;
+	color: #95989A;
+}
+.userParam .avatar{
+	width: 180px;
+	height: 180px;
+	overflow: hidden;
+	border-radius: 180px;
+}
+.userParam .avatar img{
+	width: 100%;
+}
+.userParam .username{
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+.userParam .param{
+	margin-top: 10px;
+}
+.userParam .edit{
+	cursor: pointer;
+	color: #3B3B3B;
+	margin-right: 20px;
+}
+@media (min-width: 768px){
+    #menu .navbar-nav{
+        float:none;
+        margin: 0 auto;
+        margin-top: 19px;
+        display: table;
+        table-layout: fixed;
+    }
+
+}
+@media(max-width: 691px){
+	#loginModal .modal-dialog{
+		padding-left: 20px;
+    	padding-right: 20px;
+	}
+}
+@media(max-width: 500px){
+	.loginContent{
+		width: 100%;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+@media (max-width: 991px){
+	.tbcfonted{
+		text-align: center;
+	}
+	#footer .copyright{
+		margin-left: 15px;
+	}
+	#footer .contact{
+		margin-right: 15px;
+	}
+}
+@media(max-width: 1190px){
+	.menu-absolute .logo{
+		left: 5px;
+	}
+}
