@@ -40,8 +40,12 @@ class AuthController extends Controller
     			"phone"=>"required|min:7|numeric",
 	            "email" => "required|email|unique:users,email",
                 "password" => "required|min:6",
-	        ]);
-	        $user = User::create([
+	        ],[
+                'name.required'=> 'გთხოვთ შეიყვანოთ სახელი',
+                'surname.required'=> 'გთხოვთ შეიყვანოთ გვარი'
+            ]);
+            
+            $user = User::create([
 	            "email" => $request->get('email'),
 	            "password" => bcrypt($request->get('password')),
 	            "name" => $request->get('name'),
@@ -70,6 +74,7 @@ class AuthController extends Controller
             Auth::login($user);
             return redirect('/');
     	}
+        return redirect()->back();
     }
     public function logout(){
     	Auth::logout();

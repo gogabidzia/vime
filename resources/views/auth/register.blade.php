@@ -37,7 +37,7 @@ Vime - რეგისტრაცია
                     <div class="form-group">
                         <input type="password" class="form-control" name="password" placeholder="პაროლი"></input>
                     </div>
-                    <div class="form-group">
+                   <!--  <div class="form-group">
                         <div class="click_upload user pull-right">
                             <span class="help">ფაილი არ არის არჩეული.</span>
                             <button type="button" class="btn uploadbtn">
@@ -45,7 +45,7 @@ Vime - რეგისტრაცია
                             </button>
                         </div>
                         <div class="clearfix"></div>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <div class="checkbox">
                             <label>
@@ -73,7 +73,7 @@ Vime - რეგისტრაცია
                     <div class="form-group">
                         <input type="password" class="form-control" name="password" placeholder="პაროლი"></input>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <div class="click_upload company pull-right">
                             <span class="help">ფაილი არ არის არჩეული.</span>
                             <button type="button" class="btn uploadbtn">
@@ -81,7 +81,7 @@ Vime - რეგისტრაცია
                             </button>
                         </div>
                         <div class="clearfix"></div>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <div class="checkbox">
                             <label>
@@ -89,7 +89,7 @@ Vime - რეგისტრაცია
                             </label>
                         </div> 
                     </div>
-                    <input type="file" name="comp_logo" class="comp_logo hidden">
+                    <!-- <input type="file" name="comp_logo" class="comp_logo hidden"> -->
                     <div class="form-group">
                         <button class="btn authBtn tableCentered" type="submit" name="">რეგისტრაცია</button>
                     </div>

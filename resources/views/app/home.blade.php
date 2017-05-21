@@ -12,52 +12,11 @@ Vime - მთავარი
 
 		<div class="col-md-8">
 			<div class="vacancies">
-				<div class="vacancyHeader">
-					<div class="vacancy-inner">
-							<div class="title red">
-								VIP განცხადებები
-							</div>
-							<div class="hr">
-								
-							</div>
-					</div>
-				</div>
-				<div class="items vips">
-					<div class="row">
-						<div class="col-md-4">
-							<div class="item">
-								<div class="row">
-									<div class="col-xs-4">
-										<div class="icon">
-											<img src="img/company.png">
-										</div>
-									</div>
-									<div class="col-xs-8">
-										<div class="title">
-											გაყიდვების მენეჯერი
-										</div>
-										<div class="company_name">
-											"კომპანია"
-										</div>
-										<div class="absoluted">
-											<div class="dates">
-												00.00.00 - 00.00.00
-											</div>
-											<div class="location">
-												თბილისი
-											</div>
-										</div>
-									</div>
-								</div>								
-							</div>
-						</div>
-					</div>
-				</div>
 				<!-- VIPS END -->
 				<div class="vacancyHeader">
 					<div class="vacancy-inner">
 							<div class="title green">
-								სტანდარტული
+								განცხადებები
 							</div>
 							<div class="hr">
 								
@@ -66,6 +25,7 @@ Vime - მთავარი
 				</div>
 				<div class="items standart">
 					<div class="row">
+						@foreach($vacancies as $vacancy)
 						<div class="col-md-12">
 							<div class="item">
 								<div class="row">
@@ -74,24 +34,27 @@ Vime - მთავარი
 									</div>
 									<div class="pull-left marginleft">
 										<div class="title">
-											გაყიდვების მენეჯერი
+											<a href="/vacancies/all/{{$vacancy->id}}">
+												{{ $vacancy->position }}
+											</a>
 										</div>
 										<div class="company_name">
-											"კომპანია"
+											"{{ $vacancy->user->name }}"
 										</div>
 									</div>
 									<div class="pull-right marginright">
 										<div class="dates">
-											00.00.00 - 00.00.00
+											{{ date('Y.m.d', strtotime($vacancy->date_from)) }} - {{ date('Y.m.d', strtotime($vacancy->date_to)) }}
 										</div>
 										<div class="location">
-											თბილისი
+											
 										</div>
 									</div>
 									<div class="clearfix"></div>
 								</div>								
 							</div>
 						</div>
+						@endforeach
 					</div>
 				</div>
 

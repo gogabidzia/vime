@@ -2,20 +2,34 @@
 	<div class="menu-absolute">
 		<div class="logo">
 			<a href="/">
-				<img src="img/logo.png">
+				<img src="/img/logo.png">
 			</a>
 		</div>
 		<div class="menu-right">
 		@if(Auth::check())
-			<i class="fa fa-bell notifications" aria-hidden="true"></i>
-			<i class="fa fa-user" aria-hidden="true"></i>
-			<a href="/logout">გასვლა</a>
+			<div class="dropdown pull-right">
+				<button class="btn menuBtn dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i>
+				</button>
+				
+				<ul class="dropdown-menu">
+					<li><a href="/profile">პროფილი</a></li>
+					<li><a href="/profile/settings">ანგარიშის პარამეტრები</a></li>
+					<li><a href="/logout">გასვლა</a></li>
+				</ul>
+			</div>
+			<div class="dropdown pull-right">
+				<button class="btn menuBtn dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-bell notifications" aria-hidden="true"></i>
+				</button>
+				<div class="dropdown-menu">
+					ახალი შეტყობინება არ არის.
+				</div>
+			</div>
 		@else
 			<ul>
-				<li>
+				<li class="pull-left leftFloated">
 					<a href="/register">რეგისტრაცია</a>
 				</li>
-				<li>
+				<li class="pull-left leftFloated">
 						<button class="btn menubtn subscribe" id="loginButton">შესვლა</button>
 				</li>
 			</ul>
@@ -38,7 +52,7 @@
 					<li><a href="/instructions">ინსტრუქცია</a></li>
 					<li>
 					@if(Auth::check())
-						<a href="/subscribe">
+						<a href="/profile/?add=1">
 							<button class="btn menubtn subscribe"><i class="fa fa-arrow-up" aria-hidden="true"></i>
 	 						დამატება</button>
 						</a>

@@ -4,9 +4,10 @@
 	<title>
 		@yield('title')
 	</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
 @include('partials.menu')
@@ -18,7 +19,7 @@
 
 
 
-<div id="loginModal" class="modal fade" role="dialog">
+<div id="loginModal" class="modal fade loginModal" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content">
@@ -53,8 +54,11 @@
   </div>
 </div>
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="/locales/bootstrap-datepicker.ka.min.js"></script>
+
 @yield('js')
 
 <script type="text/javascript">

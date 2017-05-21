@@ -83,14 +83,15 @@ a:active{
 	position: absolute;
 	z-index: 1;
 	right: 61px;
-	top: 33px;
+	top: 25px;
 }
 .menu-absolute .menu-right ul{
 	list-style: none;
 }
-.menu-absolute .menu-right li{
-	display: block;
-	float: left;
+.menu-absolute .menu-right li.leftFloated{
+	/*display: block;*/
+	/*float: left;*/
+	margin-top: 8px;
 }
 .menu-absolute .menu-right li a,
 .menu-absolute .menu-right li a:hover,
@@ -114,11 +115,7 @@ a:active{
 }
 #header .subscribe{
 }
-#header .subscribeBtn{
-	display: table;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 30px;
+.subscribeBtn{
 	padding: 15px 30px;
 	background: transparent;
 	font-size: 29px;
@@ -127,18 +124,25 @@ a:active{
 	transition: 0.2s;
 	box-shadow: none !important;
 }
-#header .subscribeBtn a{
+#header .subscribeBtn{
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+
+}
+.subscribeBtn a{
 	color: white;
 	text-decoration: none;
 }
-#header .subscribeBtn:hover,
-#header .subscribeBtn:focus,
-#header .subscribeBtn:active{
+.subscribeBtn:hover,
+.subscribeBtn:focus,
+.subscribeBtn:active{
 	background: white;
 }
-#header .subscribeBtn:hover a,
-#header .subscribeBtn:focus a,
-#header .subscribeBtn:active a{
+.subscribeBtn:hover a,
+.subscribeBtn:focus a,
+.subscribeBtn:active a{
 	color: #8DE0BC;
 }
 #content{
@@ -219,9 +223,10 @@ a:active{
 	box-shadow: 3px 5px 10px 0px #ccc;
 	padding-right: 10px;
 }
-.vacancies .standart .item .title{
+.vacancies .standart .item .title a{
 	font-family: SegoeUI;
 	font-weight: bold;
+	color: #2e2e2e
 }
 .vacancies .standart .item .icon{
 	margin-left: 20px;
@@ -425,20 +430,20 @@ a:active{
 	width: 500px;
 	margin: 150px auto;
 }
-#loginModal .modal-header,
-#loginModal .modal-body,
-#loginModal .modal-footer{
+.loginModal .modal-header,
+.loginModal .modal-body,
+.loginModal .modal-footer{
 	background: #F1F1F1;
 	border: none;
 }
-#loginModal .modal-dialog{
+.loginModal .modal-dialog{
 	margin: 100px auto;
 	color: #3B3B3B;
 	font-family: SegoeUI;
 	padding-left: 20px;
 	padding-right: 20px;
 }
-#loginModal .close{
+.loginModal .close{
 	position: absolute;
     right: -30px;
     top: -40px;
@@ -454,13 +459,21 @@ a:active{
 	color: #95989A;
 }
 .userParam .avatar{
-	width: 180px;
-	height: 180px;
+	width: 90%;
+	padding-top:90%; 
+	/*border: 1px solid #2e2e2e;*/
 	overflow: hidden;
-	border-radius: 180px;
+	/*border-radius: 100%;*/
+	position: relative;
 }
 .userParam .avatar img{
+	position: absolute;
+	left: 50%;
+	top: 50%;
 	width: 100%;
+	transform: translate3d(-50%,-50%,0);
+	-webkit-transform: translate3d(-50%,-50%,0);
+	-moz-transform: translate3d(-50%,-50%,0);
 }
 .userParam .username{
 	margin-bottom: 15px;
@@ -474,6 +487,55 @@ a:active{
 	color: #3B3B3B;
 	margin-right: 20px;
 }
+.subscribe_profile{
+	background: #8DE0BC;
+	margin-left: -40px;
+	font-family: SegoeUI;
+	text-align: center;
+	margin-top: 100px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+.subscribe_profile h4{
+	color: white;
+	text-align: left;
+	padding-left: 15px;
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+.subscribe_profile .png{
+	width: 90px;
+}
+.menuBtn,
+.menuBtn:focus,
+.menuBtn:active,
+.menuBtn:hover{
+	background: none;
+	border: none;
+	font-size: 24px;
+	box-shadow: none;
+}
+.addBtn{
+	background: #FF8B7E;
+	color: #2E2E2E;
+	border-radius: 13px;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-family: SegoeUI;
+	font-weight: bold;
+	margin-left: 30px;
+}
+.toggleInstruction{
+	color: #42C5A3;
+}
+.addBtn i{
+	padding-bottom: 1px;
+    border-bottom: 2px solid #2e2e2e;
+	margin-right: 10px;
+}
+.addvacancy_div{
+	margin-top: 20px;
+}
 @media (min-width: 768px){
     #menu .navbar-nav{
         float:none;
@@ -485,7 +547,7 @@ a:active{
 
 }
 @media(max-width: 691px){
-	#loginModal .modal-dialog{
+	.loginModal .modal-dialog{
 		padding-left: 20px;
     	padding-right: 20px;
 	}

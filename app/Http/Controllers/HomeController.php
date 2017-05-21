@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Vacancy;
 
 class HomeController extends Controller
 {
@@ -23,16 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('app.home');
+        $vacancies = Vacancy::orderBy('created_at','desc')->get();
+        return view('app.home', ['vacancies'=> $vacancies]);
     }
     public function subscribe(){
         return redirect()->back();   
     }
-    public function profile(Request $request){
-        if($request->user()->company){
-            return view('app.user.profilecompany');
-        }else{
-            return view('app.user.profileuser');
-        }
-    }
+    
 }

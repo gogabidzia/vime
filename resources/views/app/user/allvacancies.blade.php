@@ -16,48 +16,6 @@
 			<div class="vacancies">
 				<div class="vacancyHeader">
 					<div class="vacancy-inner">
-							<div class="title red">
-								შემოსული რეზიუმეები
-							</div>
-							<div class="hr">
-								
-							</div>
-					</div>
-				</div>
-				<div class="items vips">
-					<div class="row">
-						<div class="col-md-4">
-							<div class="item">
-								<div class="row">
-									<div class="col-md-4">
-										<div class="icon">
-											<img src="/img/company.png">
-										</div>
-									</div>
-									<div class="col-md-8">
-										<div class="title">
-											გაყიდვების მენეჯერი
-										</div>
-										<div class="company_name">
-											"კომპანია"
-										</div>
-										<div class="absoluted">
-											<div class="dates">
-												00.00.00 - 00.00.00
-											</div>
-											<div class="location">
-												თბილისი
-											</div>
-										</div>
-									</div>
-								</div>								
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- VIPS END -->
-				<div class="vacancyHeader">
-					<div class="vacancy-inner">
 							<div class="title green">
 								მიმდინარე ვაკანსიები
 							</div>
@@ -67,7 +25,6 @@
 					</div>
 				</div>
 				<div class="items standart">
-				<a href="/profile/vacancies">ყველას ნახვა</a>
 					<div class="row">
 					@foreach($vacancies as $vacancy)
 						<div class="col-md-12">
@@ -150,11 +107,8 @@
 @section('js')
 	<script type="text/javascript">
 		$(function(){
-			<?php 
-				if(isset($_GET['add']) && isset($_GET['add'])=="1"){
-			?>
-				$("#addModal").modal();
-			<?php } ?>
+
+
 			$('.logo_upload').click(function(){
 				$('.uploadInput').click();
 			});
