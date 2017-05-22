@@ -171,11 +171,36 @@ a:active{
 .vacancyHeader .vacancy-inner{
 	width: 10000px;
 }
-.vacancies .title.red{
+.vacancy-inner .title.red{
 	color: #FF8B7E;
 }
-.vacancies .title.green{
+.vacancy-inner .title.green{
 	color: #42C5A3;
+}
+.vacancy-item{
+	border-left: 1px solid #ccc;
+	padding-left: 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+span.spacer{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.vacancy-item .text{
+	min-height: 300px;
+	border-left: 3px solid #42C5A3;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px; 
+	margin-bottom: 10px;
+}
+.vacancy-item .params{
+	border-left: 3px solid #ff8b7e;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px; 
+	margin-bottom: 10px;
 }
 
 .vacancies .vips .item{
@@ -515,7 +540,8 @@ a:active{
 	font-size: 24px;
 	box-shadow: none;
 }
-.addBtn{
+.addBtn,
+.redBtn{
 	background: #FF8B7E;
 	color: #2E2E2E;
 	border-radius: 13px;
@@ -525,16 +551,104 @@ a:active{
 	font-weight: bold;
 	margin-left: 30px;
 }
-.toggleInstruction{
-	color: #42C5A3;
-}
-.addBtn i{
+.addBtn i,
+.redBtn i{
 	padding-bottom: 1px;
     border-bottom: 2px solid #2e2e2e;
 	margin-right: 10px;
 }
+.redBtn{
+	margin-left: 0;
+}
+.greenBtn{
+	background: #42C5A3;
+	color: white;
+	border-radius: 13px;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-family: SegoeUI;
+	font-weight: bold;
+}
+.greenBtn:hover,
+.greenBtn:focus,
+.greenBtn:active{
+	color: white;
+}
+.greenBtn i{
+	padding-bottom: 1px;
+    border-bottom: 2px solid white;
+	margin-right: 10px;
+}
+
+.toggleInstruction{
+	color: #42C5A3;
+}
 .addvacancy_div{
 	margin-top: 20px;
+}
+.removeVacancy{
+	position: absolute;
+	right: 0px;
+	top: -13px;
+	font-size: 40px;
+}
+.removeVideo{
+	position: absolute;
+	right: 0px;
+	top: -27px;
+	font-size: 40px;
+}
+.pagination li a
+.pagination li:hover a,
+.pagination li:focus a,
+.pagination li:active a
+.pagination{
+	color: #42C5A3;
+}
+.pagination .active span.
+.pagination .active:hover span{
+	background-color:#42C5A3;
+	border-color: #42C5A3; 
+}
+.videos{
+	padding: 15px;
+}
+.videos .video{
+	height: 200px;
+	border: 2px solid #42C5A3;
+	padding: 10px;
+	margin-bottom: 15px;
+}
+.videos .video video{
+	margin: 0 auto;
+	display: table;
+	max-width: 100%;
+	max-height: 100%;
+}
+.addLoading{
+	position: absolute;
+	display: none;
+	background:rgba(66,197,163,0.8);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.addLoading .pleasewait{
+	color: white;
+	font-size: 20px;
+}
+.addLoading img{
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+}
+.sendVideo video{
+	padding: 10px;
+	max-width: 100%;
+}
+.sendVideo.active{
+	background: #42c5a3;
 }
 @media (min-width: 768px){
     #menu .navbar-nav{

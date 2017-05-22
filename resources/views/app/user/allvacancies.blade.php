@@ -29,9 +29,10 @@
 					@foreach($vacancies as $vacancy)
 						<div class="col-md-12">
 							<div class="item">
+							<a href="/vacancies/remove/{{$vacancy->id}}" class="removeVacancy">&times;</a>
 								<div class="row">
 									<div class="icon pull-left">
-										<img src="/img/company.png">
+										<img src="{{ $vacancy->user->logo }}">
 									</div>
 									<div class="pull-left marginleft">
 										<div class="title">
@@ -93,6 +94,7 @@
 	        	</div>
 	        </div>
 	        {{csrf_field()}}
+	        
 	        <div class="pull-right">
 	            <button class="btn authBtn" type="submit" name="">დამატება</button> 
 	        </div>
@@ -138,6 +140,12 @@
 
             $('[name="date_from"]').datepicker(dateParams);
             $('[name="date_to"]').datepicker(dateParams);
+            $('.removeVacancy').click(function(ev){
+            	ev.preventDefault();
+            	if(confirm("ნამდვილად გსურთ მონიშნული ვაკანსიის წაშლა?")){
+            		location.replace($(this).attr('href'));
+            	}
+            });
 		});
 	</script>
 @stop

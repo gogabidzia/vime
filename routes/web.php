@@ -28,6 +28,15 @@ Route::get('/home', function(){
 Route::get('/profile', 'ProfileController@profile')->middleware('auth');
 Route::get('/profile/settings', 'ProfileController@settings')->middleware('auth');
 Route::get('/profile/vacancies', 'ProfileController@allvacancies')->middleware('ifCompany');
-
+Route::get('/profile/videos', 'ProfileController@videos');
+Route::post('/profile/updatepassword', 'ProfileController@changePass')->middleware('auth');
+Route::post('/profile/uploadlogo' , 'ProfileController@uploadlogo')->middleware('auth');
+Route::post('/profile/uploadvideo' , 'ProfileController@uploadVideo')->middleware('auth');
 
 Route::post('/vacancies/add', 'VacancyController@add')->middleware('ifCompany');
+Route::get('/vacancies/remove/{id}', 'VacancyController@remove')->middleware('ifCompany');
+Route::get('/vacancies/all/{id}' , 'VacancyController@view');
+
+Route::get('/logos/{image}', 'ProfileController@getImage');
+Route::get('/videos/{name}', 'ProfileController@getVideo');
+Route::get('/videos/remove/{id}', 'ProfileController@removeVideo');

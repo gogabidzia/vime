@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Vacancies extends Migration
+class Video extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class Vacancies extends Migration
      */
     public function up()
     {
-        Schema::create('vacancies', function (Blueprint $table) {
+        Schema::create('videos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('position')->nullable();
-            $table->string('description')->nullable();
-            $table->date('date_from')->nullable();
-            $table->date('date_to')->nullable();
+            $table->string('link');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class Vacancies extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vacancies');
+        Schema::dropIfExists('videos');
     }
 }

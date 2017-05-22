@@ -13,6 +13,9 @@
 				
 				<ul class="dropdown-menu">
 					<li><a href="/profile">პროფილი</a></li>
+					@if(!Auth::user()->company)
+					<li><a href="/profile/videos">ჩემი ვიდეოები</a></li>
+					@endif
 					<li><a href="/profile/settings">ანგარიშის პარამეტრები</a></li>
 					<li><a href="/logout">გასვლა</a></li>
 				</ul>

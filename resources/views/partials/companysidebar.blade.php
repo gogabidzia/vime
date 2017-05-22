@@ -1,6 +1,6 @@
-<div class="userParam">
+<div class="userParam visible-md visible-lg">
 	<div class="avatar">
-		<img src="/img/logoicon.png">
+		<img src="{{ Auth::user()->logo }}">
 	</div>
 	<!-- <form action="/upload/companylogo" method="post">
 		<div class="form-group">
@@ -25,7 +25,7 @@
 		ელ.ფოსტა : {{ Auth::user()->email }}
 	</div>
 	<div class="param">
-		ვაკანსიები : 1
+		ვაკანსიები : {{ count(Auth::user()->vacancies) }}
 	</div>
 	<div class="param">
 		რეზიუმეები : 4

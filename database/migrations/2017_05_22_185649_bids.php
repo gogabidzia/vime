@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Vacancies extends Migration
+class Bids extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class Vacancies extends Migration
      */
     public function up()
     {
-        Schema::create('vacancies', function (Blueprint $table) {
+        Schema::create('bids', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->string('position')->nullable();
-            $table->string('description')->nullable();
-            $table->date('date_from')->nullable();
-            $table->date('date_to')->nullable();
+            $table->integer('from_id');
+            $table->integer('to_id');
+            $table->integer('video_id');
             $table->timestamps();
         });
     }

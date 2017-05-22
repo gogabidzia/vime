@@ -30,7 +30,7 @@ Vime - მთავარი
 							<div class="item">
 								<div class="row">
 									<div class="icon pull-left">
-										<img src="img/company.png">
+										<img src="{{ $vacancy->user->logo }}">
 									</div>
 									<div class="pull-left marginleft">
 										<div class="title">
@@ -55,6 +55,9 @@ Vime - მთავარი
 							</div>
 						</div>
 						@endforeach
+					</div>
+					<div class="tableCentered">
+						{{$vacancies->links()}}
 					</div>
 				</div>
 

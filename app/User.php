@@ -32,4 +32,7 @@ class User extends Authenticatable
     public function vacancies(){
         return $this->hasMany('App\Vacancy');
     }
+    public function videos(){
+        return $this->hasMany('App\Video');
+    }
 }

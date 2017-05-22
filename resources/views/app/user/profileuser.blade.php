@@ -6,31 +6,13 @@
 @section('content')
 	<div class="row">
 		<div class="col-md-2">
-			<div class="userParam">
-				<div class="avatar">
-					<img src="img/avatar.png">
-				</div>
-				<h4 class="username">
-					{{ Auth::user()->name }} {{ Auth::user()->surname }}
-					<span class="edit">
-						<i class="fa fa-pencil" aria-hidden="true"></i>
-					</span>
-				</h4>
-				<div class="param">
-					ნომერი : {{ Auth::user()->phone }}
-				</div>
-				<div class="param">
-					ელ.ფოსტა : {{ Auth::user()->email }}
-				</div>
-				<div class="param">
-					ვაკანსიები : 1
-				</div>
-				<div class="param">
-					რეზიუმეები : 4
-				</div>
-			</div>
+			@include('partials.usersidebar')
 		</div>
 		<div class="col-md-8">
+		<div class="tableCentered addvacancy_div">
+			<a href="#" class="toggleInstruction">ინსტრუქცია</a>
+			<button class="btn addBtn"><i class="fa fa-arrow-up" aria-hidden="true"></i>ვიდეოს დამატება</button>
+		</div>
 			<div class="vacancies">
 				<div class="vacancyHeader">
 					<div class="vacancy-inner">
@@ -118,4 +100,71 @@
 		</div>
 		<div class="col-md-2"></div>
 	</div>
+
+<div id="addModal" class="modal sm fade loginModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title text-center">
+        	ვიდეოს დამატება
+        </h3>
+      </div>
+      <div class="modal-body">
+	      <div class="addLoading">
+	      	<div class="text-center pleasewait">გთხოვთ დაელოდოთ</div>
+	      	<img src="/img/rolling.svg">
+	      </div>
+      		@if(count($errors->all()) > 0)
+			<div class="alert alert-danger">
+				<ul>
+					@foreach($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div>
+			@endif
+        <form id="addVideo" action="/profile/uploadvideo" method="post" class="myFormControl" enctype='multipart/form-data'>
+        	{{ csrf_field() }}
+	        <div class="tableCentered">
+        		<button type="button" class="btn greenBtn">რეზიუმე</button>
+		    </div> 
+    		<div class="selected text-center">
+	        ფაილი არ არის არჩეული.
+	        </div>
+		    <input type="file" name="video" class="hidden">
+		    <div class="tableCentered" style="margin-top: 30px;">
+		    	<button type="submit" class="btn authBtn">დამატება</button>
+		    </div>
+	    </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+@stop
+@section('js')
+	<script type="text/javascript">
+		$('.addBtn').click(function(){ $("#addModal").modal(); });
+      	@if(count($errors->all()) > 0)
+      		$("#addModal").modal();
+      	@endif
+		$('#addVideo .greenBtn').click(function(){
+			$('[name="video"]').click();
+		});
+	
+		$('[name="video"]').change(function(){
+			$('#addVideo .selected').html($(this).val());
+		});
+
+		$('#addVideo').submit(function(){
+			$('.addLoading').fadeIn();
+		});
+		<?php
+			if(isset($_GET['add']) && $_GET['add']==1){
+		?>
+			$('#addModal').modal();
+		<?php } ?>
+	</script>
 @stop

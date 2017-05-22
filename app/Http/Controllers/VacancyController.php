@@ -22,4 +22,18 @@ class VacancyController extends Controller
         $vacancy->save();
         return redirect('/profile');
     }
+    public function remove(Request $request, $id){
+        $vacancy = Vacancy::findOrFail($id);
+        if($request->user()->id == $vacancy->user->id){
+            $vacancy->delete();
+            return redirect()->back();
+        }
+        else{
+            return redirect()->back();
+        }
+    }
+    public function view($id){
+        $vacancy = Vacancy::findOrFail($id);
+        return view('app.vacancies.view' , ['vacancy'=>$vacancy]);
+    }
 }

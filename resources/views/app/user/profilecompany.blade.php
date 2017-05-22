@@ -29,12 +29,12 @@
 						<div class="col-md-4">
 							<div class="item">
 								<div class="row">
-									<div class="col-md-4">
+									<div class="col-sm-4">
 										<div class="icon">
 											<img src="/img/company.png">
 										</div>
 									</div>
-									<div class="col-md-8">
+									<div class="col-sm-8">
 										<div class="title">
 											გაყიდვების მენეჯერი
 										</div>
@@ -72,9 +72,10 @@
 					@foreach($vacancies as $vacancy)
 						<div class="col-md-12">
 							<div class="item">
+							<a href="/vacancies/remove/{{$vacancy->id}}" class="removeVacancy">&times;</a>
 								<div class="row">
 									<div class="icon pull-left">
-										<img src="/img/company.png">
+										<img src="{{ $vacancy->user->logo }}">
 									</div>
 									<div class="pull-left marginleft">
 										<div class="title">
@@ -184,6 +185,12 @@
 
             $('[name="date_from"]').datepicker(dateParams);
             $('[name="date_to"]').datepicker(dateParams);
+            $('.removeVacancy').click(function(ev){
+            	ev.preventDefault();
+            	if(confirm("ნამდვილად გსურთ მონიშნული ვაკანსიის წაშლა?")){
+            		location.replace($(this).attr('href'));
+            	}
+            });
 		});
 	</script>
 @stop
