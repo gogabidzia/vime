@@ -35,4 +35,13 @@ class User extends Authenticatable
     public function videos(){
         return $this->hasMany('App\Video');
     }
+    public function bids(){
+        return $this->hasMany('App\Bid');
+    }
+    public function notifications(){
+        return $this->hasMany('App\Notification');
+    }
+    public function savedvacancies(){
+        return $this->hasMany('App\SavedVacancy');
+    }
 }

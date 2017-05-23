@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+use Illuminate\Support\Facades\Storage;
 class CreateUsersTable extends Migration
 {
     /**
@@ -13,6 +13,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        Storage::makeDirectory("/comp_logos");
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
@@ -22,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('video')->nullable();
             $table->string('logo')->nullable();
+            $table->string('type')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -34,6 +36,7 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        Storage::deleteDirectory("/comp_logos");
         Schema::dropIfExists('users');
     }
 }

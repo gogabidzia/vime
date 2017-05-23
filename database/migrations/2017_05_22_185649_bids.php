@@ -15,9 +15,10 @@ class Bids extends Migration
     {
         Schema::create('bids', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('from_id');
-            $table->integer('to_id');
+            $table->integer('user_id');
+            $table->integer('vacancy_id');
             $table->integer('video_id');
+            $table->integer('to_id');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class Bids extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vacancies');
+        Schema::dropIfExists('bids');
     }
 }

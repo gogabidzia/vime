@@ -31,9 +31,5 @@
 		რეზიუმეები : 4
 	</div>
 
-	<div class="subscribe_profile">
-		<img src="/img/subscribe.png" class="png">
-		<h4>მიიღეთ განცხადებები მეილზე</h4>
-		<button class="btn subscribeBtn"><a href="#">გამოწერა</a></button>
-	</div>
+	
 </div>

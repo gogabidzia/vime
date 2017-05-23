@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('title')
-	კომპანიის გვერდი - VIME
+	{{ $vacancy->position }} - VIME
 @stop
 
 @section('content')
 	<div class="row">
 		<div class="col-md-2">
-			search
+			@include('partials.search')
 		</div>
 		<div class="col-md-8">
 			<div class="vacancyHeader">
@@ -20,6 +20,11 @@
 				</div>
 			</div>
 			<div class="vacancy-item">
+			@if(session('bidStatus'))
+				<div class="alert alert-danger">
+					{{ session('bidStatus') }}
+				</div>
+			@endif
 				<div class="text">
 					{{ $vacancy->description }}
 				</div>
@@ -29,6 +34,12 @@
 					{{ date('Y.m.d', strtotime($vacancy->date_from)) }} - {{ date('Y.m.d', strtotime($vacancy->date_to)) }}
 				</div>
 				@if(!Auth::user()->company)
+					<a href="/vacancies/save/{{$vacancy->id}}">
+						<button class="btn redBtn pull-left">
+							<i class="fa fa-floppy-o" aria-hidden="true"></i>
+							შენახვა
+						</button>
+					</a>
 					<button class="btn greenBtn sendResume pull-right">
 					<i class="fa fa-paper-plane" aria-hidden="true"></i>
 					რეზიუმეს გაგზავნა</button>
@@ -36,7 +47,9 @@
 				@endif
 			</div>
 		</div>
-		<div class="col-md-2"></div>
+		<div class="col-md-2">
+			@include('partials.advertisement')
+		</div>
 	</div>
 
 
@@ -55,35 +68,31 @@
 	      	<div class="text-center pleasewait">გთხოვთ დაელოდოთ</div>
 	      	<img src="/img/rolling.svg">
 	      </div>
-      		@if(count($errors->all()) > 0)
-			<div class="alert alert-danger">
-				<ul>
-					@foreach($errors->all() as $error)
-						<li>{{ $error }}</li>
-					@endforeach
-				</ul>
-			</div>
-			@endif
-			@if(session('uploadStatus'))
-				<div class="alert alert-success">
-					{{ session('uploadStatus') }}
-				</div>
-			@endif
-			<div class="row">
-				<h4 class="text-center">აირჩიეთ ვიდეო</h4>
-		        @foreach(Auth::user()->videos as $video)
-		        	<div class="col-md-4">
-		        		<div class="sendVideo" data-id="{{$video->id}}">
-		        			<video src="/videos/{{$video->link}}"></video>
-		        		</div>
-		        	</div>
-		        @endforeach
-	        </div>
-	        <button class="btn greenBtn tableCentered">
-		        <i class="fa fa-paper-plane" aria-hidden="true"></i>
-		        გაგზავნა
-	        </button>
-			<div class="clearfix"></div>
+			<form id="bidResume" method="post" action="/vacancies/bid/">
+				{{csrf_field()}}
+				<div class="row">
+					<h4 class="text-center">აირჩიეთ ვიდეო</h4>
+			        <?php $i=0; ?>
+			        @foreach(Auth::user()->videos()->orderBy('created_at','desc')->get() as $video)
+			        <?php $i++; ?>
+			        	<div class="col-md-4">
+			        		<div class="sendVideo" data-id="{{$video->id}}">
+			        			<video src="/videos/{{$video->link}}"></video>
+			        		</div>
+			        	</div>
+			        @if($i%3==0)
+			        	<div class="clearfix"></div>
+			        @endif
+			        @endforeach
+		        </div>
+		        <input type="hidden" name="id" value="{{$vacancy->id}}">
+		        <input type="hidden" name="video_id">
+		        <button class="btn greenBtn tableCentered">
+			        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+			        გაგზავნა
+		        </button>
+				<div class="clearfix"></div>
+			</form>
       </div>
     </div>
   </div>
@@ -99,6 +108,7 @@
 		$('.sendVideo').click(function(){
 			$('.sendVideo').removeClass("active");
 			$(this).addClass('active');
-		})
+			$('[name="video_id"]').val($(this).attr('data-id'));
+		});
 	</script>
 @stop

@@ -1,11 +1,9 @@
 @extends('layouts.app')
-
 @section('title')
-Vime - მთავარი
+	ძებნა - Vime
 @stop
 @section('content')
 @include('partials.headerbanner')
-
 <div id="content">
 	<div class="row">
 		<div class="col-md-2">
@@ -57,9 +55,6 @@ Vime - მთავარი
 							</div>
 						</div>
 						@endforeach
-					</div>
-					<div class="tableCentered">
-						{{$vacancies->links()}}
 					</div>
 				</div>
 

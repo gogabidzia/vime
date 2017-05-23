@@ -35,8 +35,14 @@ Route::post('/profile/uploadvideo' , 'ProfileController@uploadVideo')->middlewar
 
 Route::post('/vacancies/add', 'VacancyController@add')->middleware('ifCompany');
 Route::get('/vacancies/remove/{id}', 'VacancyController@remove')->middleware('ifCompany');
+
 Route::get('/vacancies/all/{id}' , 'VacancyController@view');
+Route::post('/vacancies/bid', 'VacancyController@bid');
 
 Route::get('/logos/{image}', 'ProfileController@getImage');
 Route::get('/videos/{name}', 'ProfileController@getVideo');
-Route::get('/videos/remove/{id}', 'ProfileController@removeVideo');
+Route::get('/videos/remove/{id}', 'ProfileController@removeVideo')->middleware('ifUser');
+Route::get('/readnotifications', 'ProfileController@readNotifications');
+Route::get('/vacancies/save/{id}', 'ProfileController@saveVacancy')->middleware('ifUser');
+
+Route::get('/search/' , 'SearchController@search');

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-	კომპანიის გვერდი - VIME
+	ვაკანსიები - VIME
 @stop
 
 @section('content')
@@ -61,7 +61,9 @@
 				</div>
 			</div>	
 		</div>
-		<div class="col-md-2"></div>
+		<div class="col-md-2">
+			@include('partials.advertisement')
+		</div>
 	</div>
 
 <div id="addModal" class="modal fade loginModal" role="dialog">

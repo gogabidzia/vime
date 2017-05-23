@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-	პარამეტრები - Vime
+	ჩემი ვიდეოები - Vime
 @stop
 
 @section('content')
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		<div class="col-md-2">
-			
+			@include('partials.advertisement')
 		</div>
 	</div>
 @stop

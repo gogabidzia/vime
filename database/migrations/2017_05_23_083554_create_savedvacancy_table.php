@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Support\Facades\Storage;
-class Video extends Migration
+
+class CreateSavedvacancyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class Video extends Migration
      */
     public function up()
     {
-        Storage::makeDirectory('/resumes');
-        Schema::create('videos', function (Blueprint $table) {
+        Schema::create('savedvacancies', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('link');
+            $table->integer('vacancy_id');
             $table->timestamps();
         });
     }
@@ -29,7 +28,6 @@ class Video extends Migration
      */
     public function down()
     {
-        Storage::deleteDirectory('/resumes');
-        Schema::dropIfExists('videos');
+        Schema::dropIfExists('savedvacancies');
     }
 }

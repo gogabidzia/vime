@@ -26,33 +26,31 @@
 				</div>
 				<div class="items vips">
 					<div class="row">
-						<div class="col-md-4">
-							<div class="item">
-								<div class="row">
-									<div class="col-md-4">
-										<div class="icon">
-											<img src="img/company.png">
-										</div>
+					@foreach($bids as $bid)
+						<div class="col-md-12">
+							<div class="item-resume">
+								<div class="image pull-left">
+									<img src="{{ $bid->user->logo }}">
+								</div>
+								<div class="titlevac pull-left">
+									<div class="title">
+										{{ $bid->user->name }} {{ $bid->user->surname }}
 									</div>
-									<div class="col-md-8">
-										<div class="title">
-											გაყიდვების მენეჯერი
-										</div>
-										<div class="company_name">
-											"კომპანია"
-										</div>
-										<div class="absoluted">
-											<div class="dates">
-												00.00.00 - 00.00.00
-											</div>
-											<div class="location">
-												თბილისი
-											</div>
-										</div>
+									<div class="vac">
+										<a href="/vacancies/all/{{$bid->vacancy->id}}">
+										{{ $bid->vacancy->position }}
+										</a>
 									</div>
-								</div>								
+								</div>
+								<div class="pull-right">
+									<div class="showVideo" data-video="{{$bid->video->link}}">
+										<i class="fa fa-film" area-hidden="true"></i>
+									</div>
+								</div>
+								<div class="clearfix"></div>
 							</div>
 						</div>
+					@endforeach
 					</div>
 				</div>
 				<!-- VIPS END -->
@@ -68,6 +66,7 @@
 				</div>
 				<div class="items standart">
 					<div class="row">
+					@foreach($saved as $save)
 						<div class="col-md-12">
 							<div class="item">
 								<div class="row">
@@ -76,29 +75,32 @@
 									</div>
 									<div class="pull-left marginleft">
 										<div class="title">
-											გაყიდვების მენეჯერი
+											{{ $save->vacancy->position }}
 										</div>
 										<div class="company_name">
-											"კომპანია"
+											"{{$save->vacancy->user->name}}"
 										</div>
 									</div>
 									<div class="pull-right marginright">
 										<div class="dates">
-											00.00.00 - 00.00.00
+											{{ date('Y.m.d', strtotime($save->vacancy->date_from)) }} - {{ date('Y.m.d', strtotime($save->vacancy->date_to)) }}
 										</div>
-										<div class="location">
+										<!-- <div class="location">
 											თბილისი
-										</div>
+										</div> -->
 									</div>
 									<div class="clearfix"></div>
 								</div>								
 							</div>
 						</div>
+					@endforeach
 					</div>
 				</div>
 			</div>	
 		</div>
-		<div class="col-md-2"></div>
+		<div class="col-md-2">
+			@include('partials.advertisement')
+		</div>
 	</div>
 
 <div id="addModal" class="modal sm fade loginModal" role="dialog">
@@ -143,6 +145,26 @@
   </div>
 </div>
 
+<div id="videoModal" class="modal sm fade loginModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title text-center">
+        	ვიდეო
+        </h3>
+      </div>
+      <div class="modal-body">
+	      <div class="video">
+	      	
+	      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 @stop
 @section('js')
 	<script type="text/javascript">
@@ -153,6 +175,7 @@
 		$('#addVideo .greenBtn').click(function(){
 			$('[name="video"]').click();
 		});
+
 	
 		$('[name="video"]').change(function(){
 			$('#addVideo .selected').html($(this).val());
@@ -161,6 +184,12 @@
 		$('#addVideo').submit(function(){
 			$('.addLoading').fadeIn();
 		});
+
+		$('.showVideo').click(function(){
+			$('#videoModal .video').html('<video src="/videos/'+$(this).attr('data-video')+'" controls></video>');
+			$('#videoModal').modal();
+		});
+
 		<?php
 			if(isset($_GET['add']) && $_GET['add']==1){
 		?>

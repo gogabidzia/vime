@@ -1,3 +1,9 @@
+<?php 
+	if(Auth::user() && Auth::user()->company){
+		$notifications = Auth::user()->notifications()->orderBy('created_at','desc')->get();
+	}
+?>
+
 <div id="menu">
 	<div class="menu-absolute">
 		<div class="logo">
@@ -20,13 +26,42 @@
 					<li><a href="/logout">გასვლა</a></li>
 				</ul>
 			</div>
-			<div class="dropdown pull-right">
-				<button class="btn menuBtn dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-bell notifications" aria-hidden="true"></i>
+			@if(Auth::user()->company)
+			<div class="dropdown company pull-right">
+				<button class="btn menuBtn dropdown-toggle notificationBtn" type="button" data-toggle="dropdown"><i class="fa fa-bell notifications" aria-hidden="true"></i>
+				@if(count($notifications)>0)
+				<div class="count">{{count($notifications)}}</div>
+				@endif
 				</button>
 				<div class="dropdown-menu">
-					ახალი შეტყობინება არ არის.
+				@if(isset($notifications))
+				@foreach($notifications as $notification)
+					<div class="item-resume notification">
+						<div class="titlevac pull-left">
+							<div class="title">
+								{{ $notification->bid->user->name }} {{ $notification->bid->user->surname }}
+							</div>
+							<div class="vac">
+								<a href="/vacancies/all/{{$notification->bid->vacancy->id}}">
+								{{ $notification->bid->vacancy->position }}
+								</a>
+							</div>
+						</div>
+						<div class="pull-right">
+							<div class="showNotifVideo" data-video="{{$notification->bid->video->link}}">
+								<i class="fa fa-film" area-hidden="true"></i>
+							</div>
+						</div>
+						<div class="clearfix"></div>	
+					</div>
+					@endforeach
+					@endif
+					@if(count($notifications)==0)
+						ახალი შეტყობინება არ არის.
+					@endif
 				</div>
 			</div>
+			@endif
 		@else
 			<ul>
 				<li class="pull-left leftFloated">
@@ -77,4 +112,23 @@
 			</div><!--/.nav-collapse -->
 		</div><!--/.container-fluid -->
     </nav>
+</div>
+
+<div id="notificationModal" class="modal sm fade loginModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title text-center">
+        	ვიდეო
+        </h3>
+      </div>
+      <div class="modal-body">
+	      <div class="video">
+	      	
+	      </div>
+      </div>
+    </div>
+  </div>
 </div>

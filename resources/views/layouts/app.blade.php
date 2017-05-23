@@ -75,6 +75,18 @@
 			location.replace('/');
 		});
 	});
+	$('.showNotifVideo').click(function(){
+			$('#notificationModal .video').html('<video src="/videos/'+$(this).attr('data-video')+'" controls></video>');
+			$('#notificationModal').modal();
+	});
+	@if(Auth::check() && Auth::user()->company)
+	var notificationcount = {{ count(Auth::user()->notifications) }};
+	@endif
+	$('.notificationBtn').click(function(){
+		if(notificationcount>0){
+			$.get('/readnotifications');
+		}
+	});
 </script>
 </body>
 </html>

@@ -8,16 +8,21 @@ use Storage;
 use Image;
 use File;
 use App\Video;
+use App\Bid;
+use App\SavedVacancy;
 use Response;
+use DB;
 class ProfileController extends Controller
 {
     public function profile(Request $request){
         if($request->user()->company){
-
             $vacancies = $request->user()->vacancies()->orderBy('created_at', 'desc')->limit(10)->get();
-            return view('app.user.profilecompany', ['vacancies' => $vacancies]);
+            $incoming = Bid::where('to_id', '=', $request->user()->id)->orderBy('created_at','desc')->get();
+            return view('app.user.profilecompany', ['vacancies' => $vacancies, 'incoming'=>$incoming]);
         }else{
-            return view('app.user.profileuser');
+            $bids = $request->user()->bids()->orderBy('created_at','desc')->get();
+            $saved = $request->user()->savedvacancies()->orderBy('created_at','desc')->get();
+            return view('app.user.profileuser', ['bids'=>$bids, 'saved'=>$saved]);
         }
     }
     public function settings(Request $request){
@@ -103,5 +108,17 @@ class ProfileController extends Controller
                 return Response::make("File does not exist.", 404);
             }
         return response()->download($filePath);
+    }
+
+    public function readNotifications(Request $request){
+        $notifications = DB::table('notifications')->where('user_id', '=', $request->user()->id);
+        $notifications->delete();
+    }
+    public function saveVacancy($id, Request $request){
+        $saved = new SavedVacancy();
+        $saved->user_id = $request->user()->id;
+        $saved->vacancy_id = $id;
+        $saved->save();
+        return redirect()->back();
     }
 }

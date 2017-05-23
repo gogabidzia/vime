@@ -4,13 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Vacancy extends Model
+class Notification extends Model
 {
-	protected $table = 'vacancies';
     public function user(){
     	return $this->belongsTo('App\User');
     }
-    public function bids(){
-    	return $this->hasMany('App\Bid');
+    public function bid(){
+    	return $this->belongsTo('App\Bid');
     }
 }

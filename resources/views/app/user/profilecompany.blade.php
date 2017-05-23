@@ -26,33 +26,31 @@
 				</div>
 				<div class="items vips">
 					<div class="row">
-						<div class="col-md-4">
-							<div class="item">
-								<div class="row">
-									<div class="col-sm-4">
-										<div class="icon">
-											<img src="/img/company.png">
-										</div>
+						@foreach($incoming as $resume)
+						<div class="col-md-12">
+							<div class="item-resume">
+								<div class="image pull-left">
+									<img src="{{ $resume->user->logo }}">
+								</div>
+								<div class="titlevac pull-left">
+									<div class="title">
+										{{ $resume->user->name }} {{ $resume->user->surname }}
 									</div>
-									<div class="col-sm-8">
-										<div class="title">
-											გაყიდვების მენეჯერი
-										</div>
-										<div class="company_name">
-											"კომპანია"
-										</div>
-										<div class="absoluted">
-											<div class="dates">
-												00.00.00 - 00.00.00
-											</div>
-											<div class="location">
-												თბილისი
-											</div>
-										</div>
+									<div class="vac">
+										<a href="/vacancies/all/{{$resume->vacancy->id}}">
+										{{ $resume->vacancy->position }}
+										</a>
 									</div>
-								</div>								
+								</div>
+								<div class="pull-right">
+									<div class="showVideo" data-video="{{$resume->video->link}}">
+										<i class="fa fa-film" area-hidden="true"></i>
+									</div>
+								</div>
+								<div class="clearfix"></div>
 							</div>
 						</div>
+						@endforeach
 					</div>
 				</div>
 				<!-- VIPS END -->
@@ -104,7 +102,9 @@
 				</div>
 			</div>	
 		</div>
-		<div class="col-md-2"></div>
+		<div class="col-md-2">
+			@include('partials.advertisement')
+		</div>
 	</div>
 
 <div id="addModal" class="modal fade loginModal" role="dialog">
@@ -146,6 +146,25 @@
     </div>
   </div>
 </div>
+<div id="videoModal" class="modal sm fade loginModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title text-center">
+        	ვიდეო
+        </h3>
+      </div>
+      <div class="modal-body">
+	      <div class="video">
+	      	
+	      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 @stop
 
 @section('js')
@@ -191,6 +210,11 @@
             		location.replace($(this).attr('href'));
             	}
             });
+
+            $('.showVideo').click(function(){
+				$('#videoModal .video').html('<video src="/videos/'+$(this).attr('data-video')+'" controls></video>');
+				$('#videoModal').modal();
+			});
 		});
 	</script>
 @stop
