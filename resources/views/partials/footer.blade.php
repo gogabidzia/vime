@@ -1,6 +1,6 @@
 <div id="footer">
 	<div class="copyright pull-left">
-		Copyright Vime ©
+		Copyright Vime © 2017
 	</div>
 	<div class="contact pull-right">
 		<div class="info">

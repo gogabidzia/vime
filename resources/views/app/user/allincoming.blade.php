@@ -16,8 +16,8 @@
 			<div class="vacancies">
 				<div class="vacancyHeader">
 					<div class="vacancy-inner">
-							<div class="title green">
-								მიმდინარე ვაკანსიები
+							<div class="title red">
+								შემოსული ვიზუმეები
 							</div>
 							<div class="hr">
 								
@@ -26,42 +26,36 @@
 				</div>
 				<div class="items standart">
 					<div class="row">
-					@foreach($vacancies as $vacancy)
+					@foreach($incoming as $resume)
 						<div class="col-md-12">
-							<div class="item">
-							<a href="/vacancies/remove/{{$vacancy->id}}" class="removeVacancy">&times;</a>
-								<div class="row">
-									<div class="icon pull-left">
-										<img src="{{ $vacancy->user->logo }}">
+							<div class="item-resume">
+								<div class="image pull-left">
+									<img src="{{ $resume->user->logo }}">
+								</div>
+								<div class="titlevac pull-left">
+									<div class="title">
+										{{ $resume->user->name }} {{ $resume->user->surname }}
 									</div>
-									<div class="pull-left marginleft">
-										<div class="title">
-											<a href="/vacancies/all/{{$vacancy->id}}">
-												{{ $vacancy->position }}
-											</a>
-										</div>
-										<div class="company_name">
-											"{{ $vacancy->user->name }}"
-										</div>
+									<div class="vac">
+										<a href="/vacancies/all/{{$resume->vacancy->id}}">
+										{{ $resume->vacancy->position }}
+										</a>
 									</div>
-									<div class="pull-right marginright">
-										<div class="dates">
-											{{ date('Y.m.d', strtotime($vacancy->date_from)) }} - {{ date('Y.m.d', strtotime($vacancy->date_to)) }}
-										</div>
-										<div class="location">
-											{{$vacancy->location}}
-										</div>
+								</div>
+								<div class="pull-right">
+									<div class="showVideo" data-video="{{$resume->video->link}}">
+										<i class="fa fa-film" area-hidden="true"></i>
 									</div>
-									<div class="clearfix"></div>
-								</div>								
+								</div>
+								<div class="clearfix"></div>
 							</div>
 						</div>
-					@endforeach
+						@endforeach
 					</div>
 				</div>
-			</div>	
+			</div>
 			<div class="tableCentered">
-				{{$vacancies->links()}}
+				{{$incoming->links()}}
 			</div>
 		</div>
 		<div class="col-md-2">
@@ -69,6 +63,25 @@
 		</div>
 	</div>
 @include('partials.addmodal');
+<div id="videoModal" class="modal sm fade loginModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title text-center">
+        	ვიდეო
+        </h3>
+      </div>
+      <div class="modal-body">
+	      <div class="video">
+	      	
+	      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 @stop
 
 @section('js')
@@ -111,6 +124,10 @@
             		location.replace($(this).attr('href'));
             	}
             });
+            $('.showVideo').click(function(){
+				$('#videoModal .video').html('<video src="/videos/'+$(this).attr('data-video')+'" controls></video>');
+				$('#videoModal').modal();
+			});
 		});
 	</script>
 @stop

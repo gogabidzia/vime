@@ -436,12 +436,15 @@ span.spacer{
 	border-radius: 10px;
 	box-shadow: 2px 3px 6px 0px #cccccc;
 }
+.myFormControl select.form-control{
+	padding:6px 12px;
+}
 #login .form-control{
 	border: none;
 	padding: 20px 12px;
 	color: #95989A;
 	border-radius: 10px;
-	box-shadow 2px 3px 6px 0px #cccccc;
+	box-shadow: 2px 3px 6px 0px #cccccc;
 }
 .forgot_password,
 .forgot_password:hover,
@@ -660,6 +663,7 @@ span.spacer{
 }
 .item-resume.notification{
 	min-height: 90px;
+	border-color: #8DE0BC;
 }
 .item-resume .image{
 	width: 100px;

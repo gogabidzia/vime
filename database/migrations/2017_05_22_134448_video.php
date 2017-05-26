@@ -18,6 +18,7 @@ class Video extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('link');
+            $table->string('type');
             $table->timestamps();
         });
     }

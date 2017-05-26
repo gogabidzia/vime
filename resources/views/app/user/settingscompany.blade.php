@@ -12,6 +12,7 @@
 		<div class="col-md-8">
 			<h3 class="text-center">ანგარიშის პარამეტრები</h3>
 			<br>
+			<div class="col-md-6">
 			<h4 class="text-center">პაროლის განახლება</h4>
 			<form id="changePass" action="/profile/updatepassword" method="post" class="myFormControl">
 				{{csrf_field()}}
@@ -27,6 +28,8 @@
 				</div>
 				<div class="clearfix"></div>
 			</form>
+			</div>
+			<div class="col-md-6">
 			<h4 class="text-center">ლოგოს ატვირთვა</h4>
 			@if(count($errors->all()) > 0)
 			<div class="alert alert-danger">
@@ -44,6 +47,7 @@
 				</div>
 
 			</form>
+			</div>
 		</div>
 		<div class="col-md-2">
 			@include('partials.advertisement')

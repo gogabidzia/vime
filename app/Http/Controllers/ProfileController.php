@@ -17,11 +17,11 @@ class ProfileController extends Controller
     public function profile(Request $request){
         if($request->user()->company){
             $vacancies = $request->user()->vacancies()->orderBy('created_at', 'desc')->limit(10)->get();
-            $incoming = Bid::where('to_id', '=', $request->user()->id)->orderBy('created_at','desc')->get();
+            $incoming = Bid::where('to_id', '=', $request->user()->id)->orderBy('created_at','desc')->limit(5)->get();
             return view('app.user.profilecompany', ['vacancies' => $vacancies, 'incoming'=>$incoming]);
         }else{
-            $bids = $request->user()->bids()->orderBy('created_at','desc')->get();
-            $saved = $request->user()->savedvacancies()->orderBy('created_at','desc')->get();
+            $bids = $request->user()->bids()->orderBy('created_at','desc')->limit(7)->get();
+            $saved = $request->user()->savedvacancies()->orderBy('created_at','desc')->limit(7)->get();
             return view('app.user.profileuser', ['bids'=>$bids, 'saved'=>$saved]);
         }
     }
@@ -51,6 +51,20 @@ class ProfileController extends Controller
     public function allvacancies(Request $request){
         $vacancies = $request->user()->vacancies()->orderBy('created_at', 'desc')->paginate(15);
         return view('app.user.allvacancies', ['vacancies'=>$vacancies]);
+    }
+    public function allincoming(Request $request){
+        $incoming = Bid::where('to_id', '=', $request->user()->id)->orderBy('created_at','desc')->paginate(15);
+        return view('app.user.allincoming', ['incoming'=>$incoming]);
+    }
+
+    public function allbids(Request $request){
+            $bids = $request->user()->bids()->orderBy('created_at','desc')->limit(7)->get();
+            $saved = $request->user()->savedvacancies()->orderBy('created_at','desc')->limit(7)->get();
+            return view('app.user.profileuser', ['bids'=>$bids, 'saved'=>$saved]);
+    }
+    public function allsaved(Request $request){
+        $incoming = Bid::where('to_id', '=', $request->user()->id)->orderBy('created_at','desc')->paginate(15);
+        return view('app.user.allsaved', ['incoming'=>$incoming]);
     }
 
     public function changePass(Request $request){
@@ -93,6 +107,7 @@ class ProfileController extends Controller
         $video = new Video();
         $video->user_id = $request->user()->id;
         $video->link = $randStr . "." . $request->file('video')->extension();
+        $video->type="visume";
         $video->save();
         return redirect('/profile/videos')->with('uploadStatus', 'ვიდეო წარმატებით აიტვირთა');
 

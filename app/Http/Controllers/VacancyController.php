@@ -11,10 +11,15 @@ use App\Notification;
 class VacancyController extends Controller
 {
     public function add(Request $request){
-		$this->validate($request, [
-			"position" => "required",
+        $locationArray = ["თბილისი", "აფხაზეთის ა/რ", "აჭარის ა/რ", "გურია", "იმერეთი", "კახეთი", "მცხეთა-მთიანეთი", "რაჭა-ლეჩხუმი, ქვ. სვანეთი", "სამეგრელო-ზემო სვანეთი", "სამცხე-ჯავახეთი", "ქვემო ქართლი", "შიდა ქართლი", "უცხოეთი"];
+        $catArray = ["ვაკანსიები", "სტიპენდიები", "ტრენინგები", "ტენდერები", "სხვა"];
+        $this->validate($request, [
+            "position" => "required",
             "description" => "required",
-            "date_from"=>"required|date"
+            "date_from"=>"required|date",
+            "date_to"=>"required|date",
+            "location"=>"required|numeric|min:0|max:13",
+            "category"=>"required|numeric|min:0|max:4"
         ]);
         $vacancy = new Vacancy();
         $vacancy->user_id = $request->user()->id;
@@ -22,6 +27,9 @@ class VacancyController extends Controller
         $vacancy->position = $request->get('position');
         $vacancy->date_from = $request->get('date_from');
         $vacancy->date_to = $request->get('date_to');
+        $vacancy->type="vacancy";
+        $vacancy->location = $locationArray[$request->get('location')];
+        $vacancy->category = $catArray[$request->get('category')];
         $vacancy->save();
         return redirect('/profile');
     }
@@ -29,6 +37,7 @@ class VacancyController extends Controller
         $vacancy = Vacancy::findOrFail($id);
         if($request->user()->id == $vacancy->user->id){
             $vacancy->delete();
+            $vacancy->bids()->delete();
             return redirect()->back();
         }
         else{

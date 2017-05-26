@@ -130,7 +130,7 @@
         <form id="addVideo" action="/profile/uploadvideo" method="post" class="myFormControl" enctype='multipart/form-data'>
         	{{ csrf_field() }}
 	        <div class="tableCentered">
-        		<button type="button" class="btn greenBtn">რეზიუმე</button>
+        		<button type="button" class="btn greenBtn">ვიზუმე</button>
 		    </div> 
     		<div class="selected text-center">
 	        ფაილი არ არის არჩეული.

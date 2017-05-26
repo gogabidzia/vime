@@ -18,6 +18,9 @@ class Vacancies extends Migration
             $table->integer('user_id');
             $table->string('position')->nullable();
             $table->string('description')->nullable();
+            $table->string('location');
+            $table->string('category');
+            $table->string('type');
             $table->date('date_from')->nullable();
             $table->date('date_to')->nullable();
             $table->timestamps();

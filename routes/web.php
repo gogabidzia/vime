@@ -28,6 +28,7 @@ Route::get('/home', function(){
 Route::get('/profile', 'ProfileController@profile')->middleware('auth');
 Route::get('/profile/settings', 'ProfileController@settings')->middleware('auth');
 Route::get('/profile/vacancies', 'ProfileController@allvacancies')->middleware('ifCompany');
+Route::get('/profile/incoming', 'ProfileController@allincoming')->middleware('ifCompany');
 Route::get('/profile/videos', 'ProfileController@videos');
 Route::post('/profile/updatepassword', 'ProfileController@changePass')->middleware('auth');
 Route::post('/profile/uploadlogo' , 'ProfileController@uploadlogo')->middleware('auth');
