@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-	შემოსული ვიზუმეები - VIME
+	გაგზავნილი ვიდეოები - Facecontrol
 @stop
 
 @section('content')
@@ -17,7 +17,7 @@
 				<div class="vacancyHeader">
 					<div class="vacancy-inner">
 							<div class="title red">
-								შემოსული ვიზუმეები
+								გაგზავნილი ვიდეოები - Facecontrol
 							</div>
 							<div class="hr">
 								
@@ -26,36 +26,44 @@
 				</div>
 				<div class="items standart">
 					<div class="row">
-					@foreach($incoming as $resume)
+					@foreach($bids as $bid)
 						<div class="col-md-12">
 							<div class="item-resume">
 								<div class="image pull-left">
-									<img src="{{ $resume->user->logo }}">
+									<img src="{{ $bid->user->logo }}">
 								</div>
 								<div class="titlevac pull-left">
 									<div class="title">
-										{{ $resume->user->name }} {{ $resume->user->surname }} - {{ $resume->user->phone }}
+										{{ $bid->user->name }} {{ $bid->user->surname }}
 									</div>
 									<div class="vac">
-										<a href="/vacancies/all/{{$resume->vacancy->id}}">
-										{{ $resume->vacancy->position }}
+										<a href="/vacancies/all/{{$bid->vacancy->id}}">
+										{{ $bid->vacancy->position }}
 										</a>
 									</div>
+									<div class="status">
+										სტატუსი : 
+									</div>
+									@if($bid->accepted)
+										<div class="accepted"></div>
+									@else
+										<div class="declined"></div>
+									@endif
 								</div>
 								<div class="pull-right">
-									<div class="showVideo" data-video="{{$resume->video->link}}">
+									<div class="showVideo" data-video="{{$bid->video->link}}">
 										<i class="fa fa-film" area-hidden="true"></i>
 									</div>
 								</div>
 								<div class="clearfix"></div>
 							</div>
 						</div>
-						@endforeach
+					@endforeach
 					</div>
 				</div>
 			</div>
 			<div class="tableCentered">
-				{{$incoming->links()}}
+				{{$bids->links()}}
 			</div>
 		</div>
 		<div class="col-md-2">

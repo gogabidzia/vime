@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Storage;
-class Video extends Migration
+class CreateVideosTable extends Migration
 {
     /**
      * Run the migrations.

@@ -141,7 +141,7 @@ class VacancyController extends Controller
             }
         }
         if($bidded){
-            return redirect()->back()->with('bidStatus', 'თქვენ უკვე გაგზავნეთ რეზიუმე ამ ვაკანსიაზე');
+            return redirect()->back()->with('bidStatus', 'თქვენ უკვე გაგზავნეთ ვიდეო ამ ივენთზე');
         }
         if($request->user()->id)
         $validator = Validator::make($request->all(), [
@@ -161,12 +161,27 @@ class VacancyController extends Controller
         $bid->accepted = false;
         $bid->type="facecontrol";
         $bid->save();
-
-
         $notification = new Notification();
         $notification->user_id = $vacancy->user->id;
         $notification->bid_id = $bid->id;
         $notification->save();
         return redirect('/profile');
+    }
+
+    public function acceptbid($id,Request $request){
+        $bid = Bid::findOrFail($id);
+        if($bid){
+            $bid->accepted = true;
+            $bid->save();
+            return redirect()->back();
+        }
+    }
+    public function declinebid($id,Request $Request){
+        $bid = Bid::findOrFail($id);
+        if($bid){
+            $bid->accepted = false;
+            $bid->save();
+            return redirect()->back();
+        }
     }
 }

@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
         	'email'=>'admin@vime.ge',
         	'password'=>bcrypt('password'),
         	'name'=>'admin',
+            'type'=>'admin',
         	'phone'=>'000'
         ]);
         DB::table('users')->insert([

@@ -1,6 +1,10 @@
 @extends('layouts.app')
 @section('title')
-	ვაკანსიები - VIME
+	@if(isset($pageType))
+		ივენთები - VIME
+	@else
+		ვაკანსიები - VIME
+	@endif
 @stop
 
 @section('content')
@@ -17,7 +21,11 @@
 				<div class="vacancyHeader">
 					<div class="vacancy-inner">
 							<div class="title green">
+							@if(isset($pageType))
+								მიმდინარე ივენთები
+							@else
 								მიმდინარე ვაკანსიები
+							@endif
 							</div>
 							<div class="hr">
 								
@@ -45,9 +53,11 @@
 										</div>
 									</div>
 									<div class="pull-right marginright">
+									@if($vacancy->type !=='facecontrol')
 										<div class="dates">
 											{{ date('Y.m.d', strtotime($vacancy->date_from)) }} - {{ date('Y.m.d', strtotime($vacancy->date_to)) }}
 										</div>
+									@endif
 										<div class="location">
 											{{$vacancy->location}}
 										</div>

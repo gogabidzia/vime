@@ -59,7 +59,7 @@
                         <option value="2">ტრენინგები</option>
                         <option value="3">ტენდერები</option>
                         <option value="4">სხვა</option>
-    				</select>
+    				      </select>
     	        </div>
     	        {{csrf_field()}}
     	        

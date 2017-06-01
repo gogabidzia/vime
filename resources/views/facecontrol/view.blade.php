@@ -30,6 +30,9 @@
 				<div class="params">
 					<a href="#"><i class="fa fa-building" aria-hidden="true"></i> "{{ $event->user->name }}"</a> <span class="spacer"> | </span> 
 					<i class="fa fa-globe"> {{ $event->location }}</i>
+					<span class="spacer"> | </span>
+					<i class="fa fa-phone" aria-hidden="true"></i>
+					{{ $event->user->phone }}
 				</div>
 				@if(Auth::user() && !Auth::user()->company)
 					<a href="/vacancies/save/{{$event->id}}">

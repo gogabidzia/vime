@@ -24,6 +24,9 @@ a:active{
 	color: #FF8B7E;
 	text-decoration: none;
 }
+a.agreen{
+	color: #42C5A3;
+}
 #menu{
     height: 88px;
     box-shadow: 0 3px 13px 0px rgba(46, 46, 46, 0.14);
@@ -728,6 +731,29 @@ span.spacer{
 .item-resume .showNotifVideo i{
 	font-size: 30px;
 	color: #5f5f5f;
+}
+.item-resume .status{
+	margin-top: 20px;
+	font-family: TBCRegular;
+	float: left;
+}
+.item-resume .accepted{
+	margin-top: 20px;
+	margin-left: 10px;
+	float:left;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	background: #42C5A3;
+}
+.item-resume .declined{
+	margin-top: 20px;
+	margin-left: 10px;
+	float:left;
+	width: 20px;
+	height: 20px;
+	border-radius: 20px;
+	background: #FF8B7E;
 }
 #videoModal .video video{
 	width: 100%;

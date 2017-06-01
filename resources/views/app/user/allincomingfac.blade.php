@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-	შემოსული ვიზუმეები - VIME
+	შემოსული ვიდეოები - VIME
 @stop
 
 @section('content')
@@ -17,7 +17,7 @@
 				<div class="vacancyHeader">
 					<div class="vacancy-inner">
 							<div class="title red">
-								შემოსული ვიზუმეები
+								შემოსული ვიდეოები
 							</div>
 							<div class="hr">
 								
@@ -26,7 +26,7 @@
 				</div>
 				<div class="items standart">
 					<div class="row">
-					@foreach($incoming as $resume)
+					@foreach($incomingfac as $resume)
 						<div class="col-md-12">
 							<div class="item-resume">
 								<div class="image pull-left">
@@ -39,6 +39,26 @@
 									<div class="vac">
 										<a href="/vacancies/all/{{$resume->vacancy->id}}">
 										{{ $resume->vacancy->position }}
+										</a>
+									</div>
+									<div class="status">
+										სტატუსი : 
+									</div>
+									@if($resume->accepted)
+										<div class="accepted"></div>
+									@else
+										<div class="declined"></div>
+									@endif
+									<div class="response" style="float: left; margin-top: 12px; margin-left:10px;">
+										<a href="/declinebid/{{$resume->id}}">
+											<button class="btn redBtn">
+												უარი
+											</button>
+										</a>
+										<a href="/acceptbid/{{$resume->id}}">
+											<button class="btn greenBtn">
+												მიღება
+											</button>
 										</a>
 									</div>
 								</div>
@@ -55,7 +75,7 @@
 				</div>
 			</div>
 			<div class="tableCentered">
-				{{$incoming->links()}}
+				{{$incomingfac->links()}}
 			</div>
 		</div>
 		<div class="col-md-2">

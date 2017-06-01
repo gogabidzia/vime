@@ -20,6 +20,7 @@ class AuthController extends Controller
                 if($user->type=="admin"){
                     return redirect('/admin');
                 }
+                
                 if($request->ajax()){
                     return response([
                         "status" => "success"

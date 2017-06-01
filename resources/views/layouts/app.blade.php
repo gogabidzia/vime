@@ -59,6 +59,16 @@
 <script type="text/javascript" src="/js/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript" src="/locales/bootstrap-datepicker.ka.min.js"></script>
 
+<script type="text/javascript">
+	$('#search form select[name="type"]').change(function(){
+		if($(this).val()=='facecontrol'){
+			$('.fcFormGroup').hide();
+		}
+		else{
+			$('.fcFormGroup').show();
+		}
+	});
+</script>
 @yield('js')
 
 <script type="text/javascript">
@@ -87,6 +97,7 @@
 			$.get('/readnotifications');
 		}
 	});
+
 </script>
 </body>
 </html>

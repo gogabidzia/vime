@@ -18,12 +18,16 @@
 				</button>
 				
 				<ul class="dropdown-menu">
+				@if(Auth::user()->type !== "admin")
 					<li><a href="/profile">პროფილი</a></li>
 					@if(!Auth::user()->company)
 					<li><a href="/profile/videos">ჩემი ვიდეოები</a></li>
 					@endif
 					<li><a href="/profile/settings">ანგარიშის პარამეტრები</a></li>
 					<li><a href="/logout">გასვლა</a></li>
+				@else
+					<li><a href="/admin">პანელი</a></li>
+				@endif
 				</ul>
 			</div>
 			@if(Auth::user()->company)

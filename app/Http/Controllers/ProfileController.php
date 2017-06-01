@@ -16,13 +16,18 @@ class ProfileController extends Controller
 {
     public function profile(Request $request){
         if($request->user()->company){
-            $vacancies = $request->user()->vacancies()->orderBy('created_at', 'desc')->limit(10)->get();
-            $incoming = Bid::where('to_id', '=', $request->user()->id)->orderBy('created_at','desc')->limit(5)->get();
-            return view('app.user.profilecompany', ['vacancies' => $vacancies, 'incoming'=>$incoming]);
+            $vacancies = $request->user()->vacancies()->orderBy('created_at', 'desc')->where('type','vacancy')->limit(10)->get();
+            $events = $request->user()->vacancies()->orderBy('created_at', 'desc')->where('type','facecontrol')->limit(10)->get();
+            $incomingvac = Bid::where('to_id', '=', $request->user()->id)->orderBy('created_at','desc')->where('type','vacancy')->limit(5)->get();
+            $incomingfac = Bid::where('to_id', '=', $request->user()->id)->orderBy('created_at','desc')->where('type','facecontrol')->limit(5)->get();
+            return view('app.user.profilecompany', ['vacancies' => $vacancies,'events'=>$events, 'incomingvac'=>$incomingvac,
+                'incomingfac'=>$incomingfac
+                ]);
         }else{
-            $bids = $request->user()->bids()->orderBy('created_at','desc')->limit(7)->get();
-            $saved = $request->user()->savedvacancies()->orderBy('created_at','desc')->where('type', 'vacancy')->limit(7)->get();
-            return view('app.user.profileuser', ['bids'=>$bids, 'saved'=>$saved]);
+            $bids = $request->user()->bids()->orderBy('created_at','desc')->limit(7)->where('type', 'vacancy')->get();
+            $facecontrols = $request->user()->bids()->orderBy('created_at','desc')->limit(7)->where('type', 'facecontrol')->get();
+            $saved = $request->user()->savedvacancies()->orderBy('created_at','desc')->limit(7)->get();
+            return view('app.user.profileuser', ['bids'=>$bids, 'saved'=>$saved, 'facecontrols'=>$facecontrols]);
         }
     }
     public function settings(Request $request){
@@ -51,24 +56,36 @@ class ProfileController extends Controller
         }
     }
     public function allvacancies(Request $request){
-        $vacancies = $request->user()->vacancies()->orderBy('created_at', 'desc')->paginate(15);
+        $vacancies = $request->user()->vacancies()->orderBy('created_at', 'desc')->where('type','vacancy')->paginate(15);
         return view('app.user.allvacancies', ['vacancies'=>$vacancies]);
     }
     public function allincoming(Request $request){
-        $incoming = Bid::where('to_id', '=', $request->user()->id)->orderBy('created_at','desc')->paginate(15);
+        $incoming = Bid::where('to_id', '=', $request->user()->id)->orderBy('created_at','desc')->where('type','vacancy')->paginate(15);
         return view('app.user.allincoming', ['incoming'=>$incoming]);
     }
 
     public function allbids(Request $request){
-            $bids = $request->user()->bids()->orderBy('created_at','desc')->limit(7)->get();
-            $saved = $request->user()->savedvacancies()->orderBy('created_at','desc')->limit(7)->get();
-            return view('app.user.profileuser', ['bids'=>$bids, 'saved'=>$saved]);
+        $bids = $request->user()->bids()->where('type','vacancy')->orderBy('created_at','desc')->paginate(15);
+        return view('app.user.allbids', ['bids'=>$bids]);
+    }
+    public function allfc(Request $request){
+        $bids = $request->user()->bids()->where('type','facecontrol')->orderBy('created_at','desc')->paginate(15);
+        return view('app.user.allfc', ['bids'=>$bids]);
     }
     public function allsaved(Request $request){
-        $incoming = Bid::where('to_id', '=', $request->user()->id)->orderBy('created_at','desc')->paginate(15);
-        return view('app.user.allsaved', ['incoming'=>$incoming]);
+        $saved = $request->user()->savedvacancies()->orderBy('created_at','desc')->paginate(15);
+        return view('app.user.allsaved', ['saved'=>$saved]);
     }
 
+    public function allevents(Request $request){
+        $vacancies = $request->user()->vacancies()->orderBy('created_at', 'desc')->where('type', 'facecontrol')->paginate(15);
+        return view('app.user.allvacancies', ['vacancies'=>$vacancies, 'pageType'=>'fc']);
+
+    }
+    public function allincomingfc(Request $request){
+        $incomingfac = Bid::where('to_id', '=', $request->user()->id)->orderBy('created_at','desc')->where('type','facecontrol')->paginate(15);
+        return view('app.user.allincomingfac', ['incomingfac'=>$incomingfac]);
+    }
     public function changePass(Request $request){
         $this->validate($request, [
             "password" => "required|min:6|confirmed"
@@ -139,7 +156,7 @@ class ProfileController extends Controller
         $saved = new SavedVacancy();
         $saved->user_id = $request->user()->id;
         $saved->vacancy_id = $id;
-        $saved->type="vacancy";
+        $saved->type=1;
         $saved->save();
         return redirect()->back();
     }

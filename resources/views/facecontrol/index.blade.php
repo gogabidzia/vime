@@ -43,7 +43,6 @@
 									</div>
 									<div class="pull-right marginright">
 										<div class="dates">
-											{{ date('Y.m.d', strtotime($event->date_from)) }} - {{ date('Y.m.d', strtotime($event->date_to)) }}
 										</div>
 										<div class="location">
 											

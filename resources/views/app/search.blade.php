@@ -44,7 +44,9 @@
 									</div>
 									<div class="pull-right marginright">
 										<div class="dates">
+										@if($vacancy->type=="vacancy")
 											{{ date('Y.m.d', strtotime($vacancy->date_from)) }} - {{ date('Y.m.d', strtotime($vacancy->date_to)) }}
+										@endif
 										</div>
 										<div class="location">
 											
@@ -66,4 +68,13 @@
 		</div>
 	</div>	
 </div>
+@stop
+@section('js')
+
+	<script type="text/javascript">
+	@foreach($req as $key => $value)
+		$('[name="{{$key}}"]').val('{{$value}}');
+	@endforeach
+	$('[name="type"]').change();
+	</script>
 @stop

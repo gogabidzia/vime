@@ -34,6 +34,9 @@
 					{{ date('Y.m.d', strtotime($vacancy->date_from)) }} - {{ date('Y.m.d', strtotime($vacancy->date_to)) }}
 					<span class="spacer"> | </span>
 					<i class="fa fa-globe"> {{ $vacancy->location }}</i>
+					<span class="spacer"> | </span>
+					<i class="fa fa-phone" aria-hidden="true"></i>
+					{{ $vacancy->user->phone }}
 				</div>
 				@if(!Auth::user()->company)
 					<a href="/vacancies/save/{{$vacancy->id}}">

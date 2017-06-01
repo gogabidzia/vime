@@ -34,6 +34,12 @@ Route::post('/profile/updatepassword', 'ProfileController@changePass')->middlewa
 Route::post('/profile/uploadlogo' , 'ProfileController@uploadlogo')->middleware('auth');
 Route::post('/profile/uploadvideo' , 'ProfileController@uploadVideo')->middleware('auth');
 
+Route::get('/profile/events', 'ProfileController@allevents')->middleware('ifCompany');
+Route::get('/profile/allincomingfc', 'ProfileController@allincomingfc')->middleware('ifCompany');
+Route::get('/profile/allsaved', 'ProfileController@allsaved')->middleware('ifUser');
+Route::get('/profile/allbids', 'ProfileController@allbids')->middleware('ifUser');
+Route::get('/profile/allfc', 'ProfileController@allfc')->middleware('ifUser');
+
 Route::post('/vacancies/add', 'VacancyController@add')->middleware('ifCompany');
 Route::get('/vacancies/remove/{id}', 'VacancyController@remove')->middleware('ifCompany');
 
@@ -46,9 +52,18 @@ Route::get('/videos/remove/{id}', 'ProfileController@removeVideo')->middleware('
 Route::get('/readnotifications', 'ProfileController@readNotifications');
 Route::get('/vacancies/save/{id}', 'ProfileController@saveVacancy')->middleware('ifUser');
 
+Route::get('/acceptbid/{id}', 'VacancyController@acceptbid')->middleware('ifCompany');
+Route::get('/declinebid/{id}', 'VacancyController@declinebid')->middleware('ifCompany');
+
 Route::get('/search/' , 'SearchController@search');
 
 Route::group(['prefix'=>'facecontrol'], function(){
 	Route::get('/', 'FaceController@index');
 	Route::post('/bid', 'VacancyController@bidOnFaceControl');
+});
+
+Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function(){
+	Route::get('/', 'AdminController@index');
+	Route::get('/removeuser/{id}', 'AdminController@removeuser');
+	Route::get('/removevacancy/{id}', 'AdminController@removevacancy');
 });

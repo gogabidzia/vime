@@ -17,13 +17,18 @@
 				<div class="vacancyHeader">
 					<div class="vacancy-inner">
 							<div class="title red">
-								გაგზავნილი რეზიუმეები
+								გაგზავნილი ვიზუმეები
 							</div>
 							<div class="hr">
 								
 							</div>
 					</div>
 				</div>
+				@if(count($bids)>0)
+					<a href="/profile/allbids">ყველას ნახვა</a>
+				@else
+					გაგზავნილი ვიზუმეები არ მოიძებნა
+				@endif
 				<div class="items vips">
 					<div class="row">
 					@foreach($bids as $bid)
@@ -56,14 +61,71 @@
 				<!-- VIPS END -->
 				<div class="vacancyHeader">
 					<div class="vacancy-inner">
-							<div class="title green">
-								შენახული ვაკანსიები
+							<div class="title red">
+								Facecontrol
 							</div>
 							<div class="hr">
 								
 							</div>
 					</div>
 				</div>
+				@if(count($facecontrols)>0)
+					<a href="/profile/allfc">ყველას ნახვა</a>
+				@else
+					გაგზავნილი ვიდეოები არ მოიძებნა
+				@endif
+				<div class="items vips">
+					<div class="row">
+					@foreach($facecontrols as $bid)
+						<div class="col-md-12">
+							<div class="item-resume">
+								<div class="image pull-left">
+									<img src="{{ $bid->user->logo }}">
+								</div>
+								<div class="titlevac pull-left">
+									<div class="title">
+										{{ $bid->user->name }} {{ $bid->user->surname }}
+									</div>
+									<div class="vac">
+										<a href="/vacancies/all/{{$bid->vacancy->id}}">
+										{{ $bid->vacancy->position }}
+										</a>
+									</div>
+									<div class="status">
+										სტატუსი : 
+									</div>
+									@if($bid->accepted)
+										<div class="accepted"></div>
+									@else
+										<div class="declined"></div>
+									@endif
+								</div>
+								<div class="pull-right">
+									<div class="showVideo" data-video="{{$bid->video->link}}">
+										<i class="fa fa-film" area-hidden="true"></i>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					@endforeach
+					</div>
+				</div>
+				<div class="vacancyHeader">
+					<div class="vacancy-inner">
+							<div class="title green">
+								შენახული ვაკანსიები და ივენთები
+							</div>
+							<div class="hr">
+								
+							</div>
+					</div>
+				</div>
+				@if(count($saved)>0)
+					<a href="/profile/allsaved" class="agreen">ყველას ნახვა</a>
+				@else
+					შენახული ვაკანსიები არ მოიძებნა
+				@endif
 				<div class="items standart">
 					<div class="row">
 					@foreach($saved as $save)
