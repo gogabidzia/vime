@@ -21,7 +21,7 @@ class ProfileController extends Controller
             return view('app.user.profilecompany', ['vacancies' => $vacancies, 'incoming'=>$incoming]);
         }else{
             $bids = $request->user()->bids()->orderBy('created_at','desc')->limit(7)->get();
-            $saved = $request->user()->savedvacancies()->orderBy('created_at','desc')->limit(7)->get();
+            $saved = $request->user()->savedvacancies()->orderBy('created_at','desc')->where('type', 'vacancy')->limit(7)->get();
             return view('app.user.profileuser', ['bids'=>$bids, 'saved'=>$saved]);
         }
     }
@@ -35,8 +35,10 @@ class ProfileController extends Controller
     }
     public function videos(Request $request){
         if(!$request->user()->company){
-            $videos = $request->user()->videos()->orderBy('created_at','desc')->get();
-            return view('app.user.videos', ['videos'=>$videos]);
+            $videos = $request->user()->videos()->where('type', '=', 'visume')->orderBy('created_at','desc')->get();
+            $fvideos = $request->user()->videos()->where('type', '=', 'facecontrol')->orderBy('created_at','desc')->get();
+
+            return view('app.user.videos', ['videos'=>$videos, 'fvideos'=>$fvideos]);
         }
     }
     public function removeVideo($id){
@@ -92,7 +94,6 @@ class ProfileController extends Controller
         return redirect()->back();
     }
     public function uploadVideo(Request $request){
-        // dd($request->file('video')->getMimeType());
         $this->validate($request, [
             "video" => "required|mimetypes:video/mp4,video/x-msvideo,video/x-ms-wmv,video/quicktime,video/x-flv,video/webm|max:20000"
         ], [
@@ -101,15 +102,20 @@ class ProfileController extends Controller
             'video.required'=>"გთხოვთ აირჩიოთ ვიდეო",
             'video.uploaded'=>"სამწუხაროდ ვიდეო ვერ აიტვირთა. გთხოვთ სცადოთ თავიდან ან ატვირთოთ სხვა ვიდეო."
         ]);
-        $randStr = str_random(32);
-        $request->file('video')->storeAs('resumes', $randStr .".". $request->file('video')->extension());
+            $randStr = str_random(32);
+            $request->file('video')->storeAs('resumes', $randStr .".". $request->file('video')->extension());
 
-        $video = new Video();
-        $video->user_id = $request->user()->id;
-        $video->link = $randStr . "." . $request->file('video')->extension();
-        $video->type="visume";
-        $video->save();
-        return redirect('/profile/videos')->with('uploadStatus', 'ვიდეო წარმატებით აიტვირთა');
+            $video = new Video();
+            $video->user_id = $request->user()->id;
+            $video->link = $randStr . "." . $request->file('video')->extension();
+            if($request->get('type')=="visume"){
+                $video->type="visume";
+            }
+            if($request->get('type')=='facecontrol'){
+                $video->type = "facecontrol";
+            }
+            $video->save();
+            return redirect('/profile/videos')->with('uploadStatus', 'ვიდეო წარმატებით აიტვირთა');
 
     }
     public function getImage($image){
@@ -133,6 +139,7 @@ class ProfileController extends Controller
         $saved = new SavedVacancy();
         $saved->user_id = $request->user()->id;
         $saved->vacancy_id = $id;
+        $saved->type="vacancy";
         $saved->save();
         return redirect()->back();
     }

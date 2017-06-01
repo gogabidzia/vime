@@ -572,6 +572,16 @@ span.spacer{
 	font-family: SegoeUI;
 	font-weight: bold;
 }
+.greenBtn.active{
+	background:white;
+	color: #42C5A3;
+	border:1px solid #42C5A3;
+}
+.greenBtn.active:hover,
+.greenBtn.active:focus,
+.greenBtn.active:active{
+	color: #42C5A3;
+}
 .greenBtn:hover,
 .greenBtn:focus,
 .greenBtn:active{

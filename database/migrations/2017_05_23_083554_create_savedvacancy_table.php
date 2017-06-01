@@ -17,6 +17,7 @@ class CreateSavedvacancyTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('vacancy_id');
+            $table->integer('type');
             $table->timestamps();
         });
     }

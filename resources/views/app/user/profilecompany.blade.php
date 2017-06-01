@@ -143,6 +143,19 @@
 
 			$('.addBtn').click(function(){ $("#addModal").modal() });
 
+			$('.switcher .vacancy').click(function(){
+				$('.switcher button').removeClass('active');
+				$('.switcher .vacancy').addClass('active');
+				$('.eventform').hide();
+				$('.vacancyform').fadeIn();
+			});
+			$('.switcher .event').click(function(){
+				$('.switcher button').removeClass('active');
+				$('.switcher .event').addClass('active');
+				$('.vacancyform').hide();
+				$('.eventform').fadeIn();
+			});
+
 			function logErrors(data){
                 $('.errors').html(data.message);
                 $('.errors').show();
@@ -158,12 +171,22 @@
                     location.replace('/profile');
                 });
             });
+            $("#addEvent").submit(function(e){
+                e.preventDefault();
+                $('#addModal .errors').html('');
+                $('#addModal .errors').hide();
+                var postData = $('#addEvent').serialize();
+                $.post('/vacancies/add', postData).fail(function(data){
+                    logErrors(data.responseJSON);
+                }).done(function(){
+                    location.replace('/profile');
+                });
+            });
 			var dateParams = {
             	language:'ka',
             	format: 'yyyy-mm-dd',
             	todayHighlight: true
             }
-
             $('[name="date_from"]').datepicker(dateParams);
             $('[name="date_to"]').datepicker(dateParams);
             $('.removeVacancy').click(function(ev){
@@ -172,6 +195,8 @@
             		location.replace($(this).attr('href'));
             	}
             });
+
+
 
             $('.showVideo').click(function(){
 				$('#videoModal .video').html('<video src="/videos/'+$(this).attr('data-video')+'" controls></video>');

@@ -17,8 +17,20 @@
 				</div>
 			@endif
 			<div class="videos">
+				<h3 class="text-center">ვიზუმეები</h3>
 				<div class="row">
 					@foreach($videos as $video)
+						<div class="col-md-4">
+							<div class="video">
+							<a href="/videos/remove/{{$video->id}}" class="removeVideo">&times;</a>
+								<video src="/videos/{{ $video->link }}" controls></video>
+							</div>
+						</div>
+					@endforeach
+				</div>
+				<h3 class="text-center" style="color: #FF8B7E;">Facecontrol</h3>
+				<div class="row">
+					@foreach($fvideos as $video)
 						<div class="col-md-4">
 							<div class="video">
 							<a href="/videos/remove/{{$video->id}}" class="removeVideo">&times;</a>

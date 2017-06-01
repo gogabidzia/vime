@@ -47,3 +47,8 @@ Route::get('/readnotifications', 'ProfileController@readNotifications');
 Route::get('/vacancies/save/{id}', 'ProfileController@saveVacancy')->middleware('ifUser');
 
 Route::get('/search/' , 'SearchController@search');
+
+Route::group(['prefix'=>'facecontrol'], function(){
+	Route::get('/', 'FaceController@index');
+	Route::post('/bid', 'VacancyController@bidOnFaceControl');
+});

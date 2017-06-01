@@ -71,23 +71,17 @@
 							<div class="item">
 								<div class="row">
 									<div class="icon pull-left">
-										<img src="img/company.png">
+										<img src="{{$save->vacancy->user->logo}}">
 									</div>
 									<div class="pull-left marginleft">
 										<div class="title">
-											{{ $save->vacancy->position }}
+											<a href="/vacancies/all/{{$save->vacancy->id}}">
+												{{ $save->vacancy->position }}
+											</a>
 										</div>
 										<div class="company_name">
 											"{{$save->vacancy->user->name}}"
 										</div>
-									</div>
-									<div class="pull-right marginright">
-										<div class="dates">
-											{{ date('Y.m.d', strtotime($save->vacancy->date_from)) }} - {{ date('Y.m.d', strtotime($save->vacancy->date_to)) }}
-										</div>
-										<!-- <div class="location">
-											თბილისი
-										</div> -->
 									</div>
 									<div class="clearfix"></div>
 								</div>								
@@ -127,19 +121,40 @@
 				</ul>
 			</div>
 			@endif
-        <form id="addVideo" action="/profile/uploadvideo" method="post" class="myFormControl" enctype='multipart/form-data'>
-        	{{ csrf_field() }}
-	        <div class="tableCentered">
-        		<button type="button" class="btn greenBtn">ვიზუმე</button>
-		    </div> 
-    		<div class="selected text-center">
-	        ფაილი არ არის არჩეული.
-	        </div>
-		    <input type="file" name="video" class="hidden">
-		    <div class="tableCentered" style="margin-top: 30px;">
-		    	<button type="submit" class="btn authBtn">დამატება</button>
-		    </div>
-	    </form>
+			<div class="row">
+				<div class="col-md-6">
+			        <form id="addVideo" action="/profile/uploadvideo" method="post" class="myFormControl" enctype='multipart/form-data'>
+			        	{{ csrf_field() }}
+				        <div class="tableCentered">
+			        		<button type="button" class="btn greenBtn">ვიზუმე</button>
+					    </div> 
+			    		<div class="selected text-center">
+				        ფაილი არ არის არჩეული.
+				        </div>
+					    <input type="file" name="video" class="visumeVideo hidden">
+					    <div class="tableCentered" style="margin-top: 30px;">
+					    	<button type="submit" class="btn authBtn">დამატება</button>
+					    </div>
+					    <input type="hidden" name="type" value="visume">
+			    	</form>
+			    </div>
+			    <div class="col-md-6">
+			    	<form id="addFacVideo" action="/profile/uploadvideo" method="post" class="myFormControl" enctype='multipart/form-data'>
+			        	{{ csrf_field() }}
+				        <div class="tableCentered">
+			        		<button type="button" class="btn redBtn" style="color:white;">Facecontrol</button>
+					    </div> 
+			    		<div class="selected text-center">
+				        ფაილი არ არის არჩეული.
+				        </div>
+					    <input type="file" name="video" class="facecontrolVideo hidden">
+					    <div class="tableCentered" style="margin-top: 30px;">
+					    	<button type="submit" class="btn authBtn" style="background: #FF8B7E; color: white; border-color:#FF8B7E; ">დამატება</button>
+					    </div>
+					    <input type="hidden" name="type" value="facecontrol">
+			    	</form>
+			    </div>
+	    	</div>
       </div>
     </div>
   </div>
@@ -173,15 +188,22 @@
       		$("#addModal").modal();
       	@endif
 		$('#addVideo .greenBtn').click(function(){
-			$('[name="video"]').click();
+			$('.visumeVideo').click();
 		});
-
-	
-		$('[name="video"]').change(function(){
+		$('.visumeVideo').change(function(){
 			$('#addVideo .selected').html($(this).val());
 		});
-
 		$('#addVideo').submit(function(){
+			$('.addLoading').fadeIn();
+		});
+
+		$('#addFacVideo .redBtn').click(function(){
+			$('.facecontrolVideo').click();
+		});
+		$('.facecontrolVideo').change(function(){
+			$('#addFacVideo .selected').html($(this).val());
+		});
+		$('#addFacVideo').submit(function(){
 			$('.addLoading').fadeIn();
 		});
 

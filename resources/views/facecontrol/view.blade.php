@@ -1,10 +1,9 @@
 @extends('layouts.app')
 @section('title')
-	{{ $vacancy->position }} - VIME
+	{{ $event->position }} - Vime
 @stop
-
 @section('content')
-	<div class="row">
+<div class="row">
 		<div class="col-md-2">
 			@include('partials.search')
 		</div>
@@ -12,7 +11,7 @@
 			<div class="vacancyHeader">
 				<div class="vacancy-inner">
 						<div class="title red">
-							{{ $vacancy->position }}
+							{{ $event->position }}
 						</div>
 						<div class="hr">
 							
@@ -26,17 +25,14 @@
 				</div>
 			@endif
 				<div class="text">
-					{{ $vacancy->description }}
+					{{ $event->description }}
 				</div>
 				<div class="params">
-					<a href="#"><i class="fa fa-building" aria-hidden="true"></i> "{{ $vacancy->user->name }}"</a> <span class="spacer"> | </span> 
-					<i class="fa fa-calendar" aria-hidden="true"></i>
-					{{ date('Y.m.d', strtotime($vacancy->date_from)) }} - {{ date('Y.m.d', strtotime($vacancy->date_to)) }}
-					<span class="spacer"> | </span>
-					<i class="fa fa-globe"> {{ $vacancy->location }}</i>
+					<a href="#"><i class="fa fa-building" aria-hidden="true"></i> "{{ $event->user->name }}"</a> <span class="spacer"> | </span> 
+					<i class="fa fa-globe"> {{ $event->location }}</i>
 				</div>
-				@if(!Auth::user()->company)
-					<a href="/vacancies/save/{{$vacancy->id}}">
+				@if(Auth::user() && !Auth::user()->company)
+					<a href="/vacancies/save/{{$event->id}}">
 						<button class="btn redBtn pull-left">
 							<i class="fa fa-floppy-o" aria-hidden="true"></i>
 							შენახვა
@@ -44,7 +40,7 @@
 					</a>
 					<button class="btn greenBtn sendResume pull-right">
 					<i class="fa fa-paper-plane" aria-hidden="true"></i>
-					ვიზუმეს გაგზავნა</button>
+					ვიდეოს გაგზავნა</button>
 					<div class="clearfix"></div>
 				@endif
 			</div>
@@ -55,6 +51,7 @@
 	</div>
 
 
+@if(Auth::user() && !Auth::user()->company)
 <div id="sendModal" class="modal sm fade loginModal" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -62,7 +59,7 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h3 class="modal-title text-center">
-        	რეზიუმეს გაგზავნა
+        	ვიდეოს გაგზავნა
         </h3>
       </div>
       <div class="modal-body">
@@ -70,12 +67,12 @@
 	      	<div class="text-center pleasewait">გთხოვთ დაელოდოთ</div>
 	      	<img src="/img/rolling.svg">
 	      </div>
-			<form id="bidResume" method="post" action="/vacancies/bid/">
+			<form id="bidResume" method="post" action="/facecontrol/bid/">
 				{{csrf_field()}}
 				<div class="row">
 					<h4 class="text-center">აირჩიეთ ვიდეო</h4>
 			        <?php $i=0; ?>
-			        @foreach(Auth::user()->videos()->orderBy('created_at','desc')->where("type", "=", "visume")->get() as $video)
+		        @foreach(Auth::user()->videos()->orderBy('created_at','desc')->where("type", "=", "facecontrol")->get() as $video)
 			        <?php $i++; ?>
 			        	<div class="col-md-4">
 			        		<div class="sendVideo" data-id="{{$video->id}}">
@@ -87,9 +84,9 @@
 			        @endif
 			        @endforeach
 		        </div>
-		        <input type="hidden" name="id" value="{{$vacancy->id}}">
+		        <input type="hidden" name="id" value="{{$event->id}}">
 		        <input type="hidden" name="video_id">
-		        <button class="btn greenBtn tableCentered">
+		        <button type="submit" class="btn greenBtn tableCentered">
 			        <i class="fa fa-paper-plane" aria-hidden="true"></i>
 			        გაგზავნა
 		        </button>
@@ -99,7 +96,7 @@
     </div>
   </div>
 </div>
-
+@endif
 @stop
 
 @section('js')

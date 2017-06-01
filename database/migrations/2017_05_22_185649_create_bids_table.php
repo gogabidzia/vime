@@ -19,6 +19,8 @@ class Bids extends Migration
             $table->integer('vacancy_id');
             $table->integer('video_id');
             $table->integer('to_id');
+            $table->string('type');
+            $table->boolean('accepted')->nullable();
             $table->timestamps();
         });
     }

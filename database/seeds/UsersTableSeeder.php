@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
 use App\User;
 class UsersTableSeeder extends Seeder
 {
@@ -11,11 +12,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-        	'email'=>'admin@vime.ge',
-        	'password'=>bcrypt('password'),
-        	'name'=>'admin',
-        	'phone'=>'000'
-        ]);
+        
     }
 }
