@@ -86,6 +86,13 @@ class ProfileController extends Controller
         $incomingfac = Bid::where('to_id', '=', $request->user()->id)->orderBy('created_at','desc')->where('type','facecontrol')->paginate(15);
         return view('app.user.allincomingfac', ['incomingfac'=>$incomingfac]);
     }
+    public function allincomingfcSearch(Request $request){
+        $q = Bid::query();
+        $q->where('to_id', $request->user()->id);
+        // if($request->get('name')){
+            // $q->reject()
+        // }
+    }
     public function changePass(Request $request){
         $this->validate($request, [
             "password" => "required|min:6|confirmed"
@@ -153,11 +160,23 @@ class ProfileController extends Controller
         $notifications->delete();
     }
     public function saveVacancy($id, Request $request){
+        $isSaved = false;
+        $saveds = SavedVacancy::where('user_id', $request->user()->id)->where('vacancy_id', $id)->get();
+        if(count($saveds)>0){
+            return redirect()->back();
+        }
         $saved = new SavedVacancy();
         $saved->user_id = $request->user()->id;
         $saved->vacancy_id = $id;
         $saved->type=1;
         $saved->save();
+        return redirect()->back();
+    }
+    public function removeSavedVacancy($id, Request $request){
+        $saved = SavedVacancy::findOrFail($id);
+        if($request->user()->id = $saved->user_id){
+            $saved->delete();
+        }
         return redirect()->back();
     }
 }

@@ -15,10 +15,10 @@
 		ელ.ფოსტა : {{ Auth::user()->email }}
 	</div>
 	<div class="param">
-		ვაკანსიები : 1
+		გაგზავნილი : {{ count(Auth::user()->bids)}}
 	</div>
 	<div class="param">
-		რეზიუმეები : 4
+		ვიდეოები : {{ count(Auth::user()->videos) }}
 	</div>
 	<div class="subscribe_profile">
 		<img src="/img/subscribe.png" class="png">

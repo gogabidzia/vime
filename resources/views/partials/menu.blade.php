@@ -37,7 +37,7 @@
 				<div class="count">{{count($notifications)}}</div>
 				@endif
 				</button>
-				<div class="dropdown-menu">
+				<div class="dropdown-menu" style="max-height: 400px;overflow-y: auto;overflow-x: hidden;">
 				@if(isset($notifications))
 				@foreach($notifications as $notification)
 					<div class="item-resume notification">
@@ -91,7 +91,7 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="/">მთავარი</a></li>
-					<li><a href="/instructions">ინსტრუქცია</a></li>
+					<li><a class="toggleInstructionsModal" href="/instructions">ინსტრუქცია</a></li>
 					<li>
 					@if(Auth::check())
 						<a href="/profile/?add=1">
@@ -111,7 +111,7 @@
 	 						FACECONTROL</button>
 						</a>
 					</li>
-					<li><a href="/contact">კონტაქტი</a></li>
+					<li><a class="toggleContactModal" href="/contact">კონტაქტი</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div><!--/.container-fluid -->

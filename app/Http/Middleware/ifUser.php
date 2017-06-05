@@ -15,7 +15,7 @@ class ifUser
      */
     public function handle($request, Closure $next)
     {
-        if(!Auth::user()->company){
+        if(Auth::check() && !Auth::user()->company){
             return $next($request);
         }
         return redirect('/');

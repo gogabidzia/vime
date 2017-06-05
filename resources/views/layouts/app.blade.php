@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/owl.theme.default.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
@@ -54,10 +56,72 @@
   </div>
 </div>
 
+
+<div id="contactModal" class="modal fade loginModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title text-center">
+        	კონტაქტი
+        </h3>
+      </div>
+      <div class="modal-body">
+      	<div class="alert alert-danger contErr" style="display: none">
+      		
+      	</div>
+      	<form id="contactForm" action="/contact" method="post" class="myFormControl">
+	      	<div class="row">
+	      		<div class="form-group col-xs-6">
+	      			<input class="form-control" type="text" name="name" placeholder="სახელი">
+	      		</div>
+	      		<div class="form-group col-xs-6">
+	      			<input class="form-control" type="text" name="phone" placeholder="ტელეფონი">
+	      		</div>
+	      	</div>
+	      	<div class="form-group">
+	      		<input class="form-control" type="text" name="email" placeholder="ელ.ფოსტა">
+	      	</div>
+	      	<div class="form-group">
+      			<textarea class="form-control" type="text" name="text" placeholder="ტექსტი"></textarea>
+      		</div>
+      		{{csrf_field()}}
+      		<div class="form-group">
+      			<button class="btn authBtn pull-right">
+      				გაგზავნა
+      			</button>
+      			<div class="clearfix"></div>
+      		</div>
+      	</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="instructionsModal" class="modal fade loginModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title text-center">
+        	ინსტრუქცია
+        </h3>
+      </div>
+      <div class="modal-body">
+      	<iframe width="100%" height="315" src="https://www.youtube.com/embed/0UgiJPnwtQU" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript" src="/locales/bootstrap-datepicker.ka.min.js"></script>
+<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
 
 <script type="text/javascript">
 	$('#search form select[name="type"]').change(function(){
@@ -96,6 +160,40 @@
 		if(notificationcount>0){
 			$.get('/readnotifications');
 		}
+	});
+	$('.toggleContactModal').click(function(ev){
+		ev.preventDefault();
+		$('#contactModal').modal();
+	});
+	$('.toggleInstructionsModal').click(function(ev){
+		ev.preventDefault();
+		$('#instructionsModal').modal();
+	});
+	function logAnyErrors(data, classname){
+        $(classname).html(data.message);
+        $(classname).show();
+    }
+    $("#contactForm").submit(function(e){
+        e.preventDefault();
+        $('#contactModal .contErr').html('');
+        $('#contactModal .contErr').hide();
+        var postData = $('#contactForm').serialize();
+        $.post('/contact', postData).fail(function(data){
+            logAnyErrors(data.responseJSON, '#contactModal .contErr');
+        }).done(function(){
+            // location.replace('/');
+            $('#contactModal .modal-body').html('<h3 class="text-center">წერილი წარმატებით გაიგზავნა!</h3>');
+            setTimeout(function(){
+            	location.replace('/');
+            },3000);
+
+        });
+    });
+
+	$('#header .owl-carousel').owlCarousel({
+		items:1,
+		loop:true,
+		nav:true
 	});
 
 </script>

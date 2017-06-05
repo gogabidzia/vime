@@ -134,6 +134,30 @@ a.agreen{
 	margin-top: 30px;
 
 }
+#header .owl-nav{
+	display: none;
+}
+#header .owl-dots{
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#header .owl-dot{
+	display: block;
+	float: left;
+	margin-left: 20px;
+	width: 12px;
+	height: 12px;
+	border-radius: 12px;
+	background:white;
+}
+#header .owl-dot.active{
+	box-shadow: 0 0 4px 2px white;
+}
+#header .owl-dots .owl-dot:first-child{
+	margin-left: 0;
+}
 .subscribeBtn a{
 	color: white;
 	text-decoration: none;
@@ -649,6 +673,7 @@ span.spacer{
 	height: 100%;
 	top: 0;
 	left: 0;
+	z-index: 1001;
 }
 .addLoading .pleasewait{
 	color: white;

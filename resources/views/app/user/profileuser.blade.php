@@ -124,13 +124,14 @@
 				@if(count($saved)>0)
 					<a href="/profile/allsaved" class="agreen">ყველას ნახვა</a>
 				@else
-					შენახული ვაკანსიები არ მოიძებნა
+					შენახული ვაკანსიები/ივენთები არ მოიძებნა
 				@endif
 				<div class="items standart">
 					<div class="row">
 					@foreach($saved as $save)
 						<div class="col-md-12">
 							<div class="item">
+							<a href="/vacancies/removesaved/{{$save->id}}" class="removeVacancy">&times;</a>
 								<div class="row">
 									<div class="icon pull-left">
 										<img src="{{$save->vacancy->user->logo}}">

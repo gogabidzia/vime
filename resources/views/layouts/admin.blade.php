@@ -7,6 +7,12 @@
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.min.css">
 </head>
 <body>
+<style type="text/css">
+	.tableCentered{
+		display: table;
+		margin: 0 auto;
+	}
+</style>
 @include('partials.admin.menu')
 
 

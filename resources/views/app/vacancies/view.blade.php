@@ -38,7 +38,7 @@
 					<i class="fa fa-phone" aria-hidden="true"></i>
 					{{ $vacancy->user->phone }}
 				</div>
-				@if(!Auth::user()->company)
+				@if(Auth::check() && !Auth::user()->company)
 					<a href="/vacancies/save/{{$vacancy->id}}">
 						<button class="btn redBtn pull-left">
 							<i class="fa fa-floppy-o" aria-hidden="true"></i>
@@ -57,7 +57,7 @@
 		</div>
 	</div>
 
-
+@if(Auth::check() && !Auth::user()->company)
 <div id="sendModal" class="modal sm fade loginModal" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
@@ -102,7 +102,7 @@
     </div>
   </div>
 </div>
-
+@endif
 @stop
 
 @section('js')

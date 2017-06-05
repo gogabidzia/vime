@@ -25,10 +25,10 @@
 		ელ.ფოსტა : {{ Auth::user()->email }}
 	</div>
 	<div class="param">
-		ვაკანსიები : {{ count(Auth::user()->vacancies) }}
+		ვაკანსიები : {{ count(Auth::user()->vacancies()->where('type', 'vacancy')) }}
 	</div>
 	<div class="param">
-		რეზიუმეები : 4
+		ივენთები : {{ count(Auth::user()->vacancies()->where('type', 'facecontrol')) }}
 	</div>
 
 	

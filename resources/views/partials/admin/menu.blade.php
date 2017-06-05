@@ -11,7 +11,7 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">მთავარი</a></li>
+        <li><a href="/admin">მთავარი</a></li>
         <li><a href="/admin/users">მომხმარებლები</a></li>
         <li><a href="/admin/companies">კომპანიები</a></li>
         <li><a href="/admin/vacancies">ვაკანსიები</a></li>
@@ -19,6 +19,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/admin/contact">წერილები</a></li>
+        <li><a href="/logout">გასვლა</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container-fluid -->

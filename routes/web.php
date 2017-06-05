@@ -21,6 +21,8 @@ Route::post('register', 'AuthController@postRegister');
 
 Route::get('subscribe', 'HomeController@subscribe')->middleware('auth');
 
+Route::post('/contact', 'HomeController@sendContact');
+
 Route::get('/home', function(){
 	return redirect('/');
 });
@@ -36,6 +38,8 @@ Route::post('/profile/uploadvideo' , 'ProfileController@uploadVideo')->middlewar
 
 Route::get('/profile/events', 'ProfileController@allevents')->middleware('ifCompany');
 Route::get('/profile/allincomingfc', 'ProfileController@allincomingfc')->middleware('ifCompany');
+// Route::get('/profile/allincomingfc/search', 'ProfileController@allincomingfcSearch')->middleware('ifCompany');
+
 Route::get('/profile/allsaved', 'ProfileController@allsaved')->middleware('ifUser');
 Route::get('/profile/allbids', 'ProfileController@allbids')->middleware('ifUser');
 Route::get('/profile/allfc', 'ProfileController@allfc')->middleware('ifUser');
@@ -49,8 +53,9 @@ Route::post('/vacancies/bid', 'VacancyController@bid');
 Route::get('/logos/{image}', 'ProfileController@getImage');
 Route::get('/videos/{name}', 'ProfileController@getVideo');
 Route::get('/videos/remove/{id}', 'ProfileController@removeVideo')->middleware('ifUser');
-Route::get('/readnotifications', 'ProfileController@readNotifications');
+Route::get('/readnotifications', 'ProfileController@readNotifications')->middleware('ifCompany');
 Route::get('/vacancies/save/{id}', 'ProfileController@saveVacancy')->middleware('ifUser');
+Route::get('/vacancies/removesaved/{id}', 'ProfileController@removeSavedVacancy')->middleware('ifUser');
 
 Route::get('/acceptbid/{id}', 'VacancyController@acceptbid')->middleware('ifCompany');
 Route::get('/declinebid/{id}', 'VacancyController@declinebid')->middleware('ifCompany');
@@ -66,4 +71,14 @@ Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function(){
 	Route::get('/', 'AdminController@index');
 	Route::get('/removeuser/{id}', 'AdminController@removeuser');
 	Route::get('/removevacancy/{id}', 'AdminController@removevacancy');
+	Route::get('/removecontact/{id}', 'AdminController@removecontact');
+	Route::get('/users', 'AdminController@users');
+	Route::get('/companies', 'AdminController@companies');
+	Route::get('/events', 'AdminController@events');
+	Route::get('/vacancies', 'AdminController@vacancies');
+	Route::post('/users', 'AdminController@searchusers');
+	Route::post('/companies', 'AdminController@searchcompanies');
+	Route::post('/events', 'AdminController@searchevents');
+	Route::post('/vacancies', 'AdminController@searchvacancies');
+	Route::get('/contact', 'AdminController@contact');
 });
