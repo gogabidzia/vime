@@ -13,7 +13,7 @@
 </head>
 <body>
 @include('partials.menu')
-
+@include('partials.bubble')
 @yield('content')
 
 @include('partials.footer')
@@ -195,7 +195,15 @@
 		loop:true,
 		nav:true
 	});
-
+	var initialY = -400;
+	var inter = setInterval(function(){
+		initialY+=0.5;
+		if(initialY>=370){
+			$('#bubble').fadeOut();
+			clearInterval(inter);
+		}
+		$('#bubble').css('bottom', initialY);
+	},1);
 </script>
 </body>
 </html>

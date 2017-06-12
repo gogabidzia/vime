@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Vacancy;
 use App\User;
 use App\Contact;
+use App\News;
 use Storage;
 class AdminController extends Controller
 {
@@ -138,5 +139,33 @@ class AdminController extends Controller
     public function contact(){
         $contacts = Contact::orderBy('created_at','desc')->paginate(15);
         return view('app.admin.contacts', ['contacts'=>$contacts]);
+    }
+    public function news(){
+        $news = News::all();
+        return view('app.admin.news', ['news'=> $news]);
+    }
+    public function postNews(Request $request){
+        $item = new News();
+        $item->title = $request->get('title');
+        $item->text = $request->get('text');
+        $item->bubbled = false;
+        $item->save();
+        return redirect()->back();
+    }
+    public function removeNews($id){
+        $item = News::findOrFail($id);
+        $item->delete();
+        return redirect()->back();
+    }
+    public function makeNewsForBubble($id){
+        $items = News::where('bubbled', true)->get();
+        foreach ($items as $news) {
+            $news->bubbled = false;
+            $news->save();
+        }
+        $item = News::findOrFail($id);
+        $item->bubbled = true;
+        $item->save();
+        return redirect()->back();
     }
 }

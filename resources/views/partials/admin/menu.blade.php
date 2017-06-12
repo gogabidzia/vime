@@ -16,6 +16,7 @@
         <li><a href="/admin/companies">კომპანიები</a></li>
         <li><a href="/admin/vacancies">ვაკანსიები</a></li>
         <li><a href="/admin/events">ივენთები</a></li>
+        <li><a href="/admin/news">სიახლეები</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/admin/contact">წერილები</a></li>

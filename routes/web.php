@@ -66,7 +66,7 @@ Route::group(['prefix'=>'facecontrol'], function(){
 	Route::get('/', 'FaceController@index');
 	Route::post('/bid', 'VacancyController@bidOnFaceControl');
 });
-
+Route::get('/news/{id}', 'HomeController@news');
 Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function(){
 	Route::get('/', 'AdminController@index');
 	Route::get('/removeuser/{id}', 'AdminController@removeuser');
@@ -81,4 +81,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function(){
 	Route::post('/events', 'AdminController@searchevents');
 	Route::post('/vacancies', 'AdminController@searchvacancies');
 	Route::get('/contact', 'AdminController@contact');
+	Route::get('/news', 'AdminController@news');
+	Route::post('/news', 'AdminController@postNews');
+	Route::get('/news/remove/{id}', 'AdminController@removeNews');
+	Route::get('/news/makebubble/{id}', 'AdminController@makeNewsForBubble');
 });

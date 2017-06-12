@@ -73,6 +73,13 @@
 			<form id="bidResume" method="post" action="/facecontrol/bid/">
 				{{csrf_field()}}
 				<div class="row">
+				<div class="text-center">
+			        @if(count(Auth::user()->videos()->orderBy('created_at','desc')->where("type", "=", "facecontrol")->get())==0)
+			        	თქვენ არ დამატებული ვიდეო
+			        	<br>
+			        	<a href="/profile/?add=1">დამატება</a>
+			        @endif
+			    </div>
 					<h4 class="text-center">აირჩიეთ ვიდეო</h4>
 			        <?php $i=0; ?>
 		        @foreach(Auth::user()->videos()->orderBy('created_at','desc')->where("type", "=", "facecontrol")->get() as $video)

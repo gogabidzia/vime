@@ -1,21 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<h3 class="text-center">ახალი ივენთები</h3>
-<form action="" method="post">
-	<div class="form-group col-md-3">
-		<input class="form-control" type="text" name="position" placeholder="პოზიცია">
-	</div>
-	<div class="form-group col-md-3">
-		<input class="form-control" type="text" name="description" placeholder="აღწერა">
-	</div>
-	<div class="form-group col-md-3">
-		<input class="form-control" type="text" name="location" placeholder="ლოკაცია">
-	</div>
-	<div class="form-group col-md-3">
-		<button class="btn btn-success" style="width: 100%;">ძიება</button>
-	</div>
-	{{csrf_field()}}
-</form>
+<h3 class="text-center">წერილები</h3>
 <style type="text/css">
 	.table tr{
 		cursor: pointer;

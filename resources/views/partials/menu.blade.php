@@ -27,6 +27,7 @@
 					<li><a href="/logout">გასვლა</a></li>
 				@else
 					<li><a href="/admin">პანელი</a></li>
+					<li><a href="/logout">გამოსვლა</a></li>
 				@endif
 				</ul>
 			</div>

@@ -246,39 +246,41 @@
 @stop
 @section('js')
 	<script type="text/javascript">
-		$('.addBtn').click(function(){ $("#addModal").modal(); });
-      	@if(count($errors->all()) > 0)
-      		$("#addModal").modal();
-      	@endif
-		$('#addVideo .greenBtn').click(function(){
-			$('.visumeVideo').click();
-		});
-		$('.visumeVideo').change(function(){
-			$('#addVideo .selected').html($(this).val());
-		});
-		$('#addVideo').submit(function(){
-			$('.addLoading').fadeIn();
-		});
+		$(function(){
+			$('.addBtn').click(function(){ $("#addModal").modal(); });
+	      	@if(count($errors->all()) > 0)
+	      		$("#addModal").modal();
+	      	@endif
+			$('#addVideo .greenBtn').click(function(){
+				$('.visumeVideo').click();
+			});
+			$('.visumeVideo').change(function(){
+				$('#addVideo .selected').html($(this).val());
+			});
+			$('#addVideo').submit(function(){
+				$('.addLoading').fadeIn();
+			});
 
-		$('#addFacVideo .redBtn').click(function(){
-			$('.facecontrolVideo').click();
-		});
-		$('.facecontrolVideo').change(function(){
-			$('#addFacVideo .selected').html($(this).val());
-		});
-		$('#addFacVideo').submit(function(){
-			$('.addLoading').fadeIn();
-		});
+			$('#addFacVideo .redBtn').click(function(){
+				$('.facecontrolVideo').click();
+			});
+			$('.facecontrolVideo').change(function(){
+				$('#addFacVideo .selected').html($(this).val());
+			});
+			$('#addFacVideo').submit(function(){
+				$('.addLoading').fadeIn();
+			});
 
-		$('.showVideo').click(function(){
-			$('#videoModal .video').html('<video src="/videos/'+$(this).attr('data-video')+'" controls></video>');
-			$('#videoModal').modal();
+			$('.showVideo').click(function(){
+				$('#videoModal .video').html('<video src="/videos/'+$(this).attr('data-video')+'" controls></video>');
+				$('#videoModal').modal();
+			});
+			<?php
+				if(isset($_GET['add']) && $_GET['add']==1){
+			?>
+				$('#addModal').modal();
+			<?php } ?>
+			
 		});
-
-		<?php
-			if(isset($_GET['add']) && $_GET['add']==1){
-		?>
-			$('#addModal').modal();
-		<?php } ?>
 	</script>
 @stop

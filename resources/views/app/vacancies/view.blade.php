@@ -75,6 +75,13 @@
 	      </div>
 			<form id="bidResume" method="post" action="/vacancies/bid/">
 				{{csrf_field()}}
+				<div class="text-center">
+			        @if(count(Auth::user()->videos()->orderBy('created_at','desc')->where("type", "=", "facecontrol")->get())==0)
+			        	თქვენ არ დამატებული ვიზუმე
+			        	<br>
+			        	<a href="/profile/?add=1">დამატება</a>
+			        @endif
+			    </div>
 				<div class="row">
 					<h4 class="text-center">აირჩიეთ ვიდეო</h4>
 			        <?php $i=0; ?>
@@ -89,6 +96,7 @@
 			        	<div class="clearfix"></div>
 			        @endif
 			        @endforeach
+
 		        </div>
 		        <input type="hidden" name="id" value="{{$vacancy->id}}">
 		        <input type="hidden" name="video_id">

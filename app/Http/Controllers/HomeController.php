@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Vacancy;
 use App\Contact;
 use App\Bid;
+use App\News;
 class HomeController extends Controller
 {
     /**
@@ -30,6 +31,10 @@ class HomeController extends Controller
     }
     public function subscribe(){
         return redirect()->back();   
+    }
+    public function news($id){
+        $item = News::findOrFail($id);
+        return view('app.news', ['item'=>$item]);
     }
     public function sendContact(Request $request){
         $this->validate($request, [

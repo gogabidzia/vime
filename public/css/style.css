@@ -84,7 +84,7 @@ a.agreen{
 }
 .menu-absolute .menu-right{
 	position: absolute;
-	z-index: 1;
+	z-index: 1001;
 	right: 61px;
 	top: 25px;
 }
@@ -845,6 +845,23 @@ span.spacer{
 	margin-right: 15px;
 	margin-left: -15px;
 	text-align: center;
+}
+#bubble{
+	position: fixed;
+	z-index: 9999;
+	bottom: -400px;
+	right: 20px;
+	background: url('/img/bubble.png');
+	width: 200px;
+	height: 400px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+#bubble a,
+#bubble a:hover,
+#bubble a:focus,
+#bubble a:active{
+	color: white;
 }
 @media (min-width: 768px){
     #menu .navbar-nav{
