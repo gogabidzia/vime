@@ -76,7 +76,7 @@
 			<form id="bidResume" method="post" action="/vacancies/bid/">
 				{{csrf_field()}}
 				<div class="text-center">
-			        @if(count(Auth::user()->videos()->orderBy('created_at','desc')->where("type", "=", "facecontrol")->get())==0)
+			        @if(count(Auth::user()->videos()->orderBy('created_at','desc')->where("type", "=", "visume")->get())==0)
 			        	თქვენ არ დამატებული ვიზუმე
 			        	<br>
 			        	<a href="/profile/?add=1">დამატება</a>
