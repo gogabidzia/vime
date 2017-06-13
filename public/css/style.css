@@ -856,6 +856,7 @@ span.spacer{
 	height: 400px;
 	background-size: contain;
 	background-repeat: no-repeat;
+	cursor: pointer;
 }
 #bubble a,
 #bubble a:hover,

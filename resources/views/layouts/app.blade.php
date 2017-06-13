@@ -122,7 +122,6 @@
 <script type="text/javascript" src="/js/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript" src="/locales/bootstrap-datepicker.ka.min.js"></script>
 <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
-
 <script type="text/javascript">
 	$('#search form select[name="type"]').change(function(){
 		if($(this).val()=='facecontrol'){
@@ -195,15 +194,28 @@
 		loop:true,
 		nav:true
 	});
+	function abs(a){
+		return a>=0?a:-a;
+	}
 	var initialY = -400;
+	var sin = 0;
 	var inter = setInterval(function(){
-		initialY+=0.5;
+		sin+=0.01;
+		initialY+=0.2;
 		if(initialY>=370){
 			$('#bubble').fadeOut();
 			clearInterval(inter);
 		}
+		$('#bubble').css({
+			'transform':'scale('+(1+0.1*abs(Math.sin(sin)))+')'
+		});;2
 		$('#bubble').css('bottom', initialY);
 	},1);
+	$('#bubble').click(function(){
+		clearInterval(inter);
+		$('#bubble').fadeOut();
+		$('#bubblemodal').modal();
+	});
 </script>
 </body>
 </html>

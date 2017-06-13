@@ -9,7 +9,7 @@
 		</div>
 		<div class="info">
 			<i class="fa fa-phone" aria-hidden="true"></i>
-			000-000-000
+			+995-557-66-06-91
 		</div>
 		<div class="info"></div>
 	</div>

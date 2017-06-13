@@ -9,7 +9,7 @@
 			<input class="form-control" name="title" type="text" placeholder="სახელი"></input>
 		</div>
 		<div class="form-group">
-			<textarea class="form-control" name="text" placeholder="აღწერა"></textarea>
+			<textarea id="summernote" class="form-control" name="text" placeholder="აღწერა"></textarea>
 		</div>
 		<div class="form-group">
 			<button class="btn btn-primary">დამატება</button>
@@ -51,6 +51,7 @@
 					location.replace($(this).attr('href'));
 				}
 			});
-		})
+		});
+		$('#summernote').summernote();
 	</script>
 @stop
