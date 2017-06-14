@@ -25,17 +25,16 @@ class FacebookController extends Controller
     public function handleProviderCallback()
     {
         $user = Socialite::driver('facebook')->user();
-        $checkUser = User::where('email',$user->email)->first();
-        dd($user);
-        if($checkUser){
+        $checkUser = User::where('email', $user->email )->first();
+        if($checkUser !== null ){
         	Auth::login($checkUser);
         }
         else{
 			$newUser = User::create([
 	            "email" => $user->email,
 	            "name" => $user->name,
-	            "logo"=>$user->avatar,
-	            "type"=>"user"
+	            "logo" => $user->avatar,
+	            "type" => "user"
 	        ]);
 	        Auth::login($newUser);
         }
