@@ -26,6 +26,7 @@ class FacebookController extends Controller
     {
         $user = Socialite::driver('facebook')->user();
         $checkUser = User::where('email',$user->email)->first();
+        dd($user);
         if($checkUser){
         	Auth::login($checkUser);
         }
