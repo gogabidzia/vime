@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Socialite;
-
+use App\User;
 class FacebookController extends Controller
 {
     /**
@@ -24,7 +24,11 @@ class FacebookController extends Controller
     public function handleProviderCallback()
     {
         $user = Socialite::driver('facebook')->user();
-        dd($user);
-        // $user->token;
+
+        $userArray = explode(' ' , $user->name);
+        dd($userArray);
+  // 		$newUser = User::create([
+		// 	'name'=>
+		// ]);
     }
 }
