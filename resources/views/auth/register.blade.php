@@ -53,7 +53,8 @@ Vime - რეგისტრაცია
                             </label>
                         </div> 
                     </div>
-                    <input type="file" name="user_video" class="user_video hidden">
+                    <a style="width: 100%; margin-bottom: 15px; font-size: 17px;" href="/facebook/login" class="btn btn-primary text-center"><i class="fa fa-facebook-official"></i> Facebook ავტორიზაცია</a>
+                    <!-- <input type="file" name="user_video" class="user_video hidden"> -->
                     <div class="form-group">
                         <button class="btn authBtn tableCentered" type="submit" name="">რეგისტრაცია</button>
                     </div>
@@ -113,6 +114,8 @@ Vime - რეგისტრაცია
                     <input type="password" class="form-control" name="password" placeholder="პაროლი"></input>
                 </div>
                 {{csrf_field()}}
+                <a style="width: 100%; margin-bottom: 15px; font-size: 17px;" href="/facebook/login" class="btn btn-primary text-center"><i class="fa fa-facebook-official"></i> Facebook ავტორიზაცია</a>
+                <div class="clearfix"></div>
                 <div class="pull-right">
                     <button class="btn authBtn" type="submit" name="">შესვლა</button> 
                 </div>
