@@ -23,7 +23,7 @@ class FacebookController extends Controller
      */
     public function handleProviderCallback()
     {
-        $user = Socialite::driver('github')->user();
+        $user = Socialite::driver('facebook')->user();
         dd($user);
         // $user->token;
     }
