@@ -13,6 +13,11 @@
 			<a href="#" class="toggleInstruction">ინსტრუქცია</a>
 			<button class="btn addBtn"><i class="fa fa-arrow-up" aria-hidden="true"></i>ვიდეოს დამატება</button>
 		</div>
+			@if(session('labadzstatus'))
+				<div class="alert alert-danger">
+					{{ session('labadzstatus') }}
+				</div>
+			@endif
 			<div class="vacancies">
 				<div class="vacancyHeader">
 					<div class="vacancy-inner">
