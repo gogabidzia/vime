@@ -24,11 +24,12 @@ class FacebookController extends Controller
     public function handleProviderCallback()
     {
         $user = Socialite::driver('facebook')->user();
-
-        $userArray = explode(' ' , $user->name);
-        dd($userArray);
-  // 		$newUser = User::create([
-		// 	'name'=>
-		// ]);
+        dd($user);
+		// $newUser = User::create([
+  //           "email" => $user->email,
+  //           "name" => $user->name,
+		// 	"phone"=>$request->get("phone"),
+  //           "type"=>"user"
+  //       ]);
     }
 }
