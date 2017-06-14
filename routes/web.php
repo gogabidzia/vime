@@ -27,6 +27,9 @@ Route::get('/home', function(){
 	return redirect('/');
 });
 
+Route::get('/facebook/login', 'FacebookController@redirectToProvider');
+Route::get('/facebook/callback', 'FacebookController@handleProviderCallback');
+
 Route::get('/profile', 'ProfileController@profile')->middleware('auth');
 Route::get('/profile/settings', 'ProfileController@settings')->middleware('auth');
 Route::get('/profile/vacancies', 'ProfileController@allvacancies')->middleware('ifCompany');

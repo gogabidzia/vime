@@ -34,5 +34,10 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'facebook' => [
+        'client_id' => '1884675551787884',
+        'client_secret' => 'ea4bd828fc06016fc3f98f466f572f0b',
+        'redirect' => 'http://vime.ge/facebook/callback',
+    ],
 
 ];
