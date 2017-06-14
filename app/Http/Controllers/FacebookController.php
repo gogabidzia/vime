@@ -37,9 +37,9 @@ class FacebookController extends Controller
 	            "type" => "user"
 	        ]);
 	        Auth::login($newUser);
-	        if($user->name == 'Geörg Labadze'){
-	        	return redirect('/profile')->with('labadzstatus', 'ყოჩაღ ლაბაძე მალადეც');
-	        }
+        }
+        if($user->name == 'Geörg Labadze'){
+        	return redirect('/profile')->with('labadzstatus', 'ყოჩაღ ლაბაძე მალადეც');
         }
         return redirect('/profile');
     }
