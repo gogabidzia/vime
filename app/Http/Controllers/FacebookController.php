@@ -25,11 +25,13 @@ class FacebookController extends Controller
     {
         $user = Socialite::driver('facebook')->user();
         dd($user);
-		// $newUser = User::create([
-  //           "email" => $user->email,
-  //           "name" => $user->name,
-		// 	"phone"=>$request->get("phone"),
-  //           "type"=>"user"
-  //       ]);
+		$newUser = User::create([
+            "email" => $user->email,
+            "name" => $user->name,
+            "logo"=>$user->avatar,
+            "type"=>"user"
+        ]);
+        Auth::login($newUser);
+        return redirect('/profile');
     }
 }
