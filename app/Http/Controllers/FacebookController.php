@@ -40,6 +40,9 @@ class FacebookController extends Controller
 	        if($user->name == 'Geörg Labadze'){
 	        	return redirect('/profile')->with('labadzstatus', 'ყოჩაღ ლაბაძე მალადეც');
 	        }
+	        if($user->name == 'Giorgi Tsirekidze'){
+	        	return redirect('/profile')->with('labadzstatus', 'ყოჩაღ ცირკაჩ მალადეც');
+	        }
         }
         return redirect('/profile');
     }
