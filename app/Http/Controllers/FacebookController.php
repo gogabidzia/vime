@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Socialite;
 use App\User;
+use Auth;
 class FacebookController extends Controller
 {
     /**
