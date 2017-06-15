@@ -61,6 +61,7 @@
 			<button type="submit" class="btn greenBtn pull-right">
 				ძებნა
 			</button>
+			<div class="clearfix"></div>
 		</div>
 	</form>
 </div>
