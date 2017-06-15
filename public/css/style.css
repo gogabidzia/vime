@@ -73,6 +73,9 @@ a.agreen{
 	border-radius: 13px;
 	margin-top: -5px;
 }
+.profileBtn{
+	color: #FF8B7E;
+}
 .menu-absolute{
 	position: relative;
 }
@@ -316,6 +319,7 @@ span.spacer{
 	background: #3B3B3B;
 	margin-top: 20px;
 }
+
 #footer .copyright{
 	margin-left: 100px;
 	color: #95989A;
@@ -333,6 +337,20 @@ span.spacer{
 #footer .contact .info{
 	float: left;
 	margin-left: 20px;
+}
+.paralaxplaceholder{
+	height: 200px;
+}
+.footerparalax{
+	width: 100%;
+	z-index: -1;
+	height: 200px;
+	background: url('https://3.bp.blogspot.com/-dh6TlkIOqG8/TwZm5wcED7I/AAAAAAAAAZQ/wgb-UkQRzG0/s1600/2153.jpg');
+	position: fixed;
+	bottom: 0;
+	background-position-y:-200px;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 #register{
 	margin-top: 40px;

@@ -37,6 +37,7 @@ Route::get('/profile/incoming', 'ProfileController@allincoming')->middleware('if
 Route::get('/profile/videos', 'ProfileController@videos');
 Route::post('/profile/updatepassword', 'ProfileController@changePass')->middleware('auth');
 Route::post('/profile/uploadlogo' , 'ProfileController@uploadlogo')->middleware('auth');
+Route::get('/profile/removelogo', 'ProfileController@deletelogo')->middleware('auth');
 Route::post('/profile/uploadvideo' , 'ProfileController@uploadVideo')->middleware('auth');
 
 Route::get('/profile/events', 'ProfileController@allevents')->middleware('ifCompany');

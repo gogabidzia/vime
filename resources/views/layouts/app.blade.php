@@ -14,13 +14,13 @@
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-@include('partials.menu')
-@include('partials.bubble')
-@yield('content')
-
-@include('partials.footer')
-
-
+	@include('partials.menu')
+	@include('partials.bubble')
+<div id="main_wrapper"  style="background: #f1f1f1; position: relative;z-index: 1;">
+	@yield('content')
+	@include('partials.footer')
+</div>
+	@include('partials.paralax')
 
 
 <div id="loginModal" class="modal fade loginModal" role="dialog">
@@ -120,6 +120,22 @@
   </div>
 </div>
 
+<div id="advModal" class="modal fade loginModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title text-center">
+        	რეკლამა
+        </h3>
+      </div>
+      <div class="modal-body">
+      		რეკლამის პირობები
+      </div>
+    </div>
+  </div>
+</div>
 
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
@@ -171,6 +187,10 @@
 	$('.toggleInstructionsModal').click(function(ev){
 		ev.preventDefault();
 		$('#instructionsModal').modal();
+	});
+	$('.toggleAdvModal').click(function(ev){
+		ev.preventDefault();
+		$('#advModal').modal();
 	});
 	function logAnyErrors(data, classname){
         $(classname).html(data.message);

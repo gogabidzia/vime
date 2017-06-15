@@ -1,18 +1,24 @@
 <div class="userParam">
 	<div class="avatar">
+		@if(Auth::user()->logo)
 		<img src="{{Auth::user()->logo}}">
+		@else
+		<img src="/img/default-avatar.jpg">
+		@endif
+		<div style="margin-top: 20px;">
+			<a href="/profile/removelogo">წაშლა</a>
+			<a class="pull-right" href="/profile/settings">ატვირთვა</a>
+		</div>
+		<div class="clearfix"></div>
 	</div>
 	<h4 class="username">
 		{{ Auth::user()->name }} {{ Auth::user()->surname }}
 		<span class="edit">
-			<a href="/profile/settings"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+		<a style="color: #95989A;" href="/profile/settings"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 		</span>
 	</h4>
 	<div class="param">
 		ნომერი : {{ Auth::user()->phone }}
-	</div>
-	<div class="param">
-		ელ.ფოსტა : {{ Auth::user()->email }}
 	</div>
 	<div class="param">
 		გაგზავნილი : {{ count(Auth::user()->bids)}}

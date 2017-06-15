@@ -22,9 +22,6 @@
 		ნომერი : {{ Auth::user()->phone }}
 	</div>
 	<div class="param">
-		ელ.ფოსტა : {{ Auth::user()->email }}
-	</div>
-	<div class="param">
 		ვაკანსიები : {{ count(Auth::user()->vacancies()->where('type', 'vacancy')) }}
 	</div>
 	<div class="param">

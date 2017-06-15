@@ -1,7 +1,9 @@
 <?php 
 use App\News;
 $item = News::where('bubbled', true)->get();
-setcookie('bubble', '1', time()+60*60*5);
+if(!isset($_COOKIE['bubble'])){
+  setcookie('bubble', '1', time()+60*15);
+}
  ?>
 @if(count($item)>0 && !isset($_COOKIE['bubble']))
 <div id="bubble" style="padding-top: 30px; color: white;">

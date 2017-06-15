@@ -14,7 +14,8 @@
 		<div class="menu-right">
 		@if(Auth::check())
 			<div class="dropdown pull-right">
-				<button class="btn menuBtn dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i>
+				{{ Auth::user()->email }}
+				<button class="btn menuBtn dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user profileBtn" aria-hidden="true"></i>
 				</button>
 				
 				<ul class="dropdown-menu">
@@ -113,6 +114,7 @@
 						</a>
 					</li>
 					<li><a class="toggleContactModal" href="/contact">კონტაქტი</a></li>
+					<li><a class="toggleAdvModal" href="#">რეკლამა</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div><!--/.container-fluid -->

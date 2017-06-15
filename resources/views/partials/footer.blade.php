@@ -5,7 +5,7 @@
 	<div class="contact pull-right">
 		<div class="info">
 			<i class="fa fa-envelope-o" aria-hidden="true"></i>
-			vime@mail.com
+			vime@gmail.com
 		</div>
 		<div class="info">
 			<i class="fa fa-phone" aria-hidden="true"></i>

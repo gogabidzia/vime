@@ -119,7 +119,19 @@ class ProfileController extends Controller
 
         $user  = $request->user();
         $user->logo = '/logos/'.$request->user()->id .".". $request->file('logo')->extension();
+        $user->logopath = $request->user()->id .".". $request->file('logo')->extension();
         $user->save();
+        return redirect()->back();
+    }
+    public function deletelogo(Request $request){
+        $user = $request->user();
+        $path = $user->logopath;
+        $user->logo = "";
+        $user->logopath = "";
+        $user->save();
+        if(File::exists('/comp_logos/'.$path)){
+            Storage::delete('/comp_logos/'.$path);
+        }
         return redirect()->back();
     }
     public function uploadVideo(Request $request){
