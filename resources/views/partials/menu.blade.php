@@ -19,7 +19,7 @@
 				
 				<ul class="dropdown-menu">
 				@if(Auth::user()->type !== "admin")
-					{{ Auth::user()->email }}
+					<li style="padding-left: 10px;">{{ Auth::user()->email }}</li>
 					<li><a href="/profile">პროფილი</a></li>
 					@if(!Auth::user()->company)
 					<li><a href="/profile/videos">ჩემი ვიდეოები</a></li>
