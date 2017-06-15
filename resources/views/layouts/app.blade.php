@@ -44,8 +44,8 @@
 	        <div class="form-group">
 	            <input type="password" class="form-control" name="password" placeholder="პაროლი"></input>
 	        </div>
-	        <a style="width: 100%; margin-bottom: 15px; font-size: 17px;" href="/facebook/login" class="btn btn-primary text-center"><i class="fa fa-facebook-official"></i> Facebook ავტორიზაცია</a>
-	        <div class="clearfix"></div>
+			<a tabindex="-1" style="width: 100%; margin-bottom: 15px; font-size: 17px;" href="/facebook/login" class="btn btn-primary text-center"><i class="fa fa-facebook-official"></i> Facebook ავტორიზაცია</a>
+			<div class="clearfix"></div>
 	        {{csrf_field()}}
 	        <div class="pull-right">
 	            <button class="btn authBtn" type="submit" name="">შესვლა</button> 
