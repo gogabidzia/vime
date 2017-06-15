@@ -16,7 +16,7 @@
 <body>
 	@include('partials.menu')
 	@include('partials.bubble')
-<div id="main_wrapper"  style="background: #f1f1f1; position: relative;z-index: 1;">
+<div id="main_wrapper"  style="background: #f1f1f1">
 	@yield('content')
 	@include('partials.footer')
 </div>
