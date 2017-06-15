@@ -5,7 +5,7 @@
 	<h4 class="username">
 		{{ Auth::user()->name }} {{ Auth::user()->surname }}
 		<span class="edit">
-			<i class="fa fa-pencil" aria-hidden="true"></i>
+			<a href="/profile/settings"><i class="fa fa-pencil" aria-hidden="true"></i></a>
 		</span>
 	</h4>
 	<div class="param">
