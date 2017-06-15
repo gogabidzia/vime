@@ -96,6 +96,10 @@ class ProfileController extends Controller
     public function changePass(Request $request){
         $this->validate($request, [
             "password" => "required|min:6|confirmed"
+        ],[
+            "password.required"=>"გთხოვთ შეიყვანოთ პაროლი",
+            "password.min"=>"პაროლი უნდა შეიცავდეს მინიმუმ 6 სიმბოლოს",
+            "password.confirmed"=>"გთხოვთ დაადასტუროთ პაროლი"
         ]);
 
         $user = Auth::user();
