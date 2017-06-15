@@ -105,8 +105,9 @@ class ProfileController extends Controller
     }
     public function uploadlogo(Request $request){
         $this->validate($request, [
-            "logo" => "image|max:1000"
+            "logo" => "required|image|max:1000"
         ], [
+            'logo.required'=>"გთხოვთ აირჩიოთ სურათი",
             'logo.image'=>"ფაილი უნდა იყოს სურათის ტიპის",
             'logo.max'=>"სურათის ზომა არ უნდა აღემატებოდეს 1MB - ს"
         ]);
