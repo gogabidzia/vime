@@ -14,12 +14,12 @@
 		<div class="menu-right">
 		@if(Auth::check())
 			<div class="dropdown pull-right">
-				{{ Auth::user()->email }}
 				<button class="btn menuBtn dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user profileBtn" aria-hidden="true"></i>
 				</button>
 				
 				<ul class="dropdown-menu">
 				@if(Auth::user()->type !== "admin")
+					{{ Auth::user()->email }}
 					<li><a href="/profile">პროფილი</a></li>
 					@if(!Auth::user()->company)
 					<li><a href="/profile/videos">ჩემი ვიდეოები</a></li>
