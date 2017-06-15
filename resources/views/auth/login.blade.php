@@ -16,10 +16,11 @@ Vime - ავტორიზაცია
             <input type="password" class="form-control" name="password" placeholder="პაროლი"></input>
         </div>
         {{csrf_field()}}
+        <a tabindex="-1" style="width: 100%; margin-bottom: 15px; font-size: 17px;" href="/facebook/login" class="btn btn-primary text-center"><i class="fa fa-facebook-official"></i> Facebook ავტორიზაცია</a>
+        <div class="clearfix"></div>
         <div class="pull-left">
             <a href="#" class="forgot_password">პაროლის გახსენება</a>
         </div>
-        <a tabindex="-1" style="width: 100%; margin-bottom: 15px; font-size: 17px;" href="/facebook/login" class="btn btn-primary text-center"><i class="fa fa-facebook-official"></i> Facebook ავტორიზაცია</a>
         <div class="pull-right">
             <button class="btn authBtn" type="submit" name="">შესვლა</button> 
         </div>
