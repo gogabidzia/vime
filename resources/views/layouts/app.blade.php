@@ -97,6 +97,16 @@
       			<div class="clearfix"></div>
       		</div>
       	</form>
+      	<hr>
+  		<div class="pull-left">
+  			საკონტაქტო ტელეფონები <br>
+  			+995-557-66-06-91
+  		</div>
+  		<div class="pull-right">
+  			ელფოსტა <br>
+  			vime@gmail.com
+  		</div>
+  		<div class="clearfix"></div>
       </div>
     </div>
   </div>

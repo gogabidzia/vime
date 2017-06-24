@@ -24,6 +24,10 @@ a:active{
 	color: #FF8B7E;
 	text-decoration: none;
 }
+hr{
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+}
 .segoefonted{
 	font-family: SegoeUI;
 }
