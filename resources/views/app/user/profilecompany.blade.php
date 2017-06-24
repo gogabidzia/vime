@@ -35,7 +35,7 @@
 						<div class="col-md-12">
 							<div class="item-resume">
 								<div class="image pull-left">
-									<img src="{{ $resume->user->logo }}">
+									<img src="{{ $resume->user->getLogo() }}">
 								</div>
 								<div class="titlevac pull-left">
 									<div class="title">
@@ -81,7 +81,7 @@
 						<div class="col-md-12">
 							<div class="item-resume">
 								<div class="image pull-left">
-									<img src="{{ $resume->user->logo }}">
+									<img src="{{ $resume->user->getLogo() }}">
 								</div>
 								<div class="titlevac pull-left">
 									<div class="title">
@@ -148,7 +148,7 @@
 							<a href="/vacancies/remove/{{$vacancy->id}}" class="removeVacancy">&times;</a>
 								<div class="row">
 									<div class="icon pull-left">
-										<img src="{{ $vacancy->user->logo }}">
+										<img src="{{ $vacancy->user->getLogo() }}">
 									</div>
 									<div class="pull-left marginleft">
 										<div class="title">
@@ -195,7 +195,7 @@
 							<a href="/vacancies/remove/{{$vacancy->id}}" class="removeVacancy">&times;</a>
 								<div class="row">
 									<div class="icon pull-left">
-										<img src="{{ $vacancy->user->logo }}">
+										<img src="{{ $vacancy->user->getLogo() }}">
 									</div>
 									<div class="pull-left marginleft">
 										<div class="title">

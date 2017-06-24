@@ -29,7 +29,7 @@
 							<div class="item">
 								<div class="row">
 									<div class="icon pull-left">
-										<img src="{{ $event->user->logo }}">
+										<img src="{{ $event->user->getLogo() }}">
 									</div>
 									<div class="pull-left marginleft">
 										<div class="title">

@@ -60,7 +60,7 @@
 		@foreach($users as $user)
 			<tr>
 				<td>
-				<img src="{{$user->logo}}" width="90">
+				<img src="{{$user->getLogo()}}" width="90">
 				</td>
 				<td>{{$user->email}}</td>
 				<td>{{$user->name}}</td>
@@ -84,7 +84,7 @@
 		@foreach($companies as $user)
 			<tr>
 				<td>
-				<img src="{{$user->logo}}" width="90">
+				<img src="{{$user->getLogo()}}" width="90">
 				</td>
 				<td>{{$user->email}}</td>
 				<td>{{$user->name}}</td>

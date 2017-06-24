@@ -15,13 +15,11 @@
 </head>
 <body>
 	@include('partials.menu')
-	@include('partials.bubble')
 <div id="main_wrapper"  style="background: #f1f1f1">
 	@yield('content')
 	@include('partials.footer')
 </div>
-	@include('partials.paralax')
-
+	@include('partials.bubble')
 
 <div id="loginModal" class="modal fade loginModal" role="dialog">
   <div class="modal-dialog">

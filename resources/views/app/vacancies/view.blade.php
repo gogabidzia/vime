@@ -9,47 +9,49 @@
 			@include('partials.search')
 		</div>
 		<div class="col-md-8">
-			<div class="vacancyHeader">
-				<div class="vacancy-inner">
-						<div class="title red">
-							{{ $vacancy->position }}
-						</div>
-						<div class="hr">
-							
-						</div>
+			<div class="container-fluid">
+				<div class="vacancyHeader">
+					<div class="vacancy-inner">
+							<div class="title red">
+								{{ $vacancy->position }}
+							</div>
+							<div class="hr">
+								
+							</div>
+					</div>
 				</div>
-			</div>
-			<div class="vacancy-item">
-			@if(session('bidStatus'))
-				<div class="alert alert-danger">
-					{{ session('bidStatus') }}
-				</div>
-			@endif
-				<div class="text">
-					{{ $vacancy->description }}
-				</div>
-				<div class="params">
-					<a href="#"><i class="fa fa-building" aria-hidden="true"></i> "{{ $vacancy->user->name }}"</a> <span class="spacer"> | </span> 
-					<i class="fa fa-calendar" aria-hidden="true"></i>
-					{{ date('Y.m.d', strtotime($vacancy->date_from)) }} - {{ date('Y.m.d', strtotime($vacancy->date_to)) }}
-					<span class="spacer"> | </span>
-					<i class="fa fa-globe"> {{ $vacancy->location }}</i>
-					<span class="spacer"> | </span>
-					<i class="fa fa-phone" aria-hidden="true"></i>
-					{{ $vacancy->user->phone }}
-				</div>
-				@if(Auth::check() && !Auth::user()->company)
-					<a href="/vacancies/save/{{$vacancy->id}}">
-						<button class="btn redBtn pull-left">
-							<i class="fa fa-floppy-o" aria-hidden="true"></i>
-							შენახვა
-						</button>
-					</a>
-					<button class="btn greenBtn sendResume pull-right">
-					<i class="fa fa-paper-plane" aria-hidden="true"></i>
-					ვიზუმეს გაგზავნა</button>
-					<div class="clearfix"></div>
+				<div class="vacancy-item">
+				@if(session('bidStatus'))
+					<div class="alert alert-danger">
+						{{ session('bidStatus') }}
+					</div>
 				@endif
+					<div class="text">
+						{{ $vacancy->description }}
+					</div>
+					<div class="params">
+						<a href="#"><i class="fa fa-building" aria-hidden="true"></i> "{{ $vacancy->user->name }}"</a> <span class="spacer"> | </span> 
+						<i class="fa fa-calendar" aria-hidden="true"></i>
+						{{ date('Y.m.d', strtotime($vacancy->date_from)) }} - {{ date('Y.m.d', strtotime($vacancy->date_to)) }}
+						<span class="spacer"> | </span>
+						<i class="fa fa-globe"> {{ $vacancy->location }}</i>
+						<span class="spacer"> | </span>
+						<i class="fa fa-phone" aria-hidden="true"></i>
+						{{ $vacancy->user->phone }}
+					</div>
+					@if(Auth::check() && !Auth::user()->company)
+						<a href="/vacancies/save/{{$vacancy->id}}">
+							<button class="btn redBtn pull-left">
+								<i class="fa fa-floppy-o" aria-hidden="true"></i>
+								შენახვა
+							</button>
+						</a>
+						<button class="btn greenBtn sendResume pull-right">
+						<i class="fa fa-paper-plane" aria-hidden="true"></i>
+						ვიზუმეს გაგზავნა</button>
+						<div class="clearfix"></div>
+					@endif
+				</div>
 			</div>
 		</div>
 		<div class="col-md-2">

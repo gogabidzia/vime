@@ -44,4 +44,7 @@ class User extends Authenticatable
     public function savedvacancies(){
         return $this->hasMany('App\SavedVacancy');
     }
+    public function getLogo(){
+        return $this->logo?$this->logo:"/img/default-avatar.jpg";
+    }
 }

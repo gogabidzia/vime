@@ -1,10 +1,6 @@
 <div class="userParam">
 	<div class="avatar">
-		@if(Auth::user()->logo)
-		<img src="{{Auth::user()->logo}}">
-		@else
-		<img src="/img/default-avatar.jpg">
-		@endif
+		<img src="{{Auth::user()->getLogo()}}">
 		<div style="margin-top: 20px;">
 			<a href="/profile/removelogo">წაშლა</a>
 			<a class="pull-right" href="/profile/settings">ატვირთვა</a>
@@ -26,7 +22,7 @@
 	<div class="param">
 		ვიდეოები : {{ count(Auth::user()->videos) }}
 	</div>
-	<div class="subscribe_profile">
+	<div class="subscribe_profile visible-md visible-lg">
 		<img src="/img/subscribe.png" class="png">
 		<h4>მიიღეთ განცხადებები მეილზე</h4>
 		<button class="btn subscribeBtn"><a href="#">გამოწერა</a></button>

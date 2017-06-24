@@ -30,7 +30,7 @@
 						<div class="col-md-12">
 							<div class="item-resume">
 								<div class="image pull-left">
-									<img src="{{ $bid->user->logo }}">
+									<img src="{{ $bid->user->getLogo() }}">
 								</div>
 								<div class="titlevac pull-left">
 									<div class="title">

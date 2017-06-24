@@ -1,6 +1,6 @@
 <div id="search">
 	<form action="/search" method="get">
-		<div class="form-group">
+		<div class="form-group col-md-12 col-xs-6">
 			<div class="input-group">
 			  <input type="text" name="keyword" class="form-control" placeholder="ძებნა"> 
 			  <span class="input-group-addon">
@@ -8,7 +8,7 @@
 			  </span>
 			</div>			
 		</div>
-		<div class="form-group">
+		<div class="form-group col-md-12 col-xs-6">
 			<div class="input-group">
 			  <select class="form-control" name="type">
 			  	<option value="vacancy">ვაკანსიები</option>
@@ -19,7 +19,7 @@
 			  </span>
 			</div>			
 		</div>
-		<div class="form-group fcFormGroup">
+		<div class="form-group col-md-12 col-xs-6 fcFormGroup">
 			<div class="input-group">
 				<select name="location" class="form-control">
 	            	<option value="" disabled selected>ლოკაცია</option>
@@ -42,7 +42,7 @@
 			  </span>
 			</div>			
 		</div>
-		<div class="form-group fcFormGroup">
+		<div class="form-group col-md-12 col-xs-6 fcFormGroup">
 			<div class="input-group">
 				<select name="category" class="form-control">
 	            	<option value="" disabled selected>განცხადების ტიპი</option>
@@ -57,13 +57,14 @@
 			  </span>
 			</div>	
 		</div>
-		<div class="form-group">
+		<div class="form-group col-md-12">
 			<button type="submit" class="btn greenBtn pull-right">
 				ძებნა
 			</button>
 			<div class="clearfix"></div>
 		</div>
 	</form>
+	<div class="clearfix"></div>
 </div>
 <script type="text/javascript">
 	

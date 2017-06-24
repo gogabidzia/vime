@@ -69,7 +69,7 @@
 			</div>
 			@endif
 		@else
-			<ul>
+			<ul class="hidden1240 visible-sm visible-xs visible-lg rightMenu">
 				<li class="pull-left leftFloated">
 					<a href="/register">რეგისტრაცია</a>
 				</li>
@@ -108,19 +108,21 @@
 					@endif
 					</li>
 					<li>
-						<a href="/facecontrol">
+						<!-- <a href="/facecontrol">
 							<button class="btn menubtn facecontrol">
 	 						FACECONTROL</button>
-						</a>
+						</a> -->
 					</li>
 					<li><a class="toggleContactModal" href="/contact">კონტაქტი</a></li>
 					<li><a class="toggleAdvModal" href="#">რეკლამა</a></li>
+					<li><a href="/about">ჩვენს შესახებ</a></li>
+					<!-- <li><a href="#" data-toggle="modal" data-target="loginModal">შესვლა</a></li> -->
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div><!--/.container-fluid -->
     </nav>
 </div>
-
+</div>
 <div id="notificationModal" class="modal sm fade loginModal" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->

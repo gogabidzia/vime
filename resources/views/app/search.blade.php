@@ -30,7 +30,7 @@
 							<div class="item">
 								<div class="row">
 									<div class="icon pull-left">
-										<img src="{{ $vacancy->user->logo }}">
+										<img src="{{ $vacancy->user->getLogo() }}">
 									</div>
 									<div class="pull-left marginleft">
 										<div class="title">

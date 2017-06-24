@@ -5,10 +5,10 @@
 
 @section('content')
 	<div class="row">
-		<div class="col-md-2">
+		<div class="col-md-3">
 			@include('partials.usersidebar')
 		</div>
-		<div class="col-md-8">
+		<div class="col-md-7">
 		<div class="tableCentered addvacancy_div">
 			<a href="#" class="toggleInstruction">ინსტრუქცია</a>
 			<button class="btn addBtn"><i class="fa fa-arrow-up" aria-hidden="true"></i>ვიდეოს დამატება</button>
@@ -40,7 +40,7 @@
 						<div class="col-md-12">
 							<div class="item-resume">
 								<div class="image pull-left">
-									<img src="{{ $bid->user->logo }}">
+									<img src="{{ $bid->user->getLogo() }}">
 								</div>
 								<div class="titlevac pull-left">
 									<div class="title">
@@ -85,7 +85,7 @@
 						<div class="col-md-12">
 							<div class="item-resume">
 								<div class="image pull-left">
-									<img src="{{ $bid->user->logo }}">
+									<img src="{{ $bid->user->getLogo() }}">
 								</div>
 								<div class="titlevac pull-left">
 									<div class="title">
@@ -139,7 +139,7 @@
 							<a href="/vacancies/removesaved/{{$save->id}}" class="removeVacancy">&times;</a>
 								<div class="row">
 									<div class="icon pull-left">
-										<img src="{{$save->vacancy->user->logo}}">
+										<img src="{{$save->vacancy->user->getLogo()}}">
 									</div>
 									<div class="pull-left marginleft">
 										<div class="title">

@@ -66,10 +66,10 @@ Route::get('/declinebid/{id}', 'VacancyController@declinebid')->middleware('ifCo
 
 Route::get('/search/' , 'SearchController@search');
 
-Route::group(['prefix'=>'facecontrol'], function(){
-	Route::get('/', 'FaceController@index');
-	Route::post('/bid', 'VacancyController@bidOnFaceControl');
-});
+// Route::group(['prefix'=>'facecontrol'], function(){
+// 	Route::get('/', 'FaceController@index');
+// 	Route::post('/bid', 'VacancyController@bidOnFaceControl');
+// });
 Route::get('/news/{id}', 'HomeController@news');
 Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function(){
 	Route::get('/', 'AdminController@index');
