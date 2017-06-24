@@ -24,6 +24,9 @@ a:active{
 	color: #FF8B7E;
 	text-decoration: none;
 }
+.segoefonted{
+	font-family: SegoeUI;
+}
 a.agreen{
 	color: #42C5A3;
 }

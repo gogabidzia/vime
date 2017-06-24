@@ -26,7 +26,7 @@ Route::post('/contact', 'HomeController@sendContact');
 Route::get('/home', function(){
 	return redirect('/');
 });
-
+Route::get('/about', 'HomeController@about');
 Route::get('/facebook/login', 'FacebookController@redirectToProvider');
 Route::get('/facebook/callback', 'FacebookController@handleProviderCallback');
 

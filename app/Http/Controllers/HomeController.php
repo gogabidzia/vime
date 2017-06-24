@@ -57,5 +57,8 @@ class HomeController extends Controller
         $contact->save();
         return redirect()->back();
     }
+    public function about(){
+        return view('app.about');
+    }
     
 }
