@@ -49,7 +49,9 @@ Vime - რეგისტრაცია
                     <div class="form-group">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox"> ვეთანხმები წესებს და პირობებს და კონფიდენციალურობის პოლიტიკას
+                                <input type="checkbox" name="acceptterms"> 
+                                <a href="#" data-toggle="modal" data-target="#termsModal">ვეთანხმები წესებს და პირობებს და კონფიდენციალურობის პოლიტიკას
+                                </a>
                             </label>
                         </div> 
                     </div>
@@ -86,7 +88,9 @@ Vime - რეგისტრაცია
                     <div class="form-group">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox"> ვეთანხმები წესებს და პირობებს და კონფიდენციალურობის პოლიტიკას
+                                <input type="checkbox" name="acceptterms">
+                                <a href="#" data-toggle="modal" data-target="#termsModal">ვეთანხმები წესებს და პირობებს და კონფიდენციალურობის პოლიტიკას
+                                </a>
                             </label>
                         </div> 
                     </div>
@@ -127,6 +131,26 @@ Vime - რეგისტრაცია
         </div>
         <div class="clearfix"></div>
     </div>
+
+
+<!-- MODALS -->
+    <div id="termsModal" class="modal fade loginModal" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h3 class="modal-title text-center">
+                წესები და პირობები
+            </h3>
+          </div>
+          <div class="modal-body">
+            @include('partials.texts.terms')  
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- MODALS -->
 @stop
 
 @section('js')

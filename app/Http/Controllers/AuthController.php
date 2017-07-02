@@ -39,12 +39,15 @@ class AuthController extends Controller
     public function postRegister(Request $request){
     	if($request->get('isuser')){
     		$this->validate($request, [
-    			"name" => "required",
-    			"surname" => "required",
+    			"name" => "required|alpha",
+    			"surname" => "required|alpha",
     			"phone"=>"required|min:7|numeric",
 	            "email" => "required|email|unique:users,email",
                 "password" => "required|min:6",
+                "acceptterms"=>"required"
 	        ],[
+                'name.alpha'=>'სახელი არ უნდა შეიცავდეს რიცხვებს და გამოტოვებებს',
+                'surname.alpha'=>'გვარი არ უნდა შეიცავდეს რიცხვებს და გამოტოვებებს',
                 'name.required'=> 'გთხოვთ შეიყვანოთ სახელი',
                 'surname.required'=> 'გთხოვთ შეიყვანოთ გვარი',
                 'phone.required'=>'გთხოვთ შეიყვანოთ ნომერი',
@@ -54,7 +57,8 @@ class AuthController extends Controller
                 'email.email'=>'გთხოვთ შეიყვანოთ ვალიდური ელ.ფოსტა',
                 'email.unique'=>'ასეთი ელ.ფოსტა უკვე დარეგისტრირებულია.',
                 'password.unique'=>'გთხოვთ შეიყვანოთ პაროლი.',
-                'password.min'=>'პაროლი უნდა შეიცავდეს მინიმუმ 6 სიმბოლოს'
+                'password.min'=>'პაროლი უნდა შეიცავდეს მინიმუმ 6 სიმბოლოს',
+                'acceptterms.required'=>"გთხოვთ დაეთანხმოთ წესებსა და პირობებს"
             ]);
             
             $user = User::create([
@@ -74,6 +78,7 @@ class AuthController extends Controller
                 "phone"=>"required|min:7|numeric",
                 "email" => "required|email|unique:users,email",
                 "password" => "required|min:6",
+                "acceptterms"=>"required"
             ],[
                 'name.required'=> 'გთხოვთ შეიყვანოთ სახელი',
                 'phone.required'=>'გთხოვთ შეიყვანოთ ნომერი',
@@ -83,7 +88,8 @@ class AuthController extends Controller
                 'email.email'=>'გთხოვთ შეიყვანოთ ვალიდური ელ.ფოსტა',
                 'email.unique'=>'ასეთი ელ.ფოსტა უკვე დარეგისტრირებულია.',
                 'password.unique'=>'გთხოვთ შეიყვანოთ პაროლი.',
-                'password.min'=>'პაროლი უნდა შეიცავდეს მინიმუმ 6 სიმბოლოს'
+                'password.min'=>'პაროლი უნდა შეიცავდეს მინიმუმ 6 სიმბოლოს',
+                'acceptterms.required'=>"გთხოვთ დაეთანხმოთ წესებსა და პირობებს"
             ]);
             $user = User::create([
                 "email" => $request->get('email'),

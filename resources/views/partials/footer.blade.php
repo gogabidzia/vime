@@ -1,6 +1,6 @@
 <div id="footer">
 	<div class="copyright pull-left">
-		Copyright Vime © 2017
+		Copyright Vime © 2017 | შპს „ისუნთქე ქალაქში“
 	</div>
 	<div class="contact pull-right">
 		<div class="info">

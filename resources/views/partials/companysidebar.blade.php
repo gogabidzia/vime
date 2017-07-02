@@ -22,10 +22,10 @@
 		ნომერი : {{ Auth::user()->phone }}
 	</div>
 	<div class="param">
-		ვაკანსიები : {{ count(Auth::user()->vacancies()->where('type', 'vacancy')) }}
+		ვაკანსიები : {{ count(Auth::user()->vacancies()->where('type', 'vacancy')->get()) }}
 	</div>
 	<div class="param">
-		ივენთები : {{ count(Auth::user()->vacancies()->where('type', 'facecontrol')) }}
+		ივენთები : {{ count(Auth::user()->vacancies()->where('type', 'facecontrol')->get()) }}
 	</div>
 	<div class="subscribe_profile visible-md visible-lg">
 		<img src="/img/subscribe.png" class="png">
