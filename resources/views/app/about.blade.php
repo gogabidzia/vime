@@ -9,11 +9,12 @@
 <div id="content">
 	<div class="container">
 		<h1 class="text-center segoefonted">ჩვენს შესახებ</h1>
-		<p class="segoefonted">
-			ჩვენ ვართ ესა და ეს <br>
-			ვფუნქციონირებთ ამა და ამ წლიდან </br>
-			გვინდა ესა და ეს.
-		</p>
+		<p class="text-center">Vime.ge შეიქმენა 2017 წელს.
+		ის საქართველოში პირველი ვიდეო ვაკანსიების (ვიზუმეების) საიტია.<br>
+
+		ჩვენი მიზანია მომხმარებლის და დამსაქმებლის მარტივი დაკვაშირება ერთმანეთთან. </br> 
+
+		დამატებითი ინფორმაცია თუ როგორი ვიზუმეები უნდა გამოუშვათ იხილეთ <a href="#" data-toggle="modal" data-target="#instructionsModal">ინსტრუქციაში</a>.</p>
 	</div>
 </div>
 @stop
