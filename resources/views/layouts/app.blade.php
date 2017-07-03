@@ -20,6 +20,7 @@
 	@yield('content')
 	@include('partials.footer')
 </div>
+	@include('partials.paralax')
 	@include('partials.bubble')
 
 <div id="loginModal" class="modal fade loginModal" role="dialog">

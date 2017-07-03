@@ -369,7 +369,7 @@ span.spacer{
 	background: url('https://3.bp.blogspot.com/-dh6TlkIOqG8/TwZm5wcED7I/AAAAAAAAAZQ/wgb-UkQRzG0/s1600/2153.jpg');
 	position: fixed;
 	bottom: 0;
-	background-position-y:-200px;
+	/*background-position-y:-200px;*/
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -902,6 +902,19 @@ span.spacer{
 #bubble a:focus,
 #bubble a:active{
 	color: white;
+}
+@media (max-width: 730px){
+	.centerSM{
+		margin: 0 !important;
+		float: none !important;
+		text-align: center;
+	}
+	.centerSM:nth-child(2){
+		margin-top: 30px !important;
+	}
+	#footer{
+		padding-top: 40px;
+	}
 }
 @media (min-width: 990px){
     #menu .navbar-nav{
