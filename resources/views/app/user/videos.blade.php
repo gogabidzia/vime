@@ -28,8 +28,8 @@
 						</div>
 					@endforeach
 				</div>
-				<h3 class="text-center" style="color: #FF8B7E;">Facecontrol</h3>
-				<div class="row">
+				<h3 class="text-center hidden" style="color: #FF8B7E;">Facecontrol</h3>
+				<div class="row hidden">
 					@foreach($fvideos as $video)
 						<div class="col-md-4">
 							<div class="video">

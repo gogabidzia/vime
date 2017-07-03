@@ -190,7 +190,7 @@
 			</div>
 			@endif
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-12">
 			        <form id="addVideo" action="/profile/uploadvideo" method="post" class="myFormControl" enctype='multipart/form-data'>
 			        	{{ csrf_field() }}
 				        <div class="tableCentered">
@@ -207,7 +207,7 @@
 			    	</form>
 			    </div>
 			    <div class="col-md-6">
-			    	<form id="addFacVideo" action="/profile/uploadvideo" method="post" class="myFormControl" enctype='multipart/form-data'>
+			    	<form id="addFacVideo" action="/profile/uploadvideo" method="post" class="myFormControl hidden" enctype='multipart/form-data'>
 			        	{{ csrf_field() }}
 				        <div class="tableCentered">
 			        		<button type="button" class="btn redBtn" style="color:white;">Facecontrol</button>
