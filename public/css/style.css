@@ -903,6 +903,10 @@ span.spacer{
 #bubble a:active{
 	color: white;
 }
+#advModal .modal-body p{
+	padding-left: 20px;
+	list-style-type: persian;
+}
 @media (max-width: 730px){
 	.centerSM{
 		margin: 0 !important;
