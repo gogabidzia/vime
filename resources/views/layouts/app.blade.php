@@ -105,7 +105,7 @@
   		</div>
   		<div class="pull-right">
   			ელფოსტა <br>
-  			vime@gmail.com
+  			vimesume@gmail.com
   		</div>
   		<div class="clearfix"></div>
       </div>

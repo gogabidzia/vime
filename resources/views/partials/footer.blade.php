@@ -6,7 +6,7 @@
 		<div class="tableCentered">
 			<div class="info">
 				<i class="fa fa-envelope-o" aria-hidden="true"></i>
-				vime@gmail.com
+				vimesume@gmail.com
 			</div>
 			<div class="info">
 				<i class="fa fa-phone" aria-hidden="true"></i>
