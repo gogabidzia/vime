@@ -144,6 +144,19 @@ class AuthController extends Controller
             return view('auth.rememberchange', ['token'=>$token, 'id'=>$user->id]);
         }
     }
+    public function rememberChangePost(Request $request){
+        $user = User::findOrFail($request->get('id'));
+        $userToken = $user->remember_token;
+        $token = $request->get('token');
+        $this->validate($request, [
+            'password'=>'min:6|confirmed',
+            'token'=>'in:'.$userToken
+        ],[
+            'password.min'=>'პაროლი უნდა შეიცავდეს მინიმუმ 6 სიმბოლოს',
+            'password.confirmed'=>'პაროლები არ ემთხვევა',
+            'token.in'=>'არასწორი პარამეტრები'
+        ]);
+    }
     public function logout(){
     	Auth::logout();
     	return redirect('/');
