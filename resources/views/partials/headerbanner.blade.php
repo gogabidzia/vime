@@ -4,7 +4,7 @@
 	<div class="owl-carousel">
 		<div class="item">
 			<div class="row">
-				<div class="col-md-6 visible-md visible-lg">
+				<div class="col-md-6 visible-md visible-lg text-center">
 					<img src="img/headimg.png" height="337">
 				</div>
 				<div class="col-md-6 tbcfonted">
@@ -18,7 +18,7 @@
 		</div>
 		<div class="item">
 			<div class="row">
-				<div class="col-md-6 visible-md visible-lg">
+				<div class="col-md-6 visible-md visible-lg text-center">
 					<img src="img/headimg.png" height="337">
 				</div>
 				<div class="col-md-6 tbcfonted">
@@ -32,7 +32,7 @@
 		</div>
 		<div class="item">
 			<div class="row">
-				<div class="col-md-6 visible-md visible-lg">
+				<div class="col-md-6 visible-md visible-lg text-center">
 					<img src="img/headimg.png" height="337">
 				</div>
 				<div class="col-md-6 tbcfonted">
