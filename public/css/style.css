@@ -139,6 +139,14 @@ a.agreen{
 }
 #header .subscribe{
 }
+#header .owl-carousel .item{
+	text-align: center;
+}
+#header .owl-carousel .item img{
+	display: initial;
+	width: initial;
+	max-width: 100%;
+}
 .subscribeBtn{
 	padding: 15px 30px;
 	background: transparent;
