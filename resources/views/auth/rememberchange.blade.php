@@ -23,6 +23,8 @@
 				<div class="form-group">
 					<input type="password" class="form-control" name="password_confirmation" placeholder="დაადასტურეთ ახალი პაროლი">
 				</div>
+				<input type="hidden" name="id" value="{{$id}}">
+				<input type="hidden" name="token" value="{{$token}}">
 				<button class="btn authBtn" type="submit">შეცვლა</button>
 			</form>
 		</div>
