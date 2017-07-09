@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Auth;
 use App\Company as Company;
+use Mail;
 class AuthController extends Controller
 {
     public function register(){
