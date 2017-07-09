@@ -124,7 +124,7 @@ Vime - რეგისტრაცია
                     <button class="btn authBtn" type="submit" name="">შესვლა</button> 
                 </div>
                 <div class="pull-left">
-                    <a href="#" class="forgot_password">პაროლის გახსენება</a>
+                    <a href="/remember" class="forgot_password">პაროლის გახსენება</a>
                 </div>
                 <div class="clearfix"></div>
             </form>
