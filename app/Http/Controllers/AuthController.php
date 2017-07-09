@@ -136,6 +136,14 @@ class AuthController extends Controller
     public function rememberSent(){
         return view('auth.remembersent');
     }
+    public function rememberChange($id, $token){
+        $user = User::findOrFail($id);
+        if(!$user){return;}
+        if($user->remember_token!==$token){return;}
+        else{
+            echo "malaadec";
+        }
+    }
     public function logout(){
     	Auth::logout();
     	return redirect('/');

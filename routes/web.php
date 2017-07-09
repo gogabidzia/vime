@@ -20,6 +20,7 @@ Route::post('register', 'AuthController@postRegister');
 Route::get('/remember', 'AuthController@remember');
 Route::post('/remember', 'AuthController@postRemember');
 Route::get('/remember/sent', 'AuthController@rememberSent');
+Route::get('/remember/{id}/{token}', 'AuthController@rememberChange');
 Route::get('subscribe', 'HomeController@subscribe')->middleware('auth');
 
 Route::post('/contact', 'HomeController@sendContact');
