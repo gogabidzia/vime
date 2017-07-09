@@ -136,10 +136,10 @@ class ProfileController extends Controller
     }
     public function uploadVideo(Request $request){
         $this->validate($request, [
-            "video" => "required|mimetypes:video/mp4,video/x-msvideo,video/x-ms-wmv,video/quicktime,video/x-flv,video/webm|max:20000"
+            "video" => "required|mimetypes:video/mp4,video/x-msvideo,video/x-ms-wmv,video/quicktime,video/x-flv,video/webm|max:400000"
         ], [
             'video.mimetypes'=>"გთხოვთ აირჩიოთ სწორი ტიპის ვიდეო",
-            'video.max'=>"ვიდეოს ზომა არ უნდა აღემატებოდეს 20MB - ს",
+            'video.max'=>"ვიდეოს ზომა არ უნდა აღემატებოდეს 400MB - ს",
             'video.required'=>"გთხოვთ აირჩიოთ ვიდეო",
             'video.uploaded'=>"სამწუხაროდ ვიდეო ვერ აიტვირთა. გთხოვთ სცადოთ თავიდან ან ატვირთოთ სხვა ვიდეო."
         ]);
