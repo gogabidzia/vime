@@ -122,7 +122,7 @@ class AuthController extends Controller
         }
         else{
 
-            Mail::send('app.emails.remember', ['linkToSend'=>$linkToSend], function ($message) use $user {
+            Mail::send('app.emails.remember', ['linkToSend'=>$linkToSend], function ($message) use ($user) {
                 $id = $user->id;
                 $email = $user->email;
                 $token = $user->remember_token;
