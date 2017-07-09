@@ -16,7 +16,7 @@
 	<div class="panel panel-default">
 		<div class="panel-body"><h4>პაროლის შეცვლა</h4></div>
 		<div class="panel-footer">
-			<form action="/changepass" method="post">
+			<form action="/changepass" method="post" class="myFormControl">
 				<div class="form-group">
 					<input type="password" class="form-control" name="password" placeholder="ახალი პაროლი">
 				</div>
