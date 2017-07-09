@@ -145,6 +145,7 @@ class AuthController extends Controller
         }
     }
     public function rememberChangePost(Request $request){
+        dd(1);
         $user = User::findOrFail($request->get('id'));
         $userToken = $user->remember_token;
         $token = $request->get('token');
