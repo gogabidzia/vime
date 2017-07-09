@@ -10,8 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'HomeController@index');
+Route::get('mail/{id}', 'MailController@index');
 
 Route::get('login', 'AuthController@login')->middleware('guest');
 Route::post('login', 'AuthController@postLogin')->name('login');

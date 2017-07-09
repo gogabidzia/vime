@@ -60,70 +60,70 @@
 				</div>
 				<!-- VIPS END -->
 
-				<div class="vacancyHeader">
-					<div class="vacancy-inner">
-							<div class="title red">
-								შემოსული ვიდეოები Facecontrol-ზე
-							</div>
-							<div class="hr">
-								
-							</div>
-					</div>
-				</div>
-				@if(count($incomingfac)>0)
-				<a href="/profile/allincomingfc">ყველას ნახვა</a>
-				@else
-					ვიდეოები არ მოიძებნა.
-				@endif
-				<div class="items vips">
-					<div class="row">
-						@foreach($incomingfac as $resume)
-						<div class="col-md-12">
-							<div class="item-resume">
-								<div class="image pull-left">
-									<img src="{{ $resume->user->getLogo() }}">
-								</div>
-								<div class="titlevac pull-left">
-									<div class="title">
-										{{ $resume->user->name }} {{ $resume->user->surname }} - {{ $resume->user->phone }}
-									</div>
-									<div class="vac">
-										<a href="/vacancies/all/{{$resume->vacancy->id}}">
-										{{ $resume->vacancy->position }}
-										</a>
-									</div>
-									<div class="status">
-										სტატუსი : 
-									</div>
-									@if($resume->accepted)
-										<div class="accepted"></div>
-									@else
-										<div class="declined"></div>
-									@endif
-									<div class="response" style="float: left; margin-top: 12px; margin-left:10px;">
-										<a href="/declinebid/{{$resume->id}}">
-											<button class="btn redBtn">
-												უარი
-											</button>
-										</a>
-										<a href="/acceptbid/{{$resume->id}}">
-											<button class="btn greenBtn">
-												მიღება
-											</button>
-										</a>
-									</div>
-								</div>
-								<div class="pull-right">
-									<div class="showVideo" data-video="{{$resume->video->link}}">
-										<i class="fa fa-film" area-hidden="true"></i>
-									</div>
-								</div>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-						@endforeach
-					</div>
-				</div>
+				{{--<div class="vacancyHeader">
+													<div class="vacancy-inner">
+															<div class="title red">
+																შემოსული ვიდეოები Facecontrol-ზე
+															</div>
+															<div class="hr">
+																
+															</div>
+													</div>
+												</div>
+												@if(count($incomingfac)>0)
+												<a href="/profile/allincomingfc">ყველას ნახვა</a>
+												@else
+													ვიდეოები არ მოიძებნა.
+												@endif
+												<div class="items vips">
+													<div class="row">
+														@foreach($incomingfac as $resume)
+														<div class="col-md-12">
+															<div class="item-resume">
+																<div class="image pull-left">
+																	<img src="{{ $resume->user->getLogo() }}">
+																</div>
+																<div class="titlevac pull-left">
+																	<div class="title">
+																		{{ $resume->user->name }} {{ $resume->user->surname }} - {{ $resume->user->phone }}
+																	</div>
+																	<div class="vac">
+																		<a href="/vacancies/all/{{$resume->vacancy->id}}">
+																		{{ $resume->vacancy->position }}
+																		</a>
+																	</div>
+																	<div class="status">
+																		სტატუსი : 
+																	</div>
+																	@if($resume->accepted)
+																		<div class="accepted"></div>
+																	@else
+																		<div class="declined"></div>
+																	@endif
+																	<div class="response" style="float: left; margin-top: 12px; margin-left:10px;">
+																		<a href="/declinebid/{{$resume->id}}">
+																			<button class="btn redBtn">
+																				უარი
+																			</button>
+																		</a>
+																		<a href="/acceptbid/{{$resume->id}}">
+																			<button class="btn greenBtn">
+																				მიღება
+																			</button>
+																		</a>
+																	</div>
+																</div>
+																<div class="pull-right">
+																	<div class="showVideo" data-video="{{$resume->video->link}}">
+																		<i class="fa fa-film" area-hidden="true"></i>
+																	</div>
+																</div>
+																<div class="clearfix"></div>
+															</div>
+														</div>
+														@endforeach
+													</div>
+												</div>--}}
 
 				<div class="vacancyHeader">
 					<div class="vacancy-inner">
@@ -176,49 +176,49 @@
 					</div>
 				</div>
 
-				<div class="vacancyHeader">
-					<div class="vacancy-inner">
-							<div class="title red">
-								მიმდინარე ივენთები
-							</div>
-							<div class="hr">
-								
-							</div>
-					</div>
-				</div>
-				<div class="items standart">
-				<a href="/profile/events">ყველას ნახვა</a>
-					<div class="row">
-					@foreach($events as $vacancy)
-						<div class="col-md-12">
-							<div class="item">
-							<a href="/vacancies/remove/{{$vacancy->id}}" class="removeVacancy">&times;</a>
-								<div class="row">
-									<div class="icon pull-left">
-										<img src="{{ $vacancy->user->getLogo() }}">
-									</div>
-									<div class="pull-left marginleft">
-										<div class="title">
-											<a href="/vacancies/all/{{$vacancy->id}}">
-												{{ $vacancy->position }}
-											</a>
-										</div>
-										<div class="company_name">
-											"{{ $vacancy->user->name }}"
-										</div>
-									</div>
-									<div class="pull-right marginright">
-										<div class="location">
-											{{$vacancy->location}}
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>								
-							</div>
-						</div>
-					@endforeach
-					</div>
-				</div>
+				{{--<div class="vacancyHeader">
+													<div class="vacancy-inner">
+															<div class="title red">
+																მიმდინარე ივენთები
+															</div>
+															<div class="hr">
+																
+															</div>
+													</div>
+												</div>
+												<div class="items standart">
+												<a href="/profile/events">ყველას ნახვა</a>
+													<div class="row">
+													@foreach($events as $vacancy)
+														<div class="col-md-12">
+															<div class="item">
+															<a href="/vacancies/remove/{{$vacancy->id}}" class="removeVacancy">&times;</a>
+																<div class="row">
+																	<div class="icon pull-left">
+																		<img src="{{ $vacancy->user->getLogo() }}">
+																	</div>
+																	<div class="pull-left marginleft">
+																		<div class="title">
+																			<a href="/vacancies/all/{{$vacancy->id}}">
+																				{{ $vacancy->position }}
+																			</a>
+																		</div>
+																		<div class="company_name">
+																			"{{ $vacancy->user->name }}"
+																		</div>
+																	</div>
+																	<div class="pull-right marginright">
+																		<div class="location">
+																			{{$vacancy->location}}
+																		</div>
+																	</div>
+																	<div class="clearfix"></div>
+																</div>								
+															</div>
+														</div>
+													@endforeach
+													</div>
+												</div>--}}
 
 			</div>	
 		</div>
