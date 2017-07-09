@@ -106,6 +106,31 @@ class AuthController extends Controller
     	}
         return redirect()->back();
     }
+    public function remember(){
+        return view('auth.remember');
+    }
+    public function postRemember(Request $request){
+        $this->validate($request, [
+            'email'=>'required'
+        ],[
+            'email.required'=>'გთხოვთ შეიყვანოთ ელ.ფოსტა'
+        ]);
+        $user = User::where("email", $request->get('email'))->first();
+        if(!$user){
+            return redirect()->back()->with('status', 'ასეთი მომხმარებელი არ მოიძებნა');
+        }
+        else{
+            $id = $user->id;
+            $email = $user->email;
+            $token = $user->remember_token;
+            $linkToSend = 'http://vime.ge/remember/'.$id.'/'.$token;
+
+            Mail::send('emails.remember', ['linkToSend'=>$linkToSend], function ($message) {
+                $message->to($user->email);
+                $message->subject('პაროლის აღდგენა');
+            });
+        }
+    }
     public function logout(){
     	Auth::logout();
     	return redirect('/');

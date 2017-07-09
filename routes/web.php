@@ -11,14 +11,14 @@
 |
 */
 Route::get('/', 'HomeController@index');
-Route::get('mail/{id}', 'MailController@index');
 
 Route::get('login', 'AuthController@login')->middleware('guest');
 Route::post('login', 'AuthController@postLogin')->name('login');
 Route::get('logout', 'AuthController@logout')->name('logout');
 Route::get('register', 'AuthController@register')->name('register')->middleware('guest');
 Route::post('register', 'AuthController@postRegister');
-
+Route::get('/remember', 'AuthController@remember');
+Route::post('/remember', 'AuthController@postRemember');
 Route::get('subscribe', 'HomeController@subscribe')->middleware('auth');
 
 Route::post('/contact', 'HomeController@sendContact');
