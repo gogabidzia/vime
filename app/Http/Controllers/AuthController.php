@@ -141,7 +141,7 @@ class AuthController extends Controller
         if(!$user){return;}
         if($user->remember_token!==$token){return;}
         else{
-            echo "malaadec";
+            return view('auth.rememberchange', ['token'=>$token, 'email'=>$email]);
         }
     }
     public function logout(){
