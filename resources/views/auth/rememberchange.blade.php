@@ -23,7 +23,7 @@
 				<div class="form-group">
 					<input type="password" class="form-control" name="password_confirmation" placeholder="დაადასტურეთ ახალი პაროლი">
 				</div>
-				<button class="btn AuthBtn" type="submit">შეცვლა</button>
+				<button class="btn authBtn" type="submit">შეცვლა</button>
 			</form>
 		</div>
 	</div>
