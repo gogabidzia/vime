@@ -17,11 +17,13 @@
 		<div class="panel-body"><h4>პაროლის შეცვლა</h4></div>
 		<div class="panel-footer">
 			@if($errors->any())
-				<ul class="alert alert-danger">
+			<div class="alert alert-danger">
+				<ul>
 					@foreach($errors->all() as $error)
 						<li>{{$error}}</li>
 					@endforeach
 				</ul>
+			</div>
 			@endif
 			<form action="/changepass" method="post" class="myFormControl">
 				{{ csrf_field() }}

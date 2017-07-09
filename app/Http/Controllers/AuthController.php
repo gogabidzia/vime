@@ -156,6 +156,10 @@ class AuthController extends Controller
             'password.confirmed'=>'პაროლები არ ემთხვევა',
             'token.in'=>'არასწორი პარამეტრები'
         ]);
+        $user->password = bcrypt($request->get('password'));
+        $user->save();
+        Auth::login($user);
+        return redirect('/profile');
     }
     public function logout(){
     	Auth::logout();
