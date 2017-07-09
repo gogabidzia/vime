@@ -17,8 +17,12 @@
 		<div class="panel-body"><h4>პაროლის გახსენება</h4></div>
 		<div class="panel-footer">
 			<div class="alert alert-success">
-				წერილი წარმატებით გაიგზავნა
+				წერილი წარმატებით გაიგზავნა {{session('email')}} - მისამართზე
 			</div>
+
+			<button class="btn authBtn">
+				ხელახლა გაგზავნა
+			</button>
 		</div>
 	</div>
 </div>
