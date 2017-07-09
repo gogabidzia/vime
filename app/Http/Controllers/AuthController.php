@@ -121,13 +121,13 @@ class AuthController extends Controller
             return redirect()->back()->with('status', 'ასეთი მომხმარებელი არ მოიძებნა');
         }
         else{
-            $id = $user->id;
-            $email = $user->email;
-            $token = $user->remember_token;
-            $linkToSend = 'http://vime.ge/remember/'.$id.'/'.$token;
 
-            Mail::send('app.emails.remember', ['linkToSend'=>$linkToSend], function ($message) {
-                $message->to($user->email);
+            Mail::send('app.emails.remember', ['linkToSend'=>$linkToSend], function ($message) use $user {
+                $id = $user->id;
+                $email = $user->email;
+                $token = $user->remember_token;
+                $linkToSend = 'http://vime.ge/remember/'.$id.'/'.$token;
+                $message->to($email);
                 $message->subject('პაროლის აღდგენა');
             });
         }
