@@ -129,7 +129,11 @@ class AuthController extends Controller
                 $message->to($email);
                 $message->subject('პაროლის აღდგენა');
             });
+            return redirect('/remember/sent')->with(['token'=>$token, 'email'=>$email]);
         }
+    }
+    public function rememberSent(){
+        return view('auth.remembersent');
     }
     public function logout(){
     	Auth::logout();
