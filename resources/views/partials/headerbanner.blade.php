@@ -5,7 +5,7 @@
 		<div class="item">
 			<div class="row">
 				<div class="col-md-6 visible-md visible-lg">
-					<img src="img/headerimg.png" height="337">
+					<img src="img/headimg.png" height="337">
 				</div>
 				<div class="col-md-6 tbcfonted">
 					<h1>არ გამოტოვო შენი მომავალი სამუშაო</h1>
@@ -19,7 +19,7 @@
 		<div class="item">
 			<div class="row">
 				<div class="col-md-6 visible-md visible-lg">
-					<img src="img/headerimg.png" height="337">
+					<img src="img/headimg.png" height="337">
 				</div>
 				<div class="col-md-6 tbcfonted">
 					<h1>არ გამოტოვო შენი მომავალი სამუშაო</h1>
@@ -33,7 +33,7 @@
 		<div class="item">
 			<div class="row">
 				<div class="col-md-6 visible-md visible-lg">
-					<img src="img/headerimg.png" height="337">
+					<img src="img/headimg.png" height="337">
 				</div>
 				<div class="col-md-6 tbcfonted">
 					<h1>არ გამოტოვო შენი მომავალი სამუშაო</h1>
