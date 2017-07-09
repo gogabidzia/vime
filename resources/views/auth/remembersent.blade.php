@@ -19,10 +19,12 @@
 			<div class="alert alert-success">
 				წერილი წარმატებით გაიგზავნა {{session('email')}} - მისამართზე
 			</div>
-
-			<button class="btn authBtn">
-				ხელახლა გაგზავნა
-			</button>
+			<form action="/remember" method="post">
+				<input type="hidden" name="email" value="{{session('email')}}">
+				<button class="btn authBtn" type="submit">
+					ხელახლა გაგზავნა
+				</button>
+			</form>
 		</div>
 	</div>
 </div>

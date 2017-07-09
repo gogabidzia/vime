@@ -126,10 +126,11 @@ class AuthController extends Controller
             $token = $user->remember_token;
             $linkToSend = 'http://vime.ge/remember/'.$id.'/'.$token;
             Mail::send('app.emails.remember', ['linkToSend'=>$linkToSend], function ($message) use ($email) {
+                $message->from('vimesume@gmail.com', 'Vime');
                 $message->to($email);
                 $message->subject('პაროლის აღდგენა');
             });
-            return redirect('/remember/sent')->with(['token'=>$token, 'email'=>$email]);
+            return redirect('/remember/sent')->with(['email'=>$email]);
         }
     }
     public function rememberSent(){
