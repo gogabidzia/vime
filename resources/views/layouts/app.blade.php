@@ -211,7 +211,8 @@
 	$('#header .owl-carousel').owlCarousel({
 		items:1,
 		loop:true,
-		nav:true
+		nav:true,
+		autoplay:true,
 	});
 	function abs(a){
 		return a>=0?a:-a;
