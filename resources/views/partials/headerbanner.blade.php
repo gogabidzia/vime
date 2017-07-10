@@ -15,23 +15,8 @@
 		</div>
 		<div class="item">
 			<div class="row">
-				<div class="col-md-6 visible-md visible-lg text-left">
-					<img src="img/headimg.png" height="337">
-				</div>
-				<div class="col-md-6 tbcfonted">
-					<h1>არ გამოტოვო შენი მომავალი სამუშაო</h1>
-					<h3>მიიღე განცხადებები მეილზე!</h3>
-				</div>
-			</div>
-		</div>
-		<div class="item">
-			<div class="row">
-				<div class="col-md-6 visible-md visible-lg text-left">
-					<img src="img/headimg.png" height="337">
-				</div>
-				<div class="col-md-6 tbcfonted">
-					<h1>არ გამოტოვო შენი მომავალი სამუშაო</h1>
-					<h3>მიიღე განცხადებები მეილზე!</h3>
+				<div style="color:#111; margin-top: 100px;" class="col-md-12 tbcfonted">
+					<h1>ეწვიეთ ჩვენს <a href="https://www.facebook.com/vime.ge/">ფეისბუქ გვერდს.</a></h1>
 				</div>
 			</div>
 		</div>
