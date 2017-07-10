@@ -16,18 +16,13 @@
 		<div class="item">
 			<div class="row">
 				<div class="col-md-12 tbcfonted">
-					<div class="fb-page" data-href="https://www.facebook.com/vime.ge/" data-tabs="timeline" data-height="337" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/vime.ge/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/vime.ge/">Vime.Ge - ვიმე</a></blockquote></div>
+					<a target="_blank" href="https://www.facebook.com/vime.ge/"><img src="img/fblogo.png" style="width: 200px; height: auto;margin-top: 80px;" alt=""></a>
+					<h3 class="text-center">
+						შემოგვიერთდით ფეისბუქ გვერდზე
+					</h3>
 				</div>
 			</div>
 		</div>
 	</div>
 
 </div>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=397901047213571";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
