@@ -15,7 +15,7 @@
 		</div>
 		<div class="item">
 			<div class="row">
-				<div style="color:#111; margin-top: 100px;" class="col-md-12 tbcfonted">
+				<div class="col-md-12 tbcfonted">
 					<div class="fb-page" data-href="https://www.facebook.com/vime.ge/" data-tabs="timeline" data-height="337" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/vime.ge/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/vime.ge/">Vime.Ge - ვიმე</a></blockquote></div>
 				</div>
 			</div>
