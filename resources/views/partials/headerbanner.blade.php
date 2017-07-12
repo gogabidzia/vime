@@ -3,13 +3,13 @@
 
 	<div class="owl-carousel">
 		<div class="item">
-			<div class="row">
-				<div class="col-md-6 visible-md visible-lg text-left">
+			<div class="tableCentered">
+				<div class="pull-left">
 					<img src="img/headimg.png" height="337">
 				</div>
-				<div class="col-md-6 tbcfonted">
-					<h3 style="color:#111; margin-top: 100px;" class="tbcfonted">მოგესალმებით ვიდეო რეზიუმეების სამყაროში. ეს გახლავთ პირველი ვიზუალური CV/Resume საქართველოში, რომელიც ხელს გიწყობთ მარტივად იპოვოთ სამსახური ან სასურველი თანამშრომელი.
-					<i>ჩაები ვიმეს გამოწვევაში და აუწყე ნაბიჯი ახალს</i></h3>
+				<div class="pull-left tbcfonted" style="margin-left: 30px; margin-top: 50px;">
+					<h1 style="font-size: 50px;">ვირტუალური</h1>
+					<h1 style="font-size: 50px; margin-top: 10px; color: #ffb322;">CV/RESUME</h1>
 				</div>
 			</div>
 		</div>

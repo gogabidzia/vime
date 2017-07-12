@@ -39,7 +39,7 @@
 								</div>
 								<div class="titlevac pull-left">
 									<div class="title">
-										{{ $resume->user->name }} {{ $resume->user->surname }} - {{ $resume->user->phone }}
+										{{ $resume->user->name }} {{ $resume->user->surname }} - {{ $resume->user->phone }} - {{ $resume->user->email }}
 									</div>
 									<div class="vac">
 										<a href="/vacancies/all/{{$resume->vacancy->id}}">

@@ -55,6 +55,7 @@
 	        </div>
 	        <div class="clearfix"></div>
 	    </form>
+	    <a href="/register" class="tableCentered">რეგისტრაცია</a>
       </div>
     </div>
   </div>
@@ -212,7 +213,7 @@
 		items:1,
 		loop:true,
 		nav:true,
-		autoplay:true,
+		// autoplay:true,
 	});
 	function abs(a){
 		return a>=0?a:-a;

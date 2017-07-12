@@ -70,7 +70,7 @@
 			@endif
 		@else
 			<ul class="hidden1240 visible-sm visible-xs visible-lg rightMenu">
-				<li class="pull-left leftFloated">
+				<li class="pull-left leftFloated hidden-xs">
 					<a href="/register">რეგისტრაცია</a>
 				</li>
 				<li class="pull-left leftFloated">

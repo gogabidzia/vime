@@ -13,7 +13,7 @@
         </div>
         <div class="switcher tableCentered" style="margin-bottom: 20px;">
           <button class="btn greenBtn vacancy active" style="margin-right: 20px;">ვაკანსია</button>
-          <button class="btn greenBtn event">ივენთი</button>
+          <button class="btn greenBtn event hidden">ივენთი</button>
         </div>
         <div class="vacancyform">
           <form id="addVacancy" action="/vacancies/add" method="post" class="myFormControl">
@@ -69,7 +69,7 @@
     	        <div class="clearfix"></div>
             </form>
         </div>
-        <div class="eventform" style="display: none;">
+        <div class="eventform hidden" style="display: none;">
               <form id="addEvent" action="/vacancies/add" method="post" class="myFormControl">
               <input type="hidden" name="type" value="event">
               <div class="form-group">
