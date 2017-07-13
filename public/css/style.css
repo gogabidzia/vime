@@ -1,6 +1,6 @@
 body{
 	background: #f1f1f1;
-	overflow-x: hidden;
+	/*overflow-x: hidden;*/
 }
 @font-face{
 	src:url(../fonts/roboto/Roboto-Medium.ttf);
