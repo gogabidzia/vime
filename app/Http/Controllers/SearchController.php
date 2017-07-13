@@ -20,7 +20,7 @@ class SearchController extends Controller
     	if($request->get('location')){
     		$q->where('location', $request->get('location'));
     	}
-        $vacancies = $q->paginate(15);
+        $vacancies = $q->paginate(30);
     	return view('app.search', ['vacancies'=>$vacancies, 'req'=>$request->all()]);
     }
 }

@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $vacancies = Vacancy::orderBy('created_at','desc')->where('type','vacancy')->paginate(15);
+        $vacancies = Vacancy::orderBy('created_at','desc')->where('type','vacancy')->paginate(30);
         return view('app.home', ['vacancies'=> $vacancies]);
     }
     public function subscribe(){
