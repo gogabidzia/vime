@@ -27,10 +27,10 @@
 	<div class="param">
 		ივენთები : {{ count(Auth::user()->vacancies()->where('type', 'facecontrol')->get()) }}
 	</div>
-	<div class="subscribe_profile visible-md visible-lg">
+	<!-- <div class="subscribe_profile visible-md visible-lg">
 		<img src="/img/subscribe.png" class="png">
 		<h4>მიიღეთ განცხადებები მეილზე</h4>
 		<button class="btn subscribeBtn"><a href="#">გამოწერა</a></button>
-	</div>
+	</div> -->
 	
 </div>
