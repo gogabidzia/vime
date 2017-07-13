@@ -367,19 +367,14 @@ span.spacer{
 	float: left;
 	margin-left: 20px;
 }
-.paralaxplaceholder{
-	height: 200px;
-}
 .footerparalax{
 	width: 100%;
-	z-index: -1;
 	height: 200px;
 	background: url('https://3.bp.blogspot.com/-dh6TlkIOqG8/TwZm5wcED7I/AAAAAAAAAZQ/wgb-UkQRzG0/s1600/2153.jpg');
-	position: fixed;
-	bottom: 0;
-	/*background-position-y:-200px;*/
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position-y: 200px;
 }
 #register{
 	margin-top: 40px;

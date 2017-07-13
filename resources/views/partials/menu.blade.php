@@ -69,7 +69,7 @@
 			</div>
 			@endif
 		@else
-			<ul class="hidden1240 visible-sm visible-xs visible-lg rightMenu">
+			<ul class="visible-sm visible-xs visible-lg rightMenu">
 				<li class="pull-left leftFloated hidden-xs">
 					<a href="/register">რეგისტრაცია</a>
 				</li>

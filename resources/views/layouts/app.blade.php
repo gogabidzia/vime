@@ -6,7 +6,7 @@
 	</title>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
-	<meta name="viewport" content="width=1920">
+	<meta name="viewport" content="width=1920, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.min.css">
@@ -19,8 +19,8 @@
 <div id="main_wrapper"  style="background: #f1f1f1">
 	@yield('content')
 	@include('partials.footer')
-</div>
 	@include('partials.paralax')
+</div>
 	@include('partials.bubble')
 
 <div id="loginModal" class="modal fade loginModal" role="dialog">
