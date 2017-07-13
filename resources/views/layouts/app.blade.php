@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/owl.theme.default.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css?<?php echo date('l jS \of F Y h:i:s A'); ?>">
 </head>
 <body>
 	@include('partials.menu')
