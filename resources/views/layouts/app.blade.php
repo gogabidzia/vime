@@ -6,7 +6,7 @@
 	</title>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
-	<!-- <meta name="viewport" content="width=1920"> -->
+	<meta name="viewport" content="width=1920">
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.min.css">
