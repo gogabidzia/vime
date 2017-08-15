@@ -1,6 +1,8 @@
 body{
 	background: #f1f1f1;
-	/*overflow-x: hidden;*/
+	overflow-x: hidden;
+	margin: 0 auto;
+
 }
 @font-face{
 	src:url(../fonts/roboto/Roboto-Medium.ttf);
@@ -923,6 +925,17 @@ span.spacer{
 		padding-top: 40px;
 	}
 }
+@media(max-width: 1200px){
+	#login{
+		display: none;
+	}
+	#register{
+		float: none !important;
+	}
+	#register::after{
+		display: none;
+	}
+}
 @media (min-width: 990px){
     #menu .navbar-nav{
         float:none;
@@ -944,6 +957,21 @@ span.spacer{
 		width: 100%;
 		padding-left: 15px;
 		padding-right: 15px;
+	}
+	#register .switchbtn{
+		padding-left: 10px;
+		padding-right: 10px;
+		height: auto;
+		width:auto;
+		border-radius: 0;
+	}
+}
+@media(max-width: 560px){
+	#register .switchbtn:nth-child(1)::after{
+		display: none;
+	}
+	#register .switchbtn:nth-child(2){
+		margin-left: 15px;
 	}
 }
 @media (max-width: 991px){
@@ -982,6 +1010,14 @@ span.spacer{
 	}
 	#menu .navbar-collapse.in .navbar-nav{
 		border-bottom: 1px solid #ccc;
+	}
+}
+@media(max-width: 767px){
+	#register::after{
+		display: none;
+	}
+	#search .form-control{
+		font-size: 12px;
 	}
 }
 @media (max-width: 990px) and (min-width: 768px) {

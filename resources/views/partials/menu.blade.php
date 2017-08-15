@@ -70,7 +70,7 @@
 			@endif
 		@else
 			<ul class="rightMenu">
-				<li class="pull-left leftFloated">
+				<li class="pull-left leftFloated hidden-sm hidden-xs">
 					<a href="/register">რეგისტრაცია</a>
 				</li>
 				<li class="pull-left leftFloated">
@@ -94,19 +94,21 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="/">მთავარი</a></li>
 					<li><a class="toggleInstructionsModal" href="/instructions">ინსტრუქცია</a></li>
-					<li>
 					@if(Auth::check())
+					<li>
 						<a href="/profile/?add=1">
 							<button class="btn menubtn subscribe"><i class="fa fa-arrow-up" aria-hidden="true"></i>
 	 						დამატება</button>
 						</a>
+					</li>
 					@else
+					<li class="hidden">
 						<a href="/subscribe">
 							<button class="btn menubtn subscribe"><i class="fa fa-arrow-up" aria-hidden="true"></i>
 	 						გამოწერა</button>
 						</a>
-					@endif
 					</li>
+					@endif
 					<li>
 						<!-- <a href="/facecontrol">
 							<button class="btn menubtn facecontrol">

@@ -27,7 +27,7 @@
 				</div>
 				<div class="clearfix"></div>
 			</form>
-			<h4 class="text-center">სურათის ატვირთვა</h4>
+			<h4 class="text-center" style="margin-top: 50px;">სურათის ატვირთვა</h4>
 			@if(count($errors->all()) > 0)
 			<div class="alert alert-danger">
 				@foreach($errors->all() as $error)
@@ -42,7 +42,7 @@
 				<div class="pull-right">
 					<button type="submit" class="authBtn">ატვირთვა</button>
 				</div>
-
+				<div class="clearfix"></div>
 			</form>
 		</div>
 		<div class="col-md-2">

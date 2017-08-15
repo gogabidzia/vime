@@ -6,7 +6,7 @@
 	</title>
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
-	<meta name="viewport" content="width=1920,initial-scale=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.min.css">
@@ -16,11 +16,9 @@
 </head>
 <body>
 	@include('partials.menu')
-<div id="main_wrapper"  style="background: #f1f1f1">
 	@yield('content')
 	@include('partials.footer')
 	@include('partials.paralax')
-</div>
 	@include('partials.bubble')
 
 <div id="loginModal" class="modal fade loginModal" role="dialog">
@@ -147,9 +145,6 @@
 			$('.fcFormGroup').show();
 		}
 	});
-	$(window).resize(function(){
-		$('body').css("width", '1920px');
-	})
 </script>
 @yield('js')
 

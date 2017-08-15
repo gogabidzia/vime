@@ -45,7 +45,7 @@
 				<div class="pull-right">
 					<button type="submit" class="authBtn">ატვირთვა</button>
 				</div>
-
+				<div class="clearfix"></div>
 			</form>
 			</div>
 		</div>

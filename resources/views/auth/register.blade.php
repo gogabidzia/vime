@@ -101,7 +101,7 @@ Vime - რეგისტრაცია
                 </form>
             </div>
         </div>
-        <div id="login" class="pull-right visible-md visible-lg">
+        <div id="login" class="pull-right">
             <div class="already_registered">
                 უკვე ხართ <br>
                 დარეგისტრირებული?

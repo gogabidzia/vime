@@ -4,10 +4,10 @@
 	<div class="owl-carousel">
 		<div class="item">
 			<div class="tableCentered">
-				<div class="pull-left">
+				<div class="pull-left hidden-sm hidden-xs">
 					<img src="img/headimg.png" height="337">
 				</div>
-				<div class="pull-left tbcfonted" style="margin-left: 30px; margin-top: 50px;">
+				<div class="pull-left tbcfonted style="margin-left: 30px; margin-top: 50px;">
 					<h1 style="font-size: 50px;">ვირტუალური</h1>
 					<h1 style="font-size: 50px; margin-top: 10px; color: #ffb322;">CV/RESUME</h1>
 				</div>
