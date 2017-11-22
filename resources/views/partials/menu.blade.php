@@ -93,7 +93,7 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="/">მთავარი</a></li>
-					<li><a class="toggleInstructionsModal" href="/instructions">ინსტრუქცია</a></li>
+					<li><a href="/about">ჩვენს შესახებ</a></li>
 					@if(Auth::check())
 					<li>
 						<a href="/profile/?add=1">
@@ -117,7 +117,8 @@
 					</li>
 					<li><a class="toggleContactModal" href="/contact">კონტაქტი</a></li>
 					<li><a class="toggleAdvModal" href="#">რეკლამა</a></li>
-					<li><a href="/about">ჩვენს შესახებ</a></li>
+					<li><a class="toggleInstructionsModal" href="/instructions">ინსტრუქცია</a></li>
+					
 					<!-- <li><a href="#" data-toggle="modal" data-target="loginModal">შესვლა</a></li> -->
 				</ul>
 			</div><!--/.nav-collapse -->
