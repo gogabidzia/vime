@@ -94,7 +94,7 @@ class VacancyController extends Controller
             return redirect()->back();
         }
         $bidded = false;
-        $bids = Vacancy::findOrFail($request->get('id'))->bids;
+        $bids = Vacancy::findOrFail($request->input('id'))->bids;
         foreach($bids as $bid){
             if($bid->user->id == $request->user()->id){
                 $bidded = true;
@@ -111,11 +111,11 @@ class VacancyController extends Controller
             'video_id.required'=>'გთხოვთ აირჩიოთ ვიდეო',
             'id.exists'=>"ვიდეო არ არსებობს"
         ]);
-        $vacancy = Vacancy::findOrFail($request->get('id'));
+        $vacancy = Vacancy::findOrFail($request->input('id'));
 
         $bid = new Bid();
         $bid->user_id = $request->user()->id;
-        $bid->vacancy_id = $request->get('id');
+        $bid->vacancy_id = $request->input('id');
         $bid->video_id = $request->get('video_id');
         $bid->to_id = $vacancy->user->id;
         $bid->type = "vacancy";
@@ -134,7 +134,7 @@ class VacancyController extends Controller
             return redirect()->back();
         }
         $bidded = false;
-        $bids = Vacancy::findOrFail($request->get('id'))->bids;
+        $bids = Vacancy::findOrFail($request->input('id'))->bids;
         foreach($bids as $bid){
             if($bid->user->id == $request->user()->id){
                 $bidded = true;
@@ -151,11 +151,11 @@ class VacancyController extends Controller
             'video_id.required'=>'გთხოვთ აირჩიოთ ვიდეო',
             'id.exists'=>"ვიდეო არ არსებობს"
         ]);
-        $vacancy = Vacancy::findOrFail($request->get('id'));
+        $vacancy = Vacancy::findOrFail($request->input('id'));
 
         $bid = new Bid();
         $bid->user_id = $request->user()->id;
-        $bid->vacancy_id = $request->get('id');
+        $bid->vacancy_id = $request->input('id');
         $bid->video_id = $request->get('video_id');
         $bid->to_id = $vacancy->user->id;
         $bid->accepted = false;
