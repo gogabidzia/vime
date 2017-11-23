@@ -9,7 +9,11 @@ body{
 	font-family: RobotoM;
 }
 @font-face{
-	src:url(../fonts/TbcDin_Nusxuri_Regular.otf);
+	src:url(../fonts/TbcDin_Nusxuri_Bold.otf);
+	font-family: TBCregular;
+}
+@font-face{
+	src:url(../fonts/bpg_nino_mtavruli_bold.ttf);
 	font-family: TBCregular;
 }
 @font-face{
@@ -56,7 +60,7 @@ a.agreen{
 #menu .navbar-nav li a{
 	background: none;
 	font-weight: 400;
-	font-family: SegoeUI;
+	font-family: TBCregular;
 	color: #2E2E2E;
 	transition: 0.2s;
 }
