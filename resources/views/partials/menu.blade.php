@@ -8,10 +8,11 @@
 	<div class="menu-absolute">
 		<div class="logo">
 			<a href="/">
-				<img src="/img/logo.png">
+				<img src="/img/logo.png"></img>
 			</a>
+			<p style="color:#ffb322"><b>საიტი მუშაობს სატესტო რეჟიმში</b></p>
 		</div>
-		<div class="menu-right">
+		<div class="menu-right">			
 		@if(Auth::check())
 			<div class="dropdown pull-right">
 				<button class="btn menuBtn dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user profileBtn" aria-hidden="true"></i>

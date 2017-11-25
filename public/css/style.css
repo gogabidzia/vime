@@ -102,7 +102,7 @@ a.agreen{
 .menu-absolute .logo{
 	position: absolute;
 	left: 61px;
-	top: 15px;
+	top: 1px;
 	z-index: 101;
 }
 .menu-absolute .menu-right{
