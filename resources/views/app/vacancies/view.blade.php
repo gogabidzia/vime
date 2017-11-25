@@ -75,7 +75,7 @@
 	      	<div class="text-center pleasewait">გთხოვთ დაელოდოთ</div>
 	      	<img src="/img/rolling.svg">
 	      </div>
-			<form id="bidResume" method="post" action="/vacancies/bid/">
+			<form id="bidResume" method="post" action="/vacancies/bid">
 				{{csrf_field()}}
 				<div class="text-center">
 			        @if(count(Auth::user()->videos()->orderBy('created_at','desc')->where("type", "=", "visume")->get())==0)

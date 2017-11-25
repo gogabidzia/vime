@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('users')->insert([
         	'email'=>'admin@vime.ge',
-        	'password'=>bcrypt('password'),
+        	'password'=>bcrypt('Nikakuchava1'),
         	'name'=>'admin',
             'type'=>'admin',
         	'phone'=>'000'
