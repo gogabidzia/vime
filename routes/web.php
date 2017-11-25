@@ -55,7 +55,9 @@ Route::post('/vacancies/add', 'VacancyController@add')->middleware('ifCompany');
 Route::get('/vacancies/remove/{id}', 'VacancyController@remove')->middleware('ifCompany');
 
 Route::get('/vacancies/all/{id}' , 'VacancyController@view');
-Route::post('/vacancies/bid', 'VacancyController@bid');
+Route::post('/vacancies/bid', function(){
+	dd('here');
+});
 
 Route::get('/logos/{image}', 'ProfileController@getImage');
 Route::get('/videos/{name}', 'ProfileController@getVideo');
