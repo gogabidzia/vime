@@ -89,6 +89,7 @@ class VacancyController extends Controller
     }
 
     public function bid(Request $request){
+	dd('here');
         $video = Video::findOrFail($request->get('video_id'));
         if($video && $request->user()->id !== $video->user->id ){
             return redirect()->back();
