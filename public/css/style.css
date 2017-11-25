@@ -535,12 +535,31 @@ span.spacer{
 	background: #F1F1F1;
 	border: none;
 }
+.loginModal .modal-header-adv{
+	height: 310px !important; 
+}
+.loginModal .modal-body-adv{
+	height: 50px !important; 
+	padding: 90px !important;
+}
+
+.loginModal .modal-body-adv h1{
+	color: #ffb322;
+	font-family: Monospace;
+}
 .loginModal .modal-dialog{
 	margin: 100px auto;
 	color: #3B3B3B;
 	font-family: SegoeUI;
 	padding-left: 20px;
 	padding-right: 20px;
+}
+.modal-dialog-adv{
+	margin: 100px auto;
+	color: #3B3B3B;
+	font-family: SegoeUI;
+	padding-left: 560px;
+	padding-right: 600px;	
 }
 .loginModal .close{
 	position: absolute;
@@ -909,6 +928,7 @@ span.spacer{
 	color: white;
 }
 #advModal .modal-body p{
+
 	padding-left: 20px;
 	list-style-type: persian;
 }
@@ -1059,4 +1079,8 @@ span.spacer{
     .collapse.in{
         display:block !important;
     }
+}
+div#myDiv {
+    -webkit-transform: rotateZ(270deg); /* Safari */
+    transform: rotateZ(270deg); /* Standard syntax */
 }

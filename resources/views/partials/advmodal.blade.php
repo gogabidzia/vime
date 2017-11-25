@@ -1,18 +1,19 @@
 
 <div id="advModal" class="modal fade loginModal" role="dialog">
-  <div class="modal-dialog">
+  <div class="modal-dialog-adv">
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header-adv">
+
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h3 class="modal-title text-center">
-        	რეკლამა
+        	
         </h3>
       </div>
-      <div class="modal-body">
+      <div class="modal-body-adv">
 
-
-         <h4>vimesume@gmail.com</h4>
+      <h1><div id="myDiv">vimesume@gmail.com</div></h1>
+         
         
       </div>
     </div>
