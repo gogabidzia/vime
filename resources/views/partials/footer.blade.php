@@ -1,6 +1,6 @@
 <div id="footer">
 	<div class="copyright pull-left centerSM">
-		Copyright Vime © 2017 | შპს „ისუნთქე ქალაქში“
+		ყველა უფლება დაცულია Vime.ge © 2017
 		<!-- TOP.GE ASYNC COUNTER CODE -->
 					<div id="top-ge-counter-container" data-site-id="110151"></div>
 					<script async src="//counter.top.ge/counter.js"></script>
