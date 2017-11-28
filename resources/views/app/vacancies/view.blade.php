@@ -79,9 +79,9 @@
 				{{csrf_field()}}
 				<div class="text-center">
 			        @if(count(Auth::user()->videos()->orderBy('created_at','desc')->where("type", "=", "visume")->get())==0)
-			        	თქვენ არ დამატებული ვიზუმე
+			        	თქვენ არ გაქვთ დამატებული ვიზუმე
 			        	<br>
-			        	<a href="/profile/?add=1">დამატება</a>
+			       	    <h3><a href="/profile/?add=1" class="label label-warning">დამატება</a></h3>
 			        @endif
 			    </div>
 				<div class="row">
