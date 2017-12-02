@@ -255,6 +255,7 @@ span.spacer{
 	padding-top: 10px;
 	padding-bottom: 10px; 
 	margin-bottom: 10px;
+    word-wrap:break-word;
 }
 .vacancy-item .params{
 	border-left: 3px solid #ff8b7e;
