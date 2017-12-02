@@ -200,7 +200,7 @@ class ProfileController extends Controller
     public function editvacancy($id, Request $request){
         $description = DB::table('vacancies')->where('id', $id)->first();
                 
-        return view('app\user\edit', ['description' => $description]);
+        return view('app/user/edit', ['description' => $description]);
     }
 
     public function editedvacancy($id, Request $request){
