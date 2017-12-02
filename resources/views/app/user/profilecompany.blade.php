@@ -167,6 +167,7 @@
 										<div class="location">
 											{{$vacancy->location}}
 										</div>
+										<a href="/profile/edit/{{$vacancy->id}}" class="glyphicon">შეცვლა</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>								

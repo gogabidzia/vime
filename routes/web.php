@@ -43,6 +43,8 @@ Route::post('/profile/uploadlogo' , 'ProfileController@uploadlogo')->middleware(
 Route::get('/profile/removelogo', 'ProfileController@deletelogo')->middleware('auth');
 Route::post('/profile/uploadvideo' , 'ProfileController@uploadVideo')->middleware('auth');
 
+Route::get('/profile/edit/{id}', 'ProfileController@editvacancy');
+
 Route::get('/profile/events', 'ProfileController@allevents')->middleware('ifCompany');
 Route::get('/profile/allincomingfc', 'ProfileController@allincomingfc')->middleware('ifCompany');
 // Route::get('/profile/allincomingfc/search', 'ProfileController@allincomingfcSearch')->middleware('ifCompany');
@@ -78,6 +80,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function(){
 	Route::get('/', 'AdminController@index');
 	Route::get('/removeuser/{id}', 'AdminController@removeuser');
 	Route::get('/removevacancy/{id}', 'AdminController@removevacancy');
+
 	Route::get('/removecontact/{id}', 'AdminController@removecontact');
 	Route::get('/users', 'AdminController@users');
 	Route::get('/companies', 'AdminController@companies');

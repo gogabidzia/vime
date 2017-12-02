@@ -196,4 +196,8 @@ class ProfileController extends Controller
         }
         return redirect()->back();
     }
+    public function editvacancy($id, Request $request){
+ 
+        return view('app\user\edit');
+    }
 }

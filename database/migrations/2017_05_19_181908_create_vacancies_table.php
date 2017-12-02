@@ -17,7 +17,7 @@ class CreateVacanciesTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('position')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->string('location')->nullable();
             $table->string('category')->nullable();
             $table->string('type');
