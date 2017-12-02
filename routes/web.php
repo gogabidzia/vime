@@ -43,7 +43,8 @@ Route::post('/profile/uploadlogo' , 'ProfileController@uploadlogo')->middleware(
 Route::get('/profile/removelogo', 'ProfileController@deletelogo')->middleware('auth');
 Route::post('/profile/uploadvideo' , 'ProfileController@uploadVideo')->middleware('auth');
 
-Route::get('/profile/edit/{id}', 'ProfileController@editvacancy');
+Route::any('/profile/edit/{id}', 'ProfileController@editvacancy');
+Route::post('/profile/edit/{id}', 'ProfileController@editedvacancy');
 
 Route::get('/profile/events', 'ProfileController@allevents')->middleware('ifCompany');
 Route::get('/profile/allincomingfc', 'ProfileController@allincomingfc')->middleware('ifCompany');

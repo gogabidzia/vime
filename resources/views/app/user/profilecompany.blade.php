@@ -167,7 +167,8 @@
 										<div class="location">
 											{{$vacancy->location}}
 										</div>
-										<a href="/profile/edit/{{$vacancy->id}}" class="glyphicon">შეცვლა</a>
+										<a href="/profile/edit/{{$vacancy->id}}" class="btn btn-default btn-md label label-danger"><span>შეცვლა</span>
+										</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>								

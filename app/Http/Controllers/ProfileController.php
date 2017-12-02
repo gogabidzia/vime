@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Vacancy;
 use Storage;
 use Image;
 use File;
@@ -197,7 +198,18 @@ class ProfileController extends Controller
         return redirect()->back();
     }
     public function editvacancy($id, Request $request){
- 
-        return view('app\user\edit');
+        $description = DB::table('vacancies')->where('id', $id)->first();
+                
+        return view('app\user\edit', ['description' => $description]);
+    }
+
+    public function editedvacancy($id, Request $request){
+        
+        $descrp = DB::table('vacancies')->where('id', $id)->update(['description' => $request->get('description')]);
+
+        // $desc = DB::table('vacancies')->where('id',$id)->first();
+        // $desc->description = $request->input('description');
+
+        return redirect('/profile')->with('uploadStatus', 'აღწერა წარმატებით შეიცვალა');;
     }
 }

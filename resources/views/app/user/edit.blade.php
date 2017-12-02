@@ -17,17 +17,21 @@
 				<div class="vacancyHeader">
 					<div class="vacancy-inner">
 							<div class="title green">
-								აღწერის შეცვლა
+							აღწერის შეცვლა
 							</div>
 							<div class="hr">
 								
 							</div>
 					</div>
 				</div>
-				<form>
-					<textarea rows="10" cols="118">}</textarea>
-					<button>შეცვლა</button>
+
+				<form action="/profile/edit/{{$description->id}}" method="POST" class="myFormControl">
+   					{{csrf_field()}}
+					<textarea rows="10" cols="118"  class="form-control" name="description">{{$description->description}}</textarea>
+					<input class="btn authBtn" type="submit" Value='შეცვლა'>					
 				</form>
+
+
 			</div>	
 		</div>
 		<div class="col-md-2">
