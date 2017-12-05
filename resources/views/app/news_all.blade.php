@@ -21,10 +21,11 @@
 					<div class="items standart">
 					<div class="row">
 						@foreach($items as $item)
+						<h2 class="card-title">{!! $item->title !!}</h2>
 							 <div class="card mb-4">
-            <img class="card-img-top" src="{!! $item->img !!}" alt="Card image cap">
+            <img src="{!! $item->img !!}" class="img-rounded" alt="Cinque Terre" width="304" height="236">
             <div class="card-body">
-              <h2 class="card-title">{!! $item->title !!}</h2>
+              
               <p class="card-text">{!! $item->text !!}</p>
               <a href="#" class="btn btn-primary">Read More &rarr;</a>
             </div>
