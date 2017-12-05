@@ -912,7 +912,7 @@ span.spacer{
 	margin-left: -15px;
 	text-align: center;
 }
-#bubble{
+/*#bubble{
 	position: fixed;
 	z-index: 9999;
 	bottom: -400px;
@@ -929,7 +929,7 @@ span.spacer{
 #bubble a:focus,
 #bubble a:active{
 	color: white;
-}
+}*/
 #advModal .modal-body p{
 
 	padding-left: 20px;
