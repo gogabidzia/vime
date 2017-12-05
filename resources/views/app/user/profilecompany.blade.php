@@ -145,7 +145,9 @@
 					@foreach($vacancies as $vacancy)
 						<div class="col-md-12">
 							<div class="item">
-							<a href="/vacancies/remove/{{$vacancy->id}}" class="removeVacancy">&times;</a>
+							<a href="/vacancies/remove/{{$vacancy->id}}" class="removeVacancy">&times;</a> 
+							<a href="/profile/edit/{{$vacancy->id}}" style="font-size:24px" class="EditVacancy fa">&#xf044;</a> 
+										</a>
 								<div class="row">
 									<div class="icon pull-left">
 										<img src="{{ $vacancy->user->getLogo() }}">
@@ -167,8 +169,8 @@
 										<div class="location">
 											{{$vacancy->location}}
 										</div>
-										<a href="/profile/edit/{{$vacancy->id}}" class="btn btn-default btn-md label label-danger"><span>შეცვლა</span>
-										</a>
+										<!-- <a href="/profile/edit/{{$vacancy->id}}" class="btn btn-default btn-md label label-danger"><span>შეცვლა</span>
+										</a> -->
 									</div>
 									<div class="clearfix"></div>
 								</div>							

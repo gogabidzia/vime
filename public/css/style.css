@@ -690,6 +690,13 @@ span.spacer{
 	top: -13px;
 	font-size: 40px;
 }
+.EditVacancy{
+	position: absolute;
+	right: 30px;
+	float: right;
+	top: 7px;
+	font-size: 10px;
+}
 .removeVideo{
 	position: absolute;
 	right: 0px;
