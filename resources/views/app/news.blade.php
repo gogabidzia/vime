@@ -12,7 +12,7 @@
 			<div class="vacancyHeader">
 				<div class="vacancy-inner">
 						<div class="title red">
-							{{ $item->title }}
+						{!! $item->title !!}
 						</div>
 						<div class="hr">
 							
@@ -21,7 +21,7 @@
 			</div>
 			<div class="vacancy-item">
 				<div class="text">
-					{{ $item->text }}
+					{!! $item->text !!}
 				</div>
 			</div>
 		</div>

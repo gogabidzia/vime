@@ -148,6 +148,7 @@ class AdminController extends Controller
         $item = new News();
         $item->title = $request->get('title');
         $item->text = $request->get('text');
+        $item->img = $request->get('img'); 
         $item->bubbled = false;
         $item->save();
         return redirect()->back();

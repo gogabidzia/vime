@@ -36,6 +36,10 @@ class HomeController extends Controller
         $item = News::findOrFail($id);
         return view('app.news', ['item'=>$item]);
     }
+    public function news_all(){
+        $items = News::all();
+        return view('app.news_all', ['items'=>$items]);
+    }
     public function sendContact(Request $request){
         $this->validate($request, [
             'name'=>'required',
