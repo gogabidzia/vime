@@ -45,17 +45,25 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        if($e instanceof ValidationException) {
-            $message = $e->validator->messages()->first();
+        // if($e instanceof ValidationException) {
+        //     $message = $e->validator->messages()->first();
             
-            if ($request->ajax()) {
-                return response([
-                    "status" => "error",
-                    "message" => $message
-                ], 400);
+        //     if ($request->ajax()) {
+        //         return response([
+        //             "status" => "error",
+        //             "message" => $message
+        //         ], 400);
+        //     }
+        // }
+
+        // return parent::render($request, $e);
+
+         if($this->isHttpException($e)){
+            if (view()->exists('404.'.$e->getStatusCode()))
+            {
+                return response()->view('404.'.$e->getStatusCode(), [], $e->getStatusCode());
             }
         }
-
         return parent::render($request, $e);
     }
 

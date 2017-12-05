@@ -372,8 +372,9 @@ span.spacer{
 }
 .footerparalax{
 	width: 100%;
-	height: 200px;
-	background: url('https://3.bp.blogspot.com/-dh6TlkIOqG8/TwZm5wcED7I/AAAAAAAAAZQ/wgb-UkQRzG0/s1600/2153.jpg');
+	height: 0px;
+	/* background: url('https://3.bp.blogspot.com/-dh6TlkIOqG8/TwZm5wcED7I/AAAAAAAAAZQ/wgb-UkQRzG0/s1600/2153.jpg');
+	*/
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
