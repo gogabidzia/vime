@@ -79,7 +79,7 @@ class AuthController extends Controller
                 "phone"=>"required|min:7|numeric",
                 "email" => "required|email|unique:users,email",
                 "password" => "required|min:6",
-                "identify" => "required",
+                "identify" => "required|max:10",
                 "acceptterms"=>"required"
             ],[
                 'name.required'=> 'გთხოვთ შეიყვანოთ სახელი',
@@ -91,6 +91,8 @@ class AuthController extends Controller
                 'email.unique'=>'ასეთი ელ.ფოსტა უკვე დარეგისტრირებულია.',
                 'password.unique'=>'გთხოვთ შეიყვანოთ პაროლი.',
                 'password.min'=>'პაროლი უნდა შეიცავდეს მინიმუმ 6 სიმბოლოს',
+                'identify.required' => 'გთხოვთ შეიყვანოთ საიდენტიფიკაციო კოდი',
+                'identify.max' => 'საიდენტიფიკაციო კოდი არ უნდა აღემატებოდეს 10 სიმბოლოს',
                 'acceptterms.required'=>"გთხოვთ დაეთანხმოთ წესებსა და პირობებს"
             ]);
             $user = User::create([

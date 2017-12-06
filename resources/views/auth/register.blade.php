@@ -71,10 +71,10 @@ Vime - რეგისტრაცია
                         <input class="form-control" name="phone" placeholder="ტელეფონის ნომერი"></input>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" name="email" placeholder="ელ.ფოსტა"></input>
+                        <input class="form-control" name="identify" placeholder="საიდენტიფიკაციო კოდი"></input>
                     </div>
                     <div class="form-group">
-                        <input class="form-control" name="identify" placeholder="საიდენტიფიკაციო კოდი"></input>
+                        <input class="form-control" name="email" placeholder="ელ.ფოსტა"></input>
                     </div>
                     <div class="form-group">
                         <input type="password" class="form-control" name="password" placeholder="პაროლი"></input>
