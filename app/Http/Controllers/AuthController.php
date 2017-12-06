@@ -79,6 +79,7 @@ class AuthController extends Controller
                 "phone"=>"required|min:7|numeric",
                 "email" => "required|email|unique:users,email",
                 "password" => "required|min:6",
+                "identify" => "required",
                 "acceptterms"=>"required"
             ],[
                 'name.required'=> 'გთხოვთ შეიყვანოთ სახელი',
@@ -97,6 +98,7 @@ class AuthController extends Controller
                 "password" => bcrypt($request->get('password')),
                 "name" => $request->get('name'),
                 "phone"=>$request->get("phone"),
+                "identify"=>$request->get("identify"),
                 "type"=>"company"
             ]);
             $company = new Company();

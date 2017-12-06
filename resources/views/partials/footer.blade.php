@@ -12,11 +12,7 @@
 				<i class="fa fa-envelope-o" aria-hidden="true"></i>
 				vimesume@gmail.com
 			</div>
-			<div class="info">
-				<i class="fa fa-phone" aria-hidden="true"></i>
-				+995-557-66-06-91
-
-			</div>
+			
 			<div class="info"></div>
 			<div class="clearfix"></div>
 		</div>
