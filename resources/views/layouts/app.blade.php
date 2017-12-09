@@ -137,6 +137,8 @@
 <script type="text/javascript" src="/locales/bootstrap-datepicker.ka.min.js"></script>
 <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
 <script type="text/javascript">
+
+
 	$('#search form select[name="type"]').change(function(){
 		if($(this).val()=='facecontrol'){
 			$('.fcFormGroup').hide();

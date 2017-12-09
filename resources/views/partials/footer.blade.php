@@ -10,11 +10,13 @@
 		<div class="tableCentered">
 			<div class="info">
 				<i class="fa fa-envelope-o" aria-hidden="true"></i>
-				vimesume@gmail.com
+				vimesume@gmail.com<br>
+				<i class="fa fa-facebook"></i>
+				<a href="https://www.facebook.com/vime.ge/">შემოგვიერთდით ფეისბუქ გვერდზე</a>
+				
+				
 			</div>
-			
-			<div class="info"></div>
-			<div class="clearfix"></div>
 		</div>
+		
 	</div>
 </div>

@@ -27,7 +27,7 @@
 					</div>
 				@endif
 					<div class="text">
-						{{ $vacancy->description }}
+						{!! $vacancy->description !!}
 					</div>
 					<div class="params">
 						<a href="#"><i class="fa fa-building" aria-hidden="true"></i> "{{ $vacancy->user->name }}"</a> <span class="spacer"> | </span> 
