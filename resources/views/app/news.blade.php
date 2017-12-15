@@ -21,6 +21,7 @@
 			</div>
 			<div class="vacancy-item">
 				<div class="text">
+					<!-- <img src="{!! $item->img !!}" class="img-rounded" alt="Cinque Terre" width="300" height="200"> -->
 					{!! $item->text !!}
 				</div>
 			</div>
