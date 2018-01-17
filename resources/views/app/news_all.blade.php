@@ -142,29 +142,49 @@ img {
 <div class="container">
     <div class="latest-news-box">
     	<!-- Row -->
-    	@foreach($items as $item)
     	<div class="row nomargin">
+    		@foreach($items as $item)
+    		@if($item->position=='left')
     		<div class="col-md-6 nopadding">
     			<div class="item item-left">
     				<div class="col-md-6 nopadding hidden-xs">
-    					<img src="{!! $item->img !!}" alt="News Image">
+    					<img src="{{ $item->img }}" alt="News Image">
     					<span class="img-overflow"></span>
     					<div class="arrow-left"></div>
     				</div>
-
+    
     				<div class="col-md-6 nopadding">
     					<div class="content">
-    						<p class="date">{{ $item->created_at }}</p>
-    						<h2>{!! $item->title !!}</h2>
-    						<p>{!! $item->text !!}</p>
-    						<a href="/news/{{ $item->id }}" class="btn blue small black">კითხვის გაგრძელება</a>
-    						
+    						<p class="date">{{ date('l jS F Y', strtotime($item->created_at)) }}</p>
+    						<h2>{{ $item->title }}</h2>
+    						<p>{{ substr(strip_tags($item->text),0,15) }}</p>
+    						<a href="/news/{{ $item->id }}" class="btn blue small">კითხვის გაგრძელება</a>
     					</div>
     				</div>
     			</div>
     		</div>
-        	@endforeach
-    	</div> <!-- ./end Row -->
+    		@else
+    		<div class="col-md-6 nopadding">
+    			<div class="item item-right">
+    				<div class="col-md-6 nopadding">
+    					<div class="content">
+    						<p class="date">{{ date('l jS F Y', strtotime($item->created_at)) }}</p>
+    						<h2>{{ $item->title }}</h2>
+    						<p>{{ substr(strip_tags($item->text),0,15) }}</p>
+    						<a href="/news/{{ $item->id }}" class="btn blue small">კითხვის გაგრძელება</a>
+    					</div>
+    				</div>
+    
+    				<div class="col-md-6 nopadding hidden-xs">
+    					<img src="{{ $item->img }}" alt="News Image">
+    					<span class="img-overflow"></span>
+    					<div class="arrow-right"></div>
+    				</div>
+    			</div>
+    		</div>
+    		@endif
+    		@endforeach
+    	</div> 
     </div>
 </div>	
 			</div>

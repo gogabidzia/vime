@@ -21,6 +21,7 @@ class CreateVacanciesTable extends Migration
             $table->string('location')->nullable();
             $table->string('category')->nullable();
             $table->string('type');
+            $table->text('video')->nullable();
             $table->date('date_from')->nullable();
             $table->date('date_to')->nullable();
             $table->timestamps();

@@ -7,10 +7,18 @@ use App\Vacancy;
 use Validator;
 use App\Video;
 use App\Bid;
+use Carbon\Carbon;
 use App\Notification;
 class VacancyController extends Controller
 {
     public function add(Request $request){
+
+        // public function __construct(){
+        //     $dateTime = Carbon::now('Asia/Tbilisi');     
+        //     DB::table('vacancies')->where('date_to','<',$dateTime)->delete();
+        // }
+
+
         if($request->get("type")=='vacancy'){
             $locationArray = ["თბილისი", "აფხაზეთის ა/რ", "აჭარის ა/რ", "გურია", "იმერეთი", "კახეთი", "მცხეთა-მთიანეთი", "რაჭა-ლეჩხუმი, ქვ. სვანეთი", "სამეგრელო-ზემო სვანეთი", "სამცხე-ჯავახეთი", "ქვემო ქართლი", "შიდა ქართლი", "უცხოეთი"];
             $catArray = ["ვაკანსიები", "სტიპენდიები", "ტრენინგები", "ტენდერები", "სხვა"];

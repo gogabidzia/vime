@@ -7,6 +7,8 @@ use App\Vacancy;
 use App\Contact;
 use App\Bid;
 use App\News;
+use DB;
+use Carbon\Carbon;
 class HomeController extends Controller
 {
     /**
@@ -14,10 +16,12 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        // $this->middleware('auth');
-    }
+  
+
+    public function __construct(){
+            $dateTime = Carbon::now('Asia/Tbilisi');     
+            DB::table('vacancies')->where('date_to','<',$dateTime)->delete();
+        }
 
     /**
      * Show the application dashboard.

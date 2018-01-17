@@ -13,8 +13,15 @@ use App\Bid;
 use App\SavedVacancy;
 use Response;
 use DB;
+use Carbon\Carbon;
 class ProfileController extends Controller
 {
+
+    public function __construct(){
+        $dateTime = Carbon::now('Asia/Tbilisi');     
+            DB::table('vacancies')->where('date_to','<',$dateTime)->delete();
+    }
+
     public function profile(Request $request){
         if($request->user()->company){
             $vacancies = $request->user()->vacancies()->orderBy('created_at', 'desc')->where('type','vacancy')->limit(10)->get();

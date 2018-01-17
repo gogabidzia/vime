@@ -15,6 +15,9 @@
 			<input class="form-control" name="img" type="text" placeholder="სურათის ლინკი"></input>
 		</div>
 		<div class="form-group">
+			<input class="form-control" name="position" type="text" placeholder="პოზიცია"></input>
+		</div>
+		<div class="form-group">
 			<button class="btn btn-primary">დამატება</button>
 		</div>
 	</form>

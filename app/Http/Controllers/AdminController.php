@@ -148,6 +148,7 @@ class AdminController extends Controller
         $item = new News();
         $item->title = $request->get('title');
         $item->text = $request->get('text');
+        $item->position = $request->get('position');
         if($request->get('img')!=0){
         $item->img = $request->get('img');
         }
