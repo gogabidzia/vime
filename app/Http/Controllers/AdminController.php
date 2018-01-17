@@ -151,13 +151,13 @@ class AdminController extends Controller
         $item->position = $request->get('position');
 
         if($request->file('img')){
-            $destinationPath = "news";
+            $destinationPath = "news_image";
             $file = $request->file('img');
             $extension = $file->getClientOriginalExtension();
             $filename = rand(1111,9999).".".$extension;
             $file->move($destinationPath, $filename);
             $photo = $filename;
-            $item->img = '/news/'.$photo;
+            $item->img = '/news_image/'.$photo;
         }
         else{
             $item->img='/img/news.png';

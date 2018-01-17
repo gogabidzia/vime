@@ -95,7 +95,7 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="/">მთავარი</a></li>
 					<li><a href="/about">ჩვენს შესახებ</a></li>
-					<li><a href="/news_all">სიახლე</a></li>
+					<li><a href="/news">სიახლე</a></li>
 					@if(Auth::check())
 					<li>
 						<a href="/profile/?add=1">
