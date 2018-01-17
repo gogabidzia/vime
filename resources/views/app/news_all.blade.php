@@ -164,7 +164,7 @@ img {
     						<p class="date">{{ date('l jS F Y', strtotime($item->created_at)) }}</p>
     						<h2>{{ $item->title }}</h2>
     						<p>{{ substr(strip_tags($item->text),0,15) }}</p>
-    						<a href="/news/{{ $item->id }}" class="btn blue small black">კითხვის გაგრძელება</a>
+    						<a href="/news/{{ $item->id }}" class="btn blue small black">მეტი.....</a>
     					</div>
     				</div>
     			</div>
@@ -177,7 +177,7 @@ img {
     						<p class="date">{{ date('l jS F Y', strtotime($item->created_at)) }}</p>
     						<h2>{{ $item->title }}</h2>
     						<p>{{ substr(strip_tags($item->text),0,15) }}</p>
-    						<a href="/news/{{ $item->id }}" class="btn blue small">კითხვის გაგრძელება</a>
+    						<a href="/news/{{ $item->id }}" class="btn blue small black">მეტი.....</a>
     					</div>
     				</div>
     
