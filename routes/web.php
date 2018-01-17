@@ -77,7 +77,8 @@ Route::get('/search/' , 'SearchController@search');
 // 	Route::post('/bid', 'VacancyController@bidOnFaceControl');
 // });
 Route::get('/news/{id}', 'HomeController@news');
-Route::get('/news', 'HomeController@news_all');
+Route::get('/news_all', 'HomeController@news_all');
+
 Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function(){
 	Route::get('/', 'AdminController@index');
 	Route::get('/removeuser/{id}', 'AdminController@removeuser');

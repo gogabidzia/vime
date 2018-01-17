@@ -16,12 +16,12 @@ class HomeController extends Controller
      *
      * @return void
      */
-  
-
-    public function __construct(){
+    public function __construct()
+    {
+        // $this->middleware('auth');
             $dateTime = Carbon::now('Asia/Tbilisi');     
             DB::table('vacancies')->where('date_to','<',$dateTime)->delete();
-        }
+    }
 
     /**
      * Show the application dashboard.

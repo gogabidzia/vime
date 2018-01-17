@@ -149,12 +149,22 @@ class AdminController extends Controller
         $item->title = $request->get('title');
         $item->text = $request->get('text');
         $item->position = $request->get('position');
-        if($request->get('img')!=0){
-        $item->img = $request->get('img');
+
+        if($request->file('img')){
+            $destinationPath = "news";
+            $file = $request->file('img');
+            $extension = $file->getClientOriginalExtension();
+            $filename = rand(1111,9999).".".$extension;
+            $file->move($destinationPath, $filename);
+            $photo = $filename;
+            $item->img = '/news/'.$photo;
         }
         else{
             $item->img='/img/news.png';
-        } 
+        }
+
+
+
         $item->bubbled = false;
         $item->save();
         return redirect()->back();

@@ -3,7 +3,7 @@
 <h3 class="text-center">სიახლეები</h3>
 <h4 class="text-center">დამატება</h4>
 <div class="container">
-	<form action="?" method="post">
+	<form action="?" enctype="multipart/form-data" method="post">
 	{{csrf_field()}}
 		<div class="form-group">
 			<input class="form-control" name="title" type="text" placeholder="სახელი"></input>
@@ -12,10 +12,11 @@
 			<textarea id="summernote" class="form-control" name="text" placeholder="აღწერა"></textarea>
 		</div>
 		<div class="form-group">
-			<input class="form-control" name="img" type="text" placeholder="სურათის ლინკი"></input>
+			<input class="form-control" name="img" type="file" placeholder="სურათის ლინკი"></input>
 		</div>
 		<div class="form-group">
-			<input class="form-control" name="position" type="text" placeholder="პოზიცია"></input>
+			<input type="radio" name="position" value="left"><label for="male">Left</label>
+			<input type="radio" name="position" value="right"><label for="female">Right</label>
 		</div>
 		<div class="form-group">
 			<button class="btn btn-primary">დამატება</button>
@@ -27,7 +28,8 @@
 		<tr>
 			<td>სახელი</td>
 			<td>აღწერა</td>
-			<td></td>
+			<td>შეცვლა</td>
+			<td>წაშლა</td>
 			<td>მონიშვნა</td>
 		</tr>
 	</thead>
@@ -39,7 +41,8 @@
 			<tr>
 		@endif
 				<td>{{$item->title}}</td>
-				<td>{{$item->text}}</td>
+				<td>{{ substr(strip_tags($item->text),0,15) }}</td>
+				<td><a href="#" class="change">შეცვლა</a></td>
 				<td><a href="/admin/news/remove/{{$item->id}}" class="remove">წაშლა</a></td>
 				<td><a href="/admin/news/makebubble/{{$item->id}}">ბუშტის სიახლე</a></td>
 			</tr>
